@@ -1,6 +1,6 @@
 import { validateForm } from "../utils/validation.js";
 import { loginUser } from "../services/authService.js";
-import { showPopup, showSuccess } from "../services/ui-messages.js";
+import { hidePopup, showPopup, showSuccess } from "../services/ui-messages.js";
 
 const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
@@ -35,7 +35,7 @@ async function handleLogin() {
         text: "Try again",
         class: "warning-button",
         onClick: () => {
-          window.location.reload();
+          hidePopup();
         },
       },
       {
