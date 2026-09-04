@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlitzBid | Register</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <img src="assets/cd.png" alt="Shiny compact disc" />
+      <h1>Register account</h1>
+      <form id="registration-form" novalidate>
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" required />
+          <div class="error"></div>
+          <br />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            minlength="8"
+          />
+          <div class="error"></div>
+          <label for="confirm-password">Repeat password</label>
+          <input
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+            required
+            minlength="8"
+          />
+          <div class="error"></div>
+        </div>
+        <div>
+          <label for="avatar">Avatar</label>
+          <input
+            type="url"
+            name="avatar"
+            id="avatar"
+            placeholder="Public URL"
+          />
+          <div class="error"></div>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            minlength="2"
+            maxlength="30"
+          />
+          <div class="error"></div>
+          <label for="bio">Bio</label>
+          <input
+            type="text"
+            name="bio"
+            id="bio"
+            required
+            minlength="5"
+            maxlength="160"
+          />
+          <div class="error"></div>
+        </div>
+        <div>
+          <button type="submit" id="register" class="primary-button">
+            Sign up
+          </button>
+          <button><a href="login.html">Back</a></button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

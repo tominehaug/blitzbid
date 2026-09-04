@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlitzBid | Login</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <img src="assets/cd.png" alt="Shiny compact disc" />
+      <h1>Log in</h1>
+      <form id="login-form" novalidate>
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" required />
+        <div class="error"></div>
+        <br />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          minlength="8"
+        />
+        <div class="error"></div>
+        <div>
+          <button type="submit" id="signin" class="primary-button">
+            Sign in
+          </button>
+          <button id="signup">
+            <a href="register.html">Sign up</a>
+          </button>
+          <button><a href="index.html">Back</a></button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
