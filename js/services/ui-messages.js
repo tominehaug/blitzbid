@@ -39,3 +39,13 @@ export function hidePopup() {
   popup.classList.add("hidden");
   backdrop.classList.add("hidden");
 }
+// helper function for success messages
+export function showSuccess(message, timeout = 3000) {
+  showPopup("confirm-popup", message);
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      hidePopup();
+      resolve();
+    }, timeout);
+  });
+}
