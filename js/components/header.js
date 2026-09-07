@@ -1,4 +1,5 @@
 import { logoutUser } from "../services/authService.js";
+import { showPopup, hidePopup } from "../services/ui-messages.js";
 
 const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
@@ -16,29 +17,51 @@ export function renderHeader() {
   const params = new URLSearchParams(window.location.search);
   const user = params.get("user");
   const profile = JSON.parse(localStorage.getItem("profile"));
+  const accessToken = localStorage.getItem("accessToken");
 
-  if (!user) {
+  if (!accessToken) {
     header.innerHTML = `
       <a href="${basePath}/index.html">
-          <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
+        <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
       </a>
-      <i class="fa-solid fa-right-to-bracket"></i>`;
+      <a href="${basePath}/login.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+    `;
   } else if (path.includes("profile.html") && user === profile?.name) {
     header.innerHTML = `
       <a href="${basePath}/index.html">
-          <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
+        <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
       </a>
-      <i class="fa-solid fa-arrow-right-from-bracket" id="logout"></i>`;
-    // log out user
+      <button id="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+    `;
+
     const logoutBtn = document.getElementById("logout");
+
     if (logoutBtn) {
-      logoutBtn.addEventListener("click", logoutUser);
+      logoutBtn.addEventListener("click", () => {
+        showPopup("warning-popup", "Are you sure you want to logout?", [
+          {
+            text: "Yes",
+            class: "confirmation-button",
+            onClick: () => {
+              logoutUser();
+            },
+          },
+          {
+            text: "Back",
+            class: "warning-button",
+            onClick: () => {
+              hidePopup();
+            },
+          },
+        ]);
+      });
     }
   } else {
     header.innerHTML = `
       <a href="${basePath}/index.html">
-          <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
+        <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
       </a>
-      <i class="fa-solid fa-circle-user"></i>`;
+      <a href="${basePath}/profile.html"><i class="fa-solid fa-circle-user"></i></a>
+    `;
   }
 }
