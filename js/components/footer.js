@@ -1,7 +1,3 @@
-const basePath = window.location.hostname.includes("github.io")
-  ? "/blitzbid"
-  : "";
-
 export function renderFooter() {
   const footer = document.querySelector("footer");
   if (!footer) {
