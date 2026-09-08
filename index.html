@@ -4,22 +4,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BlitzBid | Home</title>
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Jersey+20&family=Zilla+Slab+Highlight&family=Zilla+Slab:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/4b71fec88a.js"
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="bg-brand-200 font-default">
     <header
-      class="sticky top-0 z-50 flex h-30 items-center justify-between bg-white px-8"
+      class="sticky top-0 z-50 flex h-[100px] items-center justify-between bg-white px-8"
     ></header>
-    <div>
-      <img src="assets/cd.png" alt="Shiny compact disc" />
-      <p>Music doesn't just belong in your playlist.</p>
+    <div class="relative mt-8 mb-8">
+      <img
+        src="assets/cd.png"
+        alt="Shiny compact disc"
+        class="block w-[200px] md:w-[310px] h-auto mx-auto"
+      />
+      <p
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-15 whitespace-nowrap text-xl md:text-3xl font-styled"
+      >
+        Music doesn't
+        <span class="font-styled-special text-2xl md:text-4xl"
+          >just belong</span
+        >
+        in your playlist.
+      </p>
     </div>
-    <div>
-      <h2>Browse categories</h2>
-      <ul>
+    <div class="text-center">
+      <h2 class="font-heading text-2xl">Browse categories</h2>
+      <ul class="text-xl">
         <li><a href="">Picture discs</a></li>
         <li><a href="">Casette tapes</a></li>
         <li><a href="">Posters</a></li>
@@ -29,7 +49,7 @@
       <button>load more</button>
     </div>
     <a href="#browse"><h1>Go crate digging</h1></a>
-    <main id="browse">
+    <main id="browse" class="scroll-mt-[110px]">
       <div>
         <h2>Popular listings</h2>
       </div>
