@@ -37,16 +37,20 @@
         in your playlist.
       </p>
     </div>
-    <div class="text-center">
+    <div class="text-center max-w-xs mx-auto">
       <h2 class="font-heading text-2xl">Browse categories</h2>
-      <ul class="text-xl">
-        <li><a href="">Picture discs</a></li>
-        <li><a href="">Casette tapes</a></li>
-        <li><a href="">Posters</a></li>
-        <li><a href="">CDs</a></li>
-        <li><a href="">Vinyl records</a></li>
-      </ul>
-      <button>load more</button>
+      <div
+        class="mt-1 flex flex-wrap justify-center gap-2 text-xl [&>a:nth-child(3n+1)]:border-2 [&>a:nth-child(3n+1)]:border-dashed"
+      >
+        <a href="" class="px-1">Picture discs</a>
+        <a href="" class="p-1">Casette tapes</a>
+        <a href="" class="p-1">Posters</a>
+        <a href="" class="p-1">Vinyl records</a>
+        <a href="" class="p-1">CDs</a>
+        <button id="load-categories" class="hover:text-decoration-line mt-3">
+          load more
+        </button>
+      </div>
     </div>
     <a href="#browse"><h1>Go crate digging</h1></a>
     <main id="browse" class="scroll-mt-[110px]">
