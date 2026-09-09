@@ -21,55 +21,81 @@
     <header
       class="sticky top-0 z-50 flex h-[100px] items-center justify-between bg-white px-8"
     ></header>
+    <div id="search"></div>
     <div class="relative mt-8 mb-8">
       <img
         src="assets/cd.png"
         alt="Shiny compact disc"
-        class="block w-[200px] md:w-[310px] h-auto mx-auto"
+        class="mx-auto block h-auto w-[200px] md:w-[310px]"
       />
       <p
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-15 whitespace-nowrap text-xl md:text-3xl font-styled"
+        class="font-styled absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-15 text-xl whitespace-nowrap md:text-3xl"
       >
         Music doesn't
         <span class="font-styled-special text-2xl md:text-4xl"
           >just belong</span
         >
-        in your playlist.
+        in your playlist
       </p>
     </div>
-    <div class="text-center max-w-xs mx-auto">
+    <div class="mx-auto max-w-xs text-center">
       <h2 class="font-heading text-2xl">Browse categories</h2>
       <div
-        class="mt-1 flex flex-wrap justify-center gap-2 text-xl [&>a:nth-child(3n+1)]:border-2 [&>a:nth-child(3n+1)]:border-dashed"
+        class="mt-1 flex flex-wrap justify-center gap-4 text-xl [&>a:nth-child(3n+1)]:border-2 [&>a:nth-child(3n+1)]:border-dashed"
       >
-        <a href="" class="px-1">Picture discs</a>
-        <a href="" class="p-1">Casette tapes</a>
-        <a href="" class="p-1">Posters</a>
-        <a href="" class="p-1">Vinyl records</a>
-        <a href="" class="p-1">CDs</a>
-        <button id="load-categories" class="hover:text-decoration-line mt-3">
+        <a href="" class="border-2 p-1">Picture discs</a>
+        <a href="" class="border-2 p-1">Casette tapes</a>
+        <a href="" class="border-2 p-1">Posters</a>
+        <a href="" class="border-2 p-1">Vinyl records</a>
+        <a href="" class="border-2 p-1">CDs</a>
+        <button id="load-categories" class="text-lg underline">
           load more
         </button>
       </div>
     </div>
-    <a href="#browse"><h1>Go crate digging</h1></a>
+    <a
+      href="#browse"
+      class="mx-auto mt-14 flex w-fit flex-row items-center gap-3"
+      ><img
+        src="assets/fast-forward.svg"
+        alt="Fast forward-arrow"
+        width="40"
+        height="60" />
+      <h1 class="font-heading text-4xl">Go crate digging</h1>
+      <img
+        src="assets/fast-forward.svg"
+        alt="Fast forward-arrow"
+        width="40"
+        height="60"
+    /></a>
     <main id="browse" class="scroll-mt-[110px]">
       <div>
-        <h2>Popular listings</h2>
-      </div>
-      <div>
-        <h2>
-          <p>What makes us worth the bid?</p>
+        <h2 class="font-heading text-2xl">Popular listings</h2>
+        <div
+          class="text-brand-500 mt-8 mb-8 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)] md:w-[450px] md:rotate-90"
+        ></div>
+        <h2 class="font-styled mx-auto max-w-3xs text-center text-3xl">
+          <span class="font-styled-special text-4xl">What</span> makes us worth
+          the bid <span class="font-styled-special text-4xl">?</span>
         </h2>
-        <ul>
-          <li>Curated selection</li>
-          <li>Transparency and trust</li>
-          <li>Unique and rare items</li>
+        <ul class="font-heading mt-5 flex flex-col gap-4 text-2xl">
+          <li class="w-2xs self-end bg-white p-3 text-left">
+            Curated selection
+          </li>
+          <li class="w-2xs self-start bg-white p-3 text-right">
+            Transparency and trust
+          </li>
+          <li class="w-2xs self-end bg-white p-3 text-left">
+            Unique and rare items
+          </li>
         </ul>
       </div>
+      <div
+        class="text-brand-500 mt-8 mb-4 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)]"
+      ></div>
       <div>
-        <h2>Recently added</h2>
-        <h2>Ending soon</h2>
+        <h2 class="font-heading text-2xl">Recently added</h2>
+        <h2 class="font-heading text-2xl">Ending soon</h2>
       </div>
     </main>
     <footer></footer>
