@@ -58,7 +58,7 @@
       class="mx-auto mt-14 flex w-fit flex-row items-center gap-3"
       ><img
         src="assets/fast-forward.svg"
-        alt="Fast forward-arrow"
+        alt="forward-arrow"
         width="40"
         height="60" />
       <h1 class="font-heading text-4xl">Go crate digging</h1>
@@ -69,8 +69,36 @@
         height="60"
     /></a>
     <main id="browse" class="scroll-mt-[110px]">
-      <div>
+      <section>
         <h2 class="font-heading text-2xl">Popular listings</h2>
+        <div id="popular-thumbnail-carousel"></div>
+        <a href="" class="js-prev">
+          <img
+            src="assets/forward.svg"
+            alt="back-arrow"
+            width="40"
+            height="60"
+            class="rotate-180"
+        /></a>
+        <div class="js-slides-container"></div>
+        <h3 id="js-thumbnail-title"></h3>
+        <a href="" class="js-next">
+          <img
+            src="assets/forward.svg"
+            alt="forward-arrow"
+            width="40"
+            height="60"
+          />
+        </a>
+        <div class="flex gap-2">
+          <span class="inline-block h-3 w-3 cursor-pointer bg-gray-400"></span>
+          <span class="inline-block h-3 w-3 cursor-pointer bg-gray-400"></span>
+          <span class="inline-block h-3 w-3 cursor-pointer bg-gray-400"></span>
+          <span class="inline-block h-3 w-3 cursor-pointer bg-gray-400"></span>
+          <span class="inline-block h-3 w-3 cursor-pointer bg-gray-400"></span>
+        </div>
+      </section>
+      <section>
         <div
           class="text-brand-500 mt-8 mb-8 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)] md:w-[450px] md:rotate-90"
         ></div>
@@ -89,13 +117,21 @@
             Unique and rare items
           </li>
         </ul>
-      </div>
+      </section>
       <div
         class="text-brand-500 mt-8 mb-4 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)]"
       ></div>
       <div>
         <h2 class="font-heading text-2xl">Recently added</h2>
+        <div id="recently-added">
+          <h3 id="recent-post-title"></h3>
+        </div>
+      </div>
+      <div>
         <h2 class="font-heading text-2xl">Ending soon</h2>
+        <div id="ending-soon">
+          <h3 id="ending-soon-title"></h3>
+        </div>
       </div>
     </main>
     <footer class="bg-white p-3"></footer>
