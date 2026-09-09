@@ -10,4 +10,6 @@
   --font-styled: "Zilla Slab", serif;
   --font-styled-special: "Zilla Slab Highlight", serif;
   --font-heading: "Jersey 20", sans-serif;
+
+  --text-4xl: 2.125rem;
 }
