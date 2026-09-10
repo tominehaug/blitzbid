@@ -3,189 +3,155 @@
     {
       "id": "auction-001",
       "title": "David Bowie - Aladdin Sane Picture Disc",
-      "description": "Rare collector's picture disc featuring David Bowie's iconic Aladdin Sane artwork. A striking addition to any Bowie collection.",
-      "tags": ["picture disc", "David Bowie", "rock", "collectible"],
+      "description": "Rare picture disc edition of David Bowie's Aladdin Sane. A striking collector's piece for Bowie fans and vinyl collectors.",
+      "tags": ["picture disc", "vinyl record", "David Bowie", "rock"],
       "media": [
         {
           "url": "https://url.com/bowie-aladdin-sane.jpg",
           "alt": "David Bowie Aladdin Sane picture disc"
         }
       ],
-      "created": "2026-08-28T14:20:00.000Z",
-      "updated": "2026-09-08T18:30:00.000Z",
-      "endsAt": "2026-09-14T20:00:00.000Z",
+      "created": "2026-09-02T10:15:00.000Z",
+      "updated": "2026-09-10T08:00:00.000Z",
+      "endsAt": "2026-09-20T18:00:00.000Z",
       "seller": {
         "name": "Maya Records",
-        "email": "maya.records@example.com",
-        "bio": "Collector and seller of rare rock and alternative records.",
+        "email": "maya@url.com",
+        "bio": "Independent record collector specialising in classic rock and rare pressings.",
         "avatar": {
           "url": "https://url.com/maya-avatar.jpg",
-          "alt": "Maya Records seller avatar"
+          "alt": "Maya Records profile picture"
         },
         "banner": {
           "url": "https://url.com/maya-banner.jpg",
-          "alt": "Record collection in a vintage record shop"
+          "alt": "Maya Records collection"
         },
-        "wins": ["auction-019", "auction-044"]
+        "wins": ["auction-009"]
       },
       "bids": [
         {
           "id": "bid-001",
           "amount": 85,
           "bidder": {
-            "name": "Alex Morgan",
-            "email": "alex.morgan@example.com",
-            "bio": "Long-time Bowie collector.",
+            "name": "Vinyl Vault",
+            "email": "vault@url.com",
+            "bio": "Long-time collector of alternative, rock and electronic records.",
             "avatar": {
-              "url": "https://url.com/alex-avatar.jpg",
-              "alt": "Alex Morgan avatar"
+              "url": "https://url.com/vault-avatar.jpg",
+              "alt": "Vinyl Vault profile picture"
             },
             "banner": {
-              "url": "https://url.com/alex-banner.jpg",
-              "alt": "David Bowie records"
+              "url": "https://url.com/vault-banner.jpg",
+              "alt": "Vinyl Vault record collection"
             }
           },
-          "created": "2026-09-01T16:20:00.000Z"
+          "created": "2026-09-05T14:20:00.000Z"
         },
         {
           "id": "bid-002",
           "amount": 105,
           "bidder": {
-            "name": "Jordan Lee",
-            "email": "jordan.lee@example.com",
-            "bio": "Vinyl enthusiast and crate digger.",
+            "name": "Grunge Collector",
+            "email": "grunge@url.com",
+            "bio": "Collector focused on 90s alternative and grunge memorabilia.",
             "avatar": {
-              "url": "https://url.com/jordan-avatar.jpg",
-              "alt": "Jordan Lee avatar"
+              "url": "https://url.com/grunge-avatar.jpg",
+              "alt": "Grunge Collector profile picture"
             },
             "banner": {
-              "url": "https://url.com/jordan-banner.jpg",
-              "alt": "Vintage record player"
+              "url": "https://url.com/grunge-banner.jpg",
+              "alt": "Grunge Collector collection"
             }
           },
-          "created": "2026-09-06T11:45:00.000Z"
+          "created": "2026-09-07T16:45:00.000Z"
+        },
+        {
+          "id": "bid-003",
+          "amount": 125,
+          "bidder": {
+            "name": "Poster House",
+            "email": "poster@url.com",
+            "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
+            "avatar": {
+              "url": "https://url.com/poster-avatar.jpg",
+              "alt": "Poster House profile picture"
+            },
+            "banner": {
+              "url": "https://url.com/poster-banner.jpg",
+              "alt": "Poster House collection"
+            }
+          },
+          "created": "2026-09-09T11:30:00.000Z"
         }
       ],
       "_count": {
-        "bids": 2
+        "bids": 3
       }
     },
     {
       "id": "auction-002",
-      "title": "The Beatles - Abbey Road Original Pressing",
-      "description": "Classic Abbey Road vinyl record in excellent condition. The sleeve shows only minor signs of age.",
-      "tags": ["vinyl record", "The Beatles", "rock", "classic"],
+      "title": "The Beatles - Abbey Road Original Vinyl",
+      "description": "Classic Beatles album on vinyl. A timeless addition to any record collection.",
+      "tags": ["vinyl record", "The Beatles", "classic rock"],
       "media": [
         {
           "url": "https://url.com/beatles-abbey-road.jpg",
           "alt": "The Beatles Abbey Road vinyl record"
         }
       ],
-      "created": "2026-08-30T10:15:00.000Z",
-      "updated": "2026-09-07T13:00:00.000Z",
-      "endsAt": "2026-09-16T19:30:00.000Z",
+      "created": "2026-08-24T09:30:00.000Z",
+      "updated": "2026-09-08T12:15:00.000Z",
+      "endsAt": "2026-09-21T19:30:00.000Z",
       "seller": {
         "name": "Vinyl Vault",
-        "email": "vinyl.vault@example.com",
-        "bio": "Independent seller specializing in classic records.",
+        "email": "vault@url.com",
+        "bio": "Long-time collector of alternative, rock and electronic records.",
         "avatar": {
-          "url": "https://url.com/vinyl-vault-avatar.jpg",
-          "alt": "Vinyl Vault seller avatar"
+          "url": "https://url.com/vault-avatar.jpg",
+          "alt": "Vinyl Vault profile picture"
         },
         "banner": {
-          "url": "https://url.com/vinyl-vault-banner.jpg",
-          "alt": "Shelves of vinyl records"
+          "url": "https://url.com/vault-banner.jpg",
+          "alt": "Vinyl Vault record collection"
         },
-        "wins": ["auction-012"]
-      },
-      "bids": [
-        {
-          "id": "bid-003",
-          "amount": 60,
-          "bidder": {
-            "name": "Sam Carter",
-            "email": "sam.carter@example.com",
-            "bio": "Beatles fan and record collector.",
-            "avatar": {
-              "url": "https://url.com/sam-avatar.jpg",
-              "alt": "Sam Carter avatar"
-            },
-            "banner": {
-              "url": "https://url.com/sam-banner.jpg",
-              "alt": "Beatles memorabilia"
-            }
-          },
-          "created": "2026-09-02T09:10:00.000Z"
-        }
-      ],
-      "_count": {
-        "bids": 1
-      }
-    },
-    {
-      "id": "auction-003",
-      "title": "Nirvana - Nevermind Cassette Tape",
-      "description": "Original Nevermind cassette tape from the early 1990s. A nostalgic piece of grunge history for collectors.",
-      "tags": ["casette tape", "Nirvana", "grunge", "90s"],
-      "media": [
-        {
-          "url": "https://url.com/nirvana-nevermind.jpg",
-          "alt": "Nirvana Nevermind cassette tape"
-        }
-      ],
-      "created": "2026-08-27T17:40:00.000Z",
-      "updated": "2026-09-05T15:25:00.000Z",
-      "endsAt": "2026-09-13T18:00:00.000Z",
-      "seller": {
-        "name": "Grunge Collector",
-        "email": "grunge.collector@example.com",
-        "bio": "Hunting down the best alternative music memorabilia.",
-        "avatar": {
-          "url": "https://url.com/grunge-avatar.jpg",
-          "alt": "Grunge Collector avatar"
-        },
-        "banner": {
-          "url": "https://url.com/grunge-banner.jpg",
-          "alt": "Stack of vintage cassette tapes"
-        },
-        "wins": []
+        "wins": ["auction-005"]
       },
       "bids": [
         {
           "id": "bid-004",
-          "amount": 35,
+          "amount": 45,
           "bidder": {
-            "name": "Taylor Reed",
-            "email": "taylor.reed@example.com",
-            "bio": "90s music obsessive.",
+            "name": "Maya Records",
+            "email": "maya@url.com",
+            "bio": "Independent record collector specialising in classic rock and rare pressings.",
             "avatar": {
-              "url": "https://url.com/taylor-avatar.jpg",
-              "alt": "Taylor Reed avatar"
+              "url": "https://url.com/maya-avatar.jpg",
+              "alt": "Maya Records profile picture"
             },
             "banner": {
-              "url": "https://url.com/taylor-banner.jpg",
-              "alt": "90s music collection"
+              "url": "https://url.com/maya-banner.jpg",
+              "alt": "Maya Records collection"
             }
           },
-          "created": "2026-09-04T20:10:00.000Z"
+          "created": "2026-09-04T10:10:00.000Z"
         },
         {
           "id": "bid-005",
-          "amount": 48,
+          "amount": 60,
           "bidder": {
-            "name": "Chris Nolan",
-            "email": "chris.nolan@example.com",
-            "bio": "Cassette collector and tape enthusiast.",
+            "name": "Digital Grooves",
+            "email": "digital@url.com",
+            "bio": "Electronic music collector with a soft spot for unusual physical releases.",
             "avatar": {
-              "url": "https://url.com/chris-avatar.jpg",
-              "alt": "Chris Nolan avatar"
+              "url": "https://url.com/digital-avatar.jpg",
+              "alt": "Digital Grooves profile picture"
             },
             "banner": {
-              "url": "https://url.com/chris-banner.jpg",
-              "alt": "Vintage cassette collection"
+              "url": "https://url.com/digital-banner.jpg",
+              "alt": "Digital Grooves collection"
             }
           },
-          "created": "2026-09-07T12:30:00.000Z"
+          "created": "2026-09-08T18:20:00.000Z"
         }
       ],
       "_count": {
@@ -193,51 +159,51 @@
       }
     },
     {
-      "id": "auction-004",
-      "title": "Pink Floyd - The Wall Tour Poster",
-      "description": "Vintage concert poster celebrating Pink Floyd's legendary The Wall era. Printed on heavy stock with vivid artwork.",
-      "tags": ["poster", "Pink Floyd", "rock", "memorabilia"],
+      "id": "auction-003",
+      "title": "Nirvana - Nevermind Cassette Tape",
+      "description": "Vintage cassette tape edition of Nirvana's iconic Nevermind album.",
+      "tags": ["cassette tape", "Nirvana", "grunge", "90s"],
       "media": [
         {
-          "url": "https://url.com/pink-floyd-poster.jpg",
-          "alt": "Pink Floyd The Wall vintage concert poster"
+          "url": "https://url.com/nirvana-nevermind-cassette.jpg",
+          "alt": "Nirvana Nevermind cassette tape"
         }
       ],
-      "created": "2026-08-25T12:00:00.000Z",
-      "updated": "2026-09-06T16:45:00.000Z",
-      "endsAt": "2026-09-18T21:00:00.000Z",
+      "created": "2026-08-27T15:45:00.000Z",
+      "updated": "2026-09-06T13:00:00.000Z",
+      "endsAt": "2026-09-22T18:00:00.000Z",
       "seller": {
-        "name": "Poster House",
-        "email": "poster.house@example.com",
-        "bio": "Specialists in vintage music posters and printed memorabilia.",
+        "name": "Grunge Collector",
+        "email": "grunge@url.com",
+        "bio": "Collector focused on 90s alternative and grunge memorabilia.",
         "avatar": {
-          "url": "https://url.com/poster-house-avatar.jpg",
-          "alt": "Poster House seller avatar"
+          "url": "https://url.com/grunge-avatar.jpg",
+          "alt": "Grunge Collector profile picture"
         },
         "banner": {
-          "url": "https://url.com/poster-house-banner.jpg",
-          "alt": "Vintage concert posters"
+          "url": "https://url.com/grunge-banner.jpg",
+          "alt": "Grunge Collector collection"
         },
-        "wins": ["auction-006"]
+        "wins": []
       },
       "bids": [
         {
           "id": "bid-006",
-          "amount": 120,
+          "amount": 30,
           "bidder": {
-            "name": "Morgan Blake",
-            "email": "morgan.blake@example.com",
-            "bio": "Music memorabilia collector.",
+            "name": "Needle Drop",
+            "email": "needle@url.com",
+            "bio": "Collector of alternative music, indie releases and unusual formats.",
             "avatar": {
-              "url": "https://url.com/morgan-avatar.jpg",
-              "alt": "Morgan Blake avatar"
+              "url": "https://url.com/needle-avatar.jpg",
+              "alt": "Needle Drop profile picture"
             },
             "banner": {
-              "url": "https://url.com/morgan-banner.jpg",
-              "alt": "Music memorabilia wall"
+              "url": "https://url.com/needle-banner.jpg",
+              "alt": "Needle Drop collection"
             }
           },
-          "created": "2026-09-03T14:15:00.000Z"
+          "created": "2026-09-05T17:00:00.000Z"
         }
       ],
       "_count": {
@@ -245,51 +211,84 @@
       }
     },
     {
+      "id": "auction-004",
+      "title": "Pink Floyd - The Dark Side of the Moon Poster",
+      "description": "Classic Pink Floyd wall poster featuring the iconic Dark Side of the Moon artwork.",
+      "tags": ["poster", "Pink Floyd", "classic rock", "wall art"],
+      "media": [
+        {
+          "url": "https://url.com/pink-floyd-poster.jpg",
+          "alt": "Pink Floyd Dark Side of the Moon poster"
+        }
+      ],
+      "created": "2026-08-20T11:00:00.000Z",
+      "updated": "2026-09-03T09:30:00.000Z",
+      "endsAt": "2026-09-24T20:00:00.000Z",
+      "seller": {
+        "name": "Poster House",
+        "email": "poster@url.com",
+        "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
+        "avatar": {
+          "url": "https://url.com/poster-avatar.jpg",
+          "alt": "Poster House profile picture"
+        },
+        "banner": {
+          "url": "https://url.com/poster-banner.jpg",
+          "alt": "Poster House collection"
+        },
+        "wins": ["auction-010"]
+      },
+      "bids": [],
+      "_count": {
+        "bids": 0
+      }
+    },
+    {
       "id": "auction-005",
       "title": "Daft Punk - Discovery CD",
-      "description": "Original Daft Punk Discovery CD with jewel case and booklet. Excellent condition and ready for a new collection.",
-      "tags": ["CD", "Daft Punk", "electronic", "French house"],
+      "description": "Daft Punk's Discovery on CD, featuring one of the defining electronic albums of the early 2000s.",
+      "tags": ["CD", "Daft Punk", "electronic", "2000s"],
       "media": [
         {
           "url": "https://url.com/daft-punk-discovery.jpg",
           "alt": "Daft Punk Discovery CD"
         }
       ],
-      "created": "2026-09-01T09:30:00.000Z",
-      "updated": "2026-09-08T10:20:00.000Z",
-      "endsAt": "2026-09-15T20:30:00.000Z",
+      "created": "2026-08-18T08:40:00.000Z",
+      "updated": "2026-09-02T15:10:00.000Z",
+      "endsAt": "2026-09-25T17:30:00.000Z",
       "seller": {
         "name": "Digital Grooves",
-        "email": "digital.grooves@example.com",
-        "bio": "Collector of electronic and dance music.",
+        "email": "digital@url.com",
+        "bio": "Electronic music collector with a soft spot for unusual physical releases.",
         "avatar": {
-          "url": "https://url.com/digital-grooves-avatar.jpg",
-          "alt": "Digital Grooves seller avatar"
+          "url": "https://url.com/digital-avatar.jpg",
+          "alt": "Digital Grooves profile picture"
         },
         "banner": {
-          "url": "https://url.com/digital-grooves-banner.jpg",
-          "alt": "Electronic music collection"
+          "url": "https://url.com/digital-banner.jpg",
+          "alt": "Digital Grooves collection"
         },
-        "wins": ["auction-023"]
+        "wins": ["auction-002"]
       },
       "bids": [
         {
           "id": "bid-007",
-          "amount": 42,
+          "amount": 25,
           "bidder": {
-            "name": "Jamie Woods",
-            "email": "jamie.woods@example.com",
-            "bio": "Electronic music collector.",
+            "name": "Vinyl Vault",
+            "email": "vault@url.com",
+            "bio": "Long-time collector of alternative, rock and electronic records.",
             "avatar": {
-              "url": "https://url.com/jamie-avatar.jpg",
-              "alt": "Jamie Woods avatar"
+              "url": "https://url.com/vault-avatar.jpg",
+              "alt": "Vinyl Vault profile picture"
             },
             "banner": {
-              "url": "https://url.com/jamie-banner.jpg",
-              "alt": "Electronic music setup"
+              "url": "https://url.com/vault-banner.jpg",
+              "alt": "Vinyl Vault record collection"
             }
           },
-          "created": "2026-09-05T18:50:00.000Z"
+          "created": "2026-09-01T14:00:00.000Z"
         }
       ],
       "_count": {
@@ -298,172 +297,171 @@
     },
     {
       "id": "auction-006",
-      "title": "Fleetwood Mac - Rumours Vinyl",
-      "description": "Classic Rumours album on vinyl. Clean record with a well-preserved sleeve.",
-      "tags": ["vinyl record", "Fleetwood Mac", "70s", "classic rock"],
+      "title": "Fleetwood Mac - Rumours Vinyl Record",
+      "description": "Classic Fleetwood Mac album on vinyl. A staple record for any collection.",
+      "tags": ["vinyl record", "Fleetwood Mac", "classic rock"],
       "media": [
         {
-          "url": "https://url.com/fleetwood-rumours.jpg",
+          "url": "https://url.com/fleetwood-mac-rumours.jpg",
           "alt": "Fleetwood Mac Rumours vinyl record"
         }
       ],
-      "created": "2026-08-29T11:10:00.000Z",
-      "updated": "2026-09-08T09:00:00.000Z",
-      "endsAt": "2026-09-17T19:00:00.000Z",
+      "created": "2026-08-29T12:20:00.000Z",
+      "updated": "2026-09-09T10:00:00.000Z",
+      "endsAt": "2026-09-26T21:00:00.000Z",
       "seller": {
         "name": "Needle Drop",
-        "email": "needle.drop@example.com",
-        "bio": "Vintage vinyl collector with a soft spot for 70s rock.",
+        "email": "needle@url.com",
+        "bio": "Collector of alternative music, indie releases and unusual formats.",
         "avatar": {
-          "url": "https://url.com/needle-drop-avatar.jpg",
-          "alt": "Needle Drop seller avatar"
+          "url": "https://url.com/needle-avatar.jpg",
+          "alt": "Needle Drop profile picture"
         },
         "banner": {
-          "url": "https://url.com/needle-drop-banner.jpg",
-          "alt": "Turntable and vinyl records"
-        },
-        "wins": ["auction-031"]
-      },
-      "bids": [
-        {
-          "id": "bid-008",
-          "amount": 55,
-          "bidder": {
-            "name": "Riley Stone",
-            "email": "riley.stone@example.com",
-            "bio": "Vinyl collector and record store regular.",
-            "avatar": {
-              "url": "https://url.com/riley-avatar.jpg",
-              "alt": "Riley Stone avatar"
-            },
-            "banner": {
-              "url": "https://url.com/riley-banner.jpg",
-              "alt": "Vinyl records on shelves"
-            }
-          },
-          "created": "2026-09-06T12:40:00.000Z"
-        },
-        {
-          "id": "bid-009",
-          "amount": 72,
-          "bidder": {
-            "name": "Casey Grant",
-            "email": "casey.grant@example.com",
-            "bio": "Always looking for clean classic pressings.",
-            "avatar": {
-              "url": "https://url.com/casey-avatar.jpg",
-              "alt": "Casey Grant avatar"
-            },
-            "banner": {
-              "url": "https://url.com/casey-banner.jpg",
-              "alt": "Classic vinyl collection"
-            }
-          },
-          "created": "2026-09-08T08:15:00.000Z"
-        }
-      ],
-      "_count": {
-        "bids": 2
-      }
-    },
-    {
-      "id": "auction-007",
-      "title": "The Cure - Disintegration Picture Disc",
-      "description": "Beautiful picture disc edition of The Cure's Disintegration. A standout piece for alternative and gothic music collectors.",
-      "tags": ["picture disc", "The Cure", "alternative", "goth"],
-      "media": [
-        {
-          "url": "https://url.com/cure-disintegration.jpg",
-          "alt": "The Cure Disintegration picture disc"
-        }
-      ],
-      "created": "2026-08-26T15:45:00.000Z",
-      "updated": "2026-09-04T17:10:00.000Z",
-      "endsAt": "2026-09-19T18:30:00.000Z",
-      "seller": {
-        "name": "Darkroom Records",
-        "email": "darkroom.records@example.com",
-        "bio": "Alternative, post-punk and gothic music collector.",
-        "avatar": {
-          "url": "https://url.com/darkroom-avatar.jpg",
-          "alt": "Darkroom Records seller avatar"
-        },
-        "banner": {
-          "url": "https://url.com/darkroom-banner.jpg",
-          "alt": "Dark alternative record collection"
+          "url": "https://url.com/needle-banner.jpg",
+          "alt": "Needle Drop collection"
         },
         "wins": []
       },
       "bids": [
         {
-          "id": "bid-010",
-          "amount": 90,
+          "id": "bid-008",
+          "amount": 40,
           "bidder": {
-            "name": "Robin Hayes",
-            "email": "robin.hayes@example.com",
-            "bio": "Post-punk collector.",
+            "name": "Maya Records",
+            "email": "maya@url.com",
+            "bio": "Independent record collector specialising in classic rock and rare pressings.",
             "avatar": {
-              "url": "https://url.com/robin-avatar.jpg",
-              "alt": "Robin Hayes avatar"
+              "url": "https://url.com/maya-avatar.jpg",
+              "alt": "Maya Records profile picture"
             },
             "banner": {
-              "url": "https://url.com/robin-banner.jpg",
-              "alt": "Post-punk records"
+              "url": "https://url.com/maya-banner.jpg",
+              "alt": "Maya Records collection"
             }
           },
-          "created": "2026-09-03T21:05:00.000Z"
+          "created": "2026-09-03T11:30:00.000Z"
+        },
+        {
+          "id": "bid-009",
+          "amount": 55,
+          "bidder": {
+            "name": "Poster House",
+            "email": "poster@url.com",
+            "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
+            "avatar": {
+              "url": "https://url.com/poster-avatar.jpg",
+              "alt": "Poster House profile picture"
+            },
+            "banner": {
+              "url": "https://url.com/poster-banner.jpg",
+              "alt": "Poster House collection"
+            }
+          },
+          "created": "2026-09-06T16:00:00.000Z"
+        },
+        {
+          "id": "bid-010",
+          "amount": 70,
+          "bidder": {
+            "name": "Grunge Collector",
+            "email": "grunge@url.com",
+            "bio": "Collector focused on 90s alternative and grunge memorabilia.",
+            "avatar": {
+              "url": "https://url.com/grunge-avatar.jpg",
+              "alt": "Grunge Collector profile picture"
+            },
+            "banner": {
+              "url": "https://url.com/grunge-banner.jpg",
+              "alt": "Grunge Collector collection"
+            }
+          },
+          "created": "2026-09-08T19:10:00.000Z"
         }
       ],
       "_count": {
-        "bids": 1
+        "bids": 3
+      }
+    },
+    {
+      "id": "auction-007",
+      "title": "The Cure - Disintegration Cassette Tape",
+      "description": "Vintage cassette edition of The Cure's atmospheric classic Disintegration.",
+      "tags": ["cassette tape", "The Cure", "alternative", "80s"],
+      "media": [
+        {
+          "url": "https://url.com/the-cure-disintegration.jpg",
+          "alt": "The Cure Disintegration cassette tape"
+        }
+      ],
+      "created": "2026-08-15T13:30:00.000Z",
+      "updated": "2026-08-30T11:45:00.000Z",
+      "endsAt": "2026-09-27T16:00:00.000Z",
+      "seller": {
+        "name": "Maya Records",
+        "email": "maya@url.com",
+        "bio": "Independent record collector specialising in classic rock and rare pressings.",
+        "avatar": {
+          "url": "https://url.com/maya-avatar.jpg",
+          "alt": "Maya Records profile picture"
+        },
+        "banner": {
+          "url": "https://url.com/maya-banner.jpg",
+          "alt": "Maya Records collection"
+        },
+        "wins": ["auction-009"]
+      },
+      "bids": [],
+      "_count": {
+        "bids": 0
       }
     },
     {
       "id": "auction-008",
-      "title": "Bob Dylan - Highway 61 Revisited",
-      "description": "A classic Bob Dylan vinyl record featuring Like a Rolling Stone and other essential tracks.",
-      "tags": ["vinyl record", "Bob Dylan", "folk", "1960s"],
+      "title": "Bob Dylan - Highway 61 Revisited Vinyl",
+      "description": "A classic Bob Dylan album on vinyl featuring some of his most celebrated songwriting.",
+      "tags": ["vinyl record", "Bob Dylan", "folk rock"],
       "media": [
         {
-          "url": "https://url.com/dylan-highway-61.jpg",
+          "url": "https://url.com/bob-dylan-highway-61.jpg",
           "alt": "Bob Dylan Highway 61 Revisited vinyl"
         }
       ],
-      "created": "2026-08-31T13:20:00.000Z",
-      "updated": "2026-09-07T10:30:00.000Z",
-      "endsAt": "2026-09-20T20:00:00.000Z",
+      "created": "2026-08-12T10:20:00.000Z",
+      "updated": "2026-08-28T14:15:00.000Z",
+      "endsAt": "2026-09-28T18:30:00.000Z",
       "seller": {
-        "name": "Old Gold Records",
-        "email": "old.gold@example.com",
-        "bio": "Independent collector of classic American music.",
+        "name": "Poster House",
+        "email": "poster@url.com",
+        "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
         "avatar": {
-          "url": "https://url.com/old-gold-avatar.jpg",
-          "alt": "Old Gold Records seller avatar"
+          "url": "https://url.com/poster-avatar.jpg",
+          "alt": "Poster House profile picture"
         },
         "banner": {
-          "url": "https://url.com/old-gold-banner.jpg",
-          "alt": "Vintage record store"
+          "url": "https://url.com/poster-banner.jpg",
+          "alt": "Poster House collection"
         },
-        "wins": ["auction-002"]
+        "wins": ["auction-010"]
       },
       "bids": [
         {
           "id": "bid-011",
-          "amount": 65,
+          "amount": 35,
           "bidder": {
-            "name": "Drew Wilson",
-            "email": "drew.wilson@example.com",
-            "bio": "Folk and Americana record collector.",
+            "name": "Needle Drop",
+            "email": "needle@url.com",
+            "bio": "Collector of alternative music, indie releases and unusual formats.",
             "avatar": {
-              "url": "https://url.com/drew-avatar.jpg",
-              "alt": "Drew Wilson avatar"
+              "url": "https://url.com/needle-avatar.jpg",
+              "alt": "Needle Drop profile picture"
             },
             "banner": {
-              "url": "https://url.com/drew-banner.jpg",
-              "alt": "American folk records"
+              "url": "https://url.com/needle-banner.jpg",
+              "alt": "Needle Drop collection"
             }
           },
-          "created": "2026-09-06T16:20:00.000Z"
+          "created": "2026-08-20T09:00:00.000Z"
         }
       ],
       "_count": {
@@ -472,50 +470,50 @@
     },
     {
       "id": "auction-009",
-      "title": "Talking Heads - Stop Making Sense Poster",
-      "description": "Vintage-style poster celebrating Talking Heads' legendary Stop Making Sense concert film.",
-      "tags": ["poster", "Talking Heads", "new wave", "80s"],
+      "title": "Talking Heads - Remain in Light CD",
+      "description": "Talking Heads' influential Remain in Light album on CD.",
+      "tags": ["CD", "Talking Heads", "new wave", "80s"],
       "media": [
         {
-          "url": "https://url.com/talking-heads-poster.jpg",
-          "alt": "Talking Heads Stop Making Sense poster"
+          "url": "https://url.com/talking-heads-remain.jpg",
+          "alt": "Talking Heads Remain in Light CD"
         }
       ],
-      "created": "2026-08-24T09:50:00.000Z",
-      "updated": "2026-09-03T12:15:00.000Z",
-      "endsAt": "2026-09-12T21:00:00.000Z",
+      "created": "2026-08-10T16:00:00.000Z",
+      "updated": "2026-08-25T10:00:00.000Z",
+      "endsAt": "2026-09-29T20:00:00.000Z",
       "seller": {
-        "name": "Backstage Prints",
-        "email": "backstage.prints@example.com",
-        "bio": "Music poster collector and print enthusiast.",
+        "name": "Digital Grooves",
+        "email": "digital@url.com",
+        "bio": "Electronic music collector with a soft spot for unusual physical releases.",
         "avatar": {
-          "url": "https://url.com/backstage-avatar.jpg",
-          "alt": "Backstage Prints seller avatar"
+          "url": "https://url.com/digital-avatar.jpg",
+          "alt": "Digital Grooves profile picture"
         },
         "banner": {
-          "url": "https://url.com/backstage-banner.jpg",
-          "alt": "Music posters displayed on a wall"
+          "url": "https://url.com/digital-banner.jpg",
+          "alt": "Digital Grooves collection"
         },
-        "wins": []
+        "wins": ["auction-002"]
       },
       "bids": [
         {
           "id": "bid-012",
-          "amount": 75,
+          "amount": 20,
           "bidder": {
-            "name": "Avery Cole",
-            "email": "avery.cole@example.com",
-            "bio": "New wave and post-punk fan.",
+            "name": "Maya Records",
+            "email": "maya@url.com",
+            "bio": "Independent record collector specialising in classic rock and rare pressings.",
             "avatar": {
-              "url": "https://url.com/avery-avatar.jpg",
-              "alt": "Avery Cole avatar"
+              "url": "https://url.com/maya-avatar.jpg",
+              "alt": "Maya Records profile picture"
             },
             "banner": {
-              "url": "https://url.com/avery-banner.jpg",
-              "alt": "New wave music collection"
+              "url": "https://url.com/maya-banner.jpg",
+              "alt": "Maya Records collection"
             }
           },
-          "created": "2026-09-02T18:45:00.000Z"
+          "created": "2026-08-18T13:30:00.000Z"
         }
       ],
       "_count": {
@@ -524,187 +522,189 @@
     },
     {
       "id": "auction-010",
-      "title": "Radiohead - OK Computer CD",
-      "description": "Original OK Computer CD with booklet and jewel case. A cornerstone release from the 1990s alternative scene.",
-      "tags": ["CD", "Radiohead", "alternative", "90s"],
+      "title": "Radiohead - OK Computer Vinyl Record",
+      "description": "Radiohead's landmark OK Computer album on vinyl.",
+      "tags": ["vinyl record", "Radiohead", "alternative", "90s"],
       "media": [
         {
           "url": "https://url.com/radiohead-ok-computer.jpg",
-          "alt": "Radiohead OK Computer CD"
+          "alt": "Radiohead OK Computer vinyl record"
         }
       ],
-      "created": "2026-08-30T18:10:00.000Z",
-      "updated": "2026-09-08T14:00:00.000Z",
-      "endsAt": "2026-09-21T19:30:00.000Z",
+      "created": "2026-08-08T09:10:00.000Z",
+      "updated": "2026-08-22T17:00:00.000Z",
+      "endsAt": "2026-09-30T19:00:00.000Z",
       "seller": {
-        "name": "Alternative Archives",
-        "email": "alternative.archives@example.com",
-        "bio": "Collector of alternative music from the 80s, 90s and beyond.",
+        "name": "Grunge Collector",
+        "email": "grunge@url.com",
+        "bio": "Collector focused on 90s alternative and grunge memorabilia.",
         "avatar": {
-          "url": "https://url.com/alternative-avatar.jpg",
-          "alt": "Alternative Archives seller avatar"
+          "url": "https://url.com/grunge-avatar.jpg",
+          "alt": "Grunge Collector profile picture"
         },
         "banner": {
-          "url": "https://url.com/alternative-banner.jpg",
-          "alt": "Alternative music collection"
+          "url": "https://url.com/grunge-banner.jpg",
+          "alt": "Grunge Collector collection"
         },
-        "wins": ["auction-008"]
+        "wins": []
       },
       "bids": [
         {
           "id": "bid-013",
-          "amount": 30,
+          "amount": 50,
           "bidder": {
-            "name": "Morgan Reed",
-            "email": "morgan.reed@example.com",
-            "bio": "Radiohead collector.",
+            "name": "Digital Grooves",
+            "email": "digital@url.com",
+            "bio": "Electronic music collector with a soft spot for unusual physical releases.",
             "avatar": {
-              "url": "https://url.com/morgan-reed-avatar.jpg",
-              "alt": "Morgan Reed avatar"
+              "url": "https://url.com/digital-avatar.jpg",
+              "alt": "Digital Grooves profile picture"
             },
             "banner": {
-              "url": "https://url.com/morgan-reed-banner.jpg",
-              "alt": "Radiohead collection"
+              "url": "https://url.com/digital-banner.jpg",
+              "alt": "Digital Grooves collection"
             }
           },
-          "created": "2026-09-07T20:10:00.000Z"
+          "created": "2026-08-15T12:00:00.000Z"
+        },
+        {
+          "id": "bid-014",
+          "amount": 65,
+          "bidder": {
+            "name": "Vinyl Vault",
+            "email": "vault@url.com",
+            "bio": "Long-time collector of alternative, rock and electronic records.",
+            "avatar": {
+              "url": "https://url.com/vault-avatar.jpg",
+              "alt": "Vinyl Vault profile picture"
+            },
+            "banner": {
+              "url": "https://url.com/vault-banner.jpg",
+              "alt": "Vinyl Vault record collection"
+            }
+          },
+          "created": "2026-08-20T18:00:00.000Z"
         }
       ],
       "_count": {
-        "bids": 1
+        "bids": 2
       }
     },
     {
       "id": "auction-011",
       "title": "Kate Bush - Hounds of Love Picture Disc",
-      "description": "Beautiful collector's picture disc of Kate Bush's Hounds of Love. An eye-catching piece with excellent artwork.",
-      "tags": ["picture disc", "Kate Bush", "art pop", "80s"],
+      "description": "Collector-friendly picture disc edition of Kate Bush's Hounds of Love.",
+      "tags": ["picture disc", "Kate Bush", "pop", "80s"],
       "media": [
         {
           "url": "https://url.com/kate-bush-hounds.jpg",
           "alt": "Kate Bush Hounds of Love picture disc"
         }
       ],
-      "created": "2026-08-23T16:00:00.000Z",
-      "updated": "2026-09-06T09:40:00.000Z",
-      "endsAt": "2026-09-22T18:00:00.000Z",
+      "created": "2026-09-01T14:45:00.000Z",
+      "updated": "2026-09-09T16:30:00.000Z",
+      "endsAt": "2026-10-01T18:00:00.000Z",
       "seller": {
-        "name": "Strange Records",
-        "email": "strange.records@example.com",
-        "bio": "Collector of unusual, beautiful and rare music releases.",
+        "name": "Needle Drop",
+        "email": "needle@url.com",
+        "bio": "Collector of alternative music, indie releases and unusual formats.",
         "avatar": {
-          "url": "https://url.com/strange-records-avatar.jpg",
-          "alt": "Strange Records seller avatar"
+          "url": "https://url.com/needle-avatar.jpg",
+          "alt": "Needle Drop profile picture"
         },
         "banner": {
-          "url": "https://url.com/strange-records-banner.jpg",
-          "alt": "Eclectic record collection"
-        },
-        "wins": ["auction-015"]
-      },
-      "bids": [
-        {
-          "id": "bid-014",
-          "amount": 110,
-          "bidder": {
-            "name": "Nina Hart",
-            "email": "nina.hart@example.com",
-            "bio": "Kate Bush superfan and collector.",
-            "avatar": {
-              "url": "https://url.com/nina-avatar.jpg",
-              "alt": "Nina Hart avatar"
-            },
-            "banner": {
-              "url": "https://url.com/nina-banner.jpg",
-              "alt": "Kate Bush records"
-            }
-          },
-          "created": "2026-09-05T13:25:00.000Z"
-        }
-      ],
-      "_count": {
-        "bids": 1
-      }
-    },
-    {
-      "id": "auction-012",
-      "title": "The Smiths - The Queen Is Dead Cassette",
-      "description": "Rare cassette edition of The Smiths' classic album The Queen Is Dead. Compact, nostalgic and perfect for collectors.",
-      "tags": ["casette tape", "The Smiths", "indie", "80s"],
-      "media": [
-        {
-          "url": "https://url.com/smiths-queen-dead.jpg",
-          "alt": "The Smiths The Queen Is Dead cassette tape"
-        }
-      ],
-      "created": "2026-08-22T11:30:00.000Z",
-      "updated": "2026-09-02T16:50:00.000Z",
-      "endsAt": "2026-09-23T20:00:00.000Z",
-      "seller": {
-        "name": "Manchester Sounds",
-        "email": "manchester.sounds@example.com",
-        "bio": "Specializing in British indie and alternative music.",
-        "avatar": {
-          "url": "https://url.com/manchester-avatar.jpg",
-          "alt": "Manchester Sounds seller avatar"
-        },
-        "banner": {
-          "url": "https://url.com/manchester-banner.jpg",
-          "alt": "British indie record collection"
+          "url": "https://url.com/needle-banner.jpg",
+          "alt": "Needle Drop collection"
         },
         "wins": []
       },
       "bids": [
         {
           "id": "bid-015",
-          "amount": 40,
+          "amount": 55,
           "bidder": {
-            "name": "Jamie Parker",
-            "email": "jamie.parker@example.com",
-            "bio": "Smiths collector from the old-school indie scene.",
+            "name": "Poster House",
+            "email": "poster@url.com",
+            "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
             "avatar": {
-              "url": "https://url.com/jamie-parker-avatar.jpg",
-              "alt": "Jamie Parker avatar"
+              "url": "https://url.com/poster-avatar.jpg",
+              "alt": "Poster House profile picture"
             },
             "banner": {
-              "url": "https://url.com/jamie-parker-banner.jpg",
-              "alt": "British indie records"
+              "url": "https://url.com/poster-banner.jpg",
+              "alt": "Poster House collection"
             }
           },
-          "created": "2026-09-08T11:00:00.000Z"
+          "created": "2026-09-03T15:00:00.000Z"
+        },
+        {
+          "id": "bid-016",
+          "amount": 75,
+          "bidder": {
+            "name": "Maya Records",
+            "email": "maya@url.com",
+            "bio": "Independent record collector specialising in classic rock and rare pressings.",
+            "avatar": {
+              "url": "https://url.com/maya-avatar.jpg",
+              "alt": "Maya Records profile picture"
+            },
+            "banner": {
+              "url": "https://url.com/maya-banner.jpg",
+              "alt": "Maya Records collection"
+            }
+          },
+          "created": "2026-09-06T10:30:00.000Z"
+        },
+        {
+          "id": "bid-017",
+          "amount": 90,
+          "bidder": {
+            "name": "Vinyl Vault",
+            "email": "vault@url.com",
+            "bio": "Long-time collector of alternative, rock and electronic records.",
+            "avatar": {
+              "url": "https://url.com/vault-avatar.jpg",
+              "alt": "Vinyl Vault profile picture"
+            },
+            "banner": {
+              "url": "https://url.com/vault-banner.jpg",
+              "alt": "Vinyl Vault record collection"
+            }
+          },
+          "created": "2026-09-09T13:15:00.000Z"
         }
       ],
       "_count": {
-        "bids": 1
+        "bids": 3
       }
     },
     {
-      "id": "auction-013",
-      "title": "Aphex Twin - Selected Ambient Works CD",
-      "description": "Classic electronic release on CD, complete with original booklet. A must-have for fans of ambient and experimental music.",
-      "tags": ["CD", "Aphex Twin", "electronic", "ambient"],
+      "id": "auction-012",
+      "title": "The Smiths - The Queen Is Dead CD",
+      "description": "Classic Smiths album on CD, perfect for fans of alternative and indie music.",
+      "tags": ["CD", "The Smiths", "indie", "80s"],
       "media": [
         {
-          "url": "https://url.com/aphex-ambient.jpg",
-          "alt": "Aphex Twin Selected Ambient Works CD"
+          "url": "https://url.com/the-smiths-queen.jpg",
+          "alt": "The Smiths The Queen Is Dead CD"
         }
       ],
-      "created": "2026-08-21T14:45:00.000Z",
-      "updated": "2026-09-05T10:00:00.000Z",
-      "endsAt": "2026-09-24T19:00:00.000Z",
+      "created": "2026-08-05T12:00:00.000Z",
+      "updated": "2026-08-20T09:00:00.000Z",
+      "endsAt": "2026-10-02T21:00:00.000Z",
       "seller": {
-        "name": "Ambient Archives",
-        "email": "ambient.archives@example.com",
-        "bio": "Collector of experimental and electronic music.",
+        "name": "Maya Records",
+        "email": "maya@url.com",
+        "bio": "Independent record collector specialising in classic rock and rare pressings.",
         "avatar": {
-          "url": "https://url.com/ambient-avatar.jpg",
-          "alt": "Ambient Archives seller avatar"
+          "url": "https://url.com/maya-avatar.jpg",
+          "alt": "Maya Records profile picture"
         },
         "banner": {
-          "url": "https://url.com/ambient-banner.jpg",
-          "alt": "Electronic music collection"
+          "url": "https://url.com/maya-banner.jpg",
+          "alt": "Maya Records collection"
         },
-        "wins": ["auction-041"]
+        "wins": ["auction-009"]
       },
       "bids": [],
       "_count": {
@@ -712,51 +712,103 @@
       }
     },
     {
+      "id": "auction-013",
+      "title": "Aphex Twin - Selected Ambient Works 85-92 CD",
+      "description": "Seminal electronic album by Aphex Twin on CD.",
+      "tags": ["CD", "Aphex Twin", "electronic", "90s"],
+      "media": [
+        {
+          "url": "https://url.com/aphex-twin-selected.jpg",
+          "alt": "Aphex Twin Selected Ambient Works CD"
+        }
+      ],
+      "created": "2026-09-08T12:00:00.000Z",
+      "updated": "2026-09-09T12:00:00.000Z",
+      "endsAt": "2026-10-03T18:30:00.000Z",
+      "seller": {
+        "name": "Digital Grooves",
+        "email": "digital@url.com",
+        "bio": "Electronic music collector with a soft spot for unusual physical releases.",
+        "avatar": {
+          "url": "https://url.com/digital-avatar.jpg",
+          "alt": "Digital Grooves profile picture"
+        },
+        "banner": {
+          "url": "https://url.com/digital-banner.jpg",
+          "alt": "Digital Grooves collection"
+        },
+        "wins": ["auction-002"]
+      },
+      "bids": [
+        {
+          "id": "bid-018",
+          "amount": 35,
+          "bidder": {
+            "name": "Needle Drop",
+            "email": "needle@url.com",
+            "bio": "Collector of alternative music, indie releases and unusual formats.",
+            "avatar": {
+              "url": "https://url.com/needle-avatar.jpg",
+              "alt": "Needle Drop profile picture"
+            },
+            "banner": {
+              "url": "https://url.com/needle-banner.jpg",
+              "alt": "Needle Drop collection"
+            }
+          },
+          "created": "2026-09-09T17:30:00.000Z"
+        }
+      ],
+      "_count": {
+        "bids": 1
+      }
+    },
+    {
       "id": "auction-014",
       "title": "Joy Division - Unknown Pleasures Poster",
-      "description": "Minimalist poster featuring the instantly recognizable Unknown Pleasures waveform artwork.",
-      "tags": ["poster", "Joy Division", "post-punk", "art"],
+      "description": "Iconic Joy Division Unknown Pleasures poster inspired by the legendary album artwork.",
+      "tags": ["poster", "Joy Division", "post-punk", "80s"],
       "media": [
         {
           "url": "https://url.com/joy-division-poster.jpg",
           "alt": "Joy Division Unknown Pleasures poster"
         }
       ],
-      "created": "2026-08-20T10:05:00.000Z",
-      "updated": "2026-09-01T17:20:00.000Z",
-      "endsAt": "2026-09-25T21:00:00.000Z",
+      "created": "2026-09-09T09:30:00.000Z",
+      "updated": "2026-09-09T10:00:00.000Z",
+      "endsAt": "2026-10-04T20:00:00.000Z",
       "seller": {
-        "name": "Wall of Sound",
-        "email": "wall.of.sound@example.com",
-        "bio": "Music art and poster collector.",
+        "name": "Poster House",
+        "email": "poster@url.com",
+        "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
         "avatar": {
-          "url": "https://url.com/wall-of-sound-avatar.jpg",
-          "alt": "Wall of Sound seller avatar"
+          "url": "https://url.com/poster-avatar.jpg",
+          "alt": "Poster House profile picture"
         },
         "banner": {
-          "url": "https://url.com/wall-of-sound-banner.jpg",
-          "alt": "Framed music posters"
+          "url": "https://url.com/poster-banner.jpg",
+          "alt": "Poster House collection"
         },
-        "wins": []
+        "wins": ["auction-010"]
       },
       "bids": [
         {
-          "id": "bid-016",
-          "amount": 50,
+          "id": "bid-019",
+          "amount": 25,
           "bidder": {
-            "name": "Lee Adams",
-            "email": "lee.adams@example.com",
-            "bio": "Post-punk and graphic design fan.",
+            "name": "Grunge Collector",
+            "email": "grunge@url.com",
+            "bio": "Collector focused on 90s alternative and grunge memorabilia.",
             "avatar": {
-              "url": "https://url.com/lee-avatar.jpg",
-              "alt": "Lee Adams avatar"
+              "url": "https://url.com/grunge-avatar.jpg",
+              "alt": "Grunge Collector profile picture"
             },
             "banner": {
-              "url": "https://url.com/lee-banner.jpg",
-              "alt": "Post-punk poster collection"
+              "url": "https://url.com/grunge-banner.jpg",
+              "alt": "Grunge Collector collection"
             }
           },
-          "created": "2026-09-04T15:35:00.000Z"
+          "created": "2026-09-09T18:00:00.000Z"
         }
       ],
       "_count": {
@@ -765,72 +817,90 @@
     },
     {
       "id": "auction-015",
-      "title": "Prince - Purple Rain Vinyl",
-      "description": "Iconic Purple Rain album on vinyl. A timeless record and a beautiful centerpiece for any music collection.",
-      "tags": ["vinyl record", "Prince", "funk", "pop"],
+      "title": "Prince - Purple Rain Vinyl Record",
+      "description": "Iconic Purple Rain album by Prince on vinyl, featuring one of the most celebrated records of the 1980s.",
+      "tags": ["vinyl record", "Prince", "pop", "80s"],
       "media": [
         {
           "url": "https://url.com/prince-purple-rain.jpg",
           "alt": "Prince Purple Rain vinyl record"
         }
       ],
-      "created": "2026-08-19T08:30:00.000Z",
-      "updated": "2026-09-07T19:15:00.000Z",
-      "endsAt": "2026-09-26T20:30:00.000Z",
+      "created": "2026-09-10T08:15:00.000Z",
+      "updated": "2026-09-10T09:00:00.000Z",
+      "endsAt": "2026-10-05T19:30:00.000Z",
       "seller": {
-        "name": "Purple Needle",
-        "email": "purple.needle@example.com",
-        "bio": "Collector of funk, soul and pop records.",
+        "name": "Vinyl Vault",
+        "email": "vault@url.com",
+        "bio": "Long-time collector of alternative, rock and electronic records.",
         "avatar": {
-          "url": "https://url.com/purple-needle-avatar.jpg",
-          "alt": "Purple Needle seller avatar"
+          "url": "https://url.com/vault-avatar.jpg",
+          "alt": "Vinyl Vault profile picture"
         },
         "banner": {
-          "url": "https://url.com/purple-needle-banner.jpg",
-          "alt": "Purple themed vinyl collection"
+          "url": "https://url.com/vault-banner.jpg",
+          "alt": "Vinyl Vault record collection"
         },
-        "wins": ["auction-009", "auction-027"]
+        "wins": ["auction-005"]
       },
       "bids": [
         {
-          "id": "bid-017",
-          "amount": 45,
+          "id": "bid-020",
+          "amount": 40,
           "bidder": {
-            "name": "Dani Brooks",
-            "email": "dani.brooks@example.com",
-            "bio": "Prince fan and lifelong vinyl collector.",
+            "name": "Maya Records",
+            "email": "maya@url.com",
+            "bio": "Independent record collector specialising in classic rock and rare pressings.",
             "avatar": {
-              "url": "https://url.com/dani-avatar.jpg",
-              "alt": "Dani Brooks avatar"
+              "url": "https://url.com/maya-avatar.jpg",
+              "alt": "Maya Records profile picture"
             },
             "banner": {
-              "url": "https://url.com/dani-banner.jpg",
-              "alt": "Prince vinyl collection"
+              "url": "https://url.com/maya-banner.jpg",
+              "alt": "Maya Records collection"
             }
           },
-          "created": "2026-09-02T12:20:00.000Z"
+          "created": "2026-09-10T08:45:00.000Z"
         },
         {
-          "id": "bid-018",
-          "amount": 68,
+          "id": "bid-021",
+          "amount": 55,
           "bidder": {
-            "name": "Pat Evans",
-            "email": "pat.evans@example.com",
-            "bio": "Soul, funk and pop collector.",
+            "name": "Digital Grooves",
+            "email": "digital@url.com",
+            "bio": "Electronic music collector with a soft spot for unusual physical releases.",
             "avatar": {
-              "url": "https://url.com/pat-avatar.jpg",
-              "alt": "Pat Evans avatar"
+              "url": "https://url.com/digital-avatar.jpg",
+              "alt": "Digital Grooves profile picture"
             },
             "banner": {
-              "url": "https://url.com/pat-banner.jpg",
-              "alt": "Funk and soul records"
+              "url": "https://url.com/digital-banner.jpg",
+              "alt": "Digital Grooves collection"
             }
           },
-          "created": "2026-09-07T17:05:00.000Z"
+          "created": "2026-09-10T09:10:00.000Z"
+        },
+        {
+          "id": "bid-022",
+          "amount": 70,
+          "bidder": {
+            "name": "Needle Drop",
+            "email": "needle@url.com",
+            "bio": "Collector of alternative music, indie releases and unusual formats.",
+            "avatar": {
+              "url": "https://url.com/needle-avatar.jpg",
+              "alt": "Needle Drop profile picture"
+            },
+            "banner": {
+              "url": "https://url.com/needle-banner.jpg",
+              "alt": "Needle Drop collection"
+            }
+          },
+          "created": "2026-09-10T09:45:00.000Z"
         }
       ],
       "_count": {
-        "bids": 2
+        "bids": 3
       }
     }
   ],
