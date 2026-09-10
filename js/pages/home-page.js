@@ -2,6 +2,10 @@ import { getMock } from "../services/apiClient.js";
 import { renderHeader } from "../components/header.js";
 import { renderFooter } from "../components/footer.js";
 
+const basePath = window.location.hostname.includes("github.io")
+  ? "/blitzbid"
+  : "";
+
 const mockResponse = await getMock("../../mock_endpoint/data.json");
 const mockAuctions = mockResponse.data;
 
