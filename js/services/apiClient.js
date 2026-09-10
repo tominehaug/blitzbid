@@ -66,3 +66,21 @@ export const post = (endpoint, body) => apiClient(endpoint, { body });
 export const put = (endpoint, body) =>
   apiClient(endpoint, { method: "PUT", body });
 export const del = (endpoint) => apiClient(endpoint, { method: "DELETE" });
+
+export async function getMock(endpoint) {
+  try {
+    const response = await fetch(endpoint);
+
+    if (!response.ok) {
+      throw new ApiError(`HTTP Error: ${response.status}`, response.status);
+    }
+
+    return await response.json();
+  } catch (error) {
+    if (error instanceof ApiError) {
+      throw error;
+    }
+
+    throw new Error("A network or client error occurred.");
+  }
+}
