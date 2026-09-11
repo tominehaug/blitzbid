@@ -22,15 +22,20 @@ function createCarousel(highlights, container) {
     link.href = `${basePath}/auction.html?id=${highlight.id}`;
     link.classList.add("js-link-wrap");
 
+    const figure = document.createElement("figure");
+
     const slideImg = document.createElement("img");
     slideImg.src = highlight.media[0].url;
     slideImg.alt = highlight.media[0].alt;
+    slideImg.classList.add("aspect-square", "w-full", "object-cover");
 
-    const titleDiv = document.createElement("div");
-    titleDiv.textContent = highlight.title;
+    const title = document.createElement("figcaption");
+    title.textContent = highlight.title;
+    title.classList.add("bg-white", "p-2");
 
-    link.appendChild(titleDiv);
-    link.appendChild(slideImg);
+    figure.appendChild(slideImg);
+    figure.appendChild(title);
+    link.appendChild(figure);
     slideContainer.appendChild(link);
   });
 
@@ -45,9 +50,12 @@ function createCarousel(highlights, container) {
     if (n < 1) {
       slideIndex = slides.length;
     }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.add("hidden");
     }
+
+    slides[slideIndex - 1].classList.remove("hidden");
+
     for (let i = 0; i < dots.length; i++) {
       dots[i].classList.remove("bg-gray-700", "bg-gray-400");
 
@@ -57,7 +65,6 @@ function createCarousel(highlights, container) {
         dots[i].classList.add("bg-gray-400");
       }
     }
-    slides[slideIndex - 1].style.display = "block";
   }
 
   function plusSlides(n) {
