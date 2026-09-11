@@ -6,6 +6,8 @@ const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
   : "";
 
+// Fetching and displaying highlights in thumbnail carousels
+
 const mockResponse = await getMock("../../mock_endpoint/data.json");
 const mockAuctions = mockResponse.data;
 
@@ -46,14 +48,16 @@ function createCarousel(highlights, container) {
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(
-        "bg-gray-700",
-        "bg-gray-400",
-      );
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("bg-gray-700", "bg-gray-400");
+
+      if (i === slideIndex - 1) {
+        dots[i].classList.add("bg-gray-700");
+      } else {
+        dots[i].classList.add("bg-gray-400");
+      }
     }
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " bg-gray-700";
   }
 
   function plusSlides(n) {
@@ -109,6 +113,10 @@ function displayEnding(auctions) {
 
   createCarousel(ending, endingCarousel);
 }
+
+// search bar logic
+
+// init
 
 renderHeader();
 renderFooter();
