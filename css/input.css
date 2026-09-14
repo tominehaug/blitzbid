@@ -12,5 +12,10 @@
   --font-heading: "Jersey 20", sans-serif;
 
   --text-4xl: 2.125rem;
-  --text-5xl: 45px;
+  --text-5xl: 40px;
+  --text-6xl: 45px: ;
+}
+
+.btn-primary {
+  @apply bg-brand-500 font-heading text-brand-200 p-3 text-3xl tracking-wider uppercase;
 }
