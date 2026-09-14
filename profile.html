@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | BlitzBid</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Jersey+20&family=Zilla+Slab+Highlight&family=Zilla+Slab:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/4b71fec88a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-brand-200 font-default">
+    <section id="profile-details">
+      <img src="" alt="" id="profile-banner" class="md:hidden" />
+      <a href="" class="js-back">
+        <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
+      </a>
+      <img src="" alt="" id="profile-img" />
+      <h1 id="profile-name"></h1>
+      <button>
+        <i class="fa-solid fa-pen-to-square"></i>
+      </button>
+      <p id="profile-bio"></p>
+      <button id="new-listing" class="btn-primary w-full">New listing</button>
+    </section>
+    <div>
+      <i class="fa-solid fa-bars rotate-90 text-4xl"></i>
+      <i class="fa-solid fa-hand text-4xl"></i>
+      <i class="fa-solid fa-money-check-dollar text-4xl"></i>
+    </div>
+    <section id="my-listings">
+      <div class="font-heading relative">
+        <img src="" alt="" />
+        <i class="fa-solid fa-pen-to-square absolute top-1 right-1"></i>
+        <h2 class="text-2xl"></h2>
+        <p class="text-brand-500 text-2xl">
+          <span class=""></span>(highest bid)
+        </p>
+        <p class="font-heading text-error"></p>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="js/pages/profile.js"></script>
+</html>
