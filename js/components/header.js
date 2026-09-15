@@ -6,7 +6,7 @@ const basePath = window.location.hostname.includes("github.io")
   : "";
 
 const profile = JSON.parse(localStorage.getItem("profile"));
-const username = profile.name;
+const username = profile?.name;
 
 export function renderHeader() {
   const header = document.querySelector("header");
