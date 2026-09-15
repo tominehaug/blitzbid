@@ -1,3 +1,4 @@
+import { renderHeader } from "../components/header.js";
 import { validateForm } from "../utils/validation.js";
 import { post } from "../services/apiClient.js";
 import { showPopup, showSuccess } from "../services/ui-messages.js";
@@ -70,3 +71,5 @@ async function handleRegistration() {
     ]);
   }
 }
+
+renderHeader();
