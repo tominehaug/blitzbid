@@ -5,6 +5,9 @@ const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
   : "";
 
+const profile = JSON.parse(localStorage.getItem("profile"));
+const username = profile.name;
+
 export function renderHeader() {
   const header = document.querySelector("header");
 
@@ -61,7 +64,7 @@ export function renderHeader() {
       <a href="${basePath}/index.html">
         <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
       </a>
-      <a href="${basePath}/profile.html"><i class="fa-solid fa-circle-user text-5xl"></i></a>
+      <a href="${basePath}/profile.html?user=${username}"><i class="fa-solid fa-circle-user text-5xl"></i></a>
     `;
   }
 }
