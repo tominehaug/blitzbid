@@ -1,3 +1,4 @@
+import { renderHeader } from "../components/header.js";
 import { validateForm } from "../utils/validation.js";
 import { loginUser } from "../services/authService.js";
 import { hidePopup, showPopup, showSuccess } from "../services/ui-messages.js";
@@ -48,3 +49,5 @@ async function handleLogin() {
     ]);
   }
 }
+
+renderHeader();
