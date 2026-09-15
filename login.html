@@ -4,40 +4,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BlitzBid | Login</title>
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Jersey+20&family=Zilla+Slab+Highlight&family=Zilla+Slab:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/4b71fec88a.js"
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="bg-brand-200">
+  <body class="bg-brand-200 flex min-h-screen flex-col">
     <header
-      class="sticky top-0 z-50 flex h-25 items-center justify-between bg-white px-8"
+      class="z-50 flex h-25 items-center justify-between bg-white px-8"
     ></header>
-    <main class="font-heading">
-      <img src="assets/cd_half.png" alt="Shiny compact disc" class="" />
-      <h1 class="uppercase">Log in</h1>
-      <form id="login-form" novalidate>
-        <label for="email">E-mail</label>
-        <input type="email" name="email" id="email" required />
+    <main
+      class="font-heading mt-6 flex flex-1 flex-col items-center tracking-wider"
+    >
+      <img
+        src="assets/cd_half.png"
+        alt="Shiny compact disc"
+        class="h-21 w-auto"
+      />
+      <h1 class="mt-3 text-3xl uppercase">Log in</h1>
+      <form
+        id="login-form"
+        novalidate
+        class="mt-10 flex w-full flex-1 flex-col gap-1 text-center md:w-auto"
+      >
+        <label for="email" class="text-2xl">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          class="focus:border-brand-500 w-80 self-center border border-gray-400 bg-white p-3"
+        />
         <div class="error"></div>
-        <br />
-        <label for="password">Password</label>
+        <label for="password" class="text-2xl">Password</label>
         <input
           type="password"
           name="password"
           id="password"
           required
           minlength="8"
+          class="focus:border-brand-500 w-80 self-center border border-gray-400 bg-white p-3"
         />
-        <div class="error"></div>
-        <div>
-          <button type="submit" id="signin" class="primary-button">
-            Sign in
+        <div class="error pb-7"></div>
+        <div class="mt-auto flex flex-col md:gap-6 md:pb-6">
+          <button type="submit" id="signin" class="btn-primary !p-5">
+            Log in
           </button>
-          <button id="signup">
-            <a href="register.html">Sign up</a>
-          </button>
-          <button><a href="index.html">Back</a></button>
+          <a
+            class="text-brand-500 border-brand-500 border-2 border-dashed p-5 text-3xl uppercase"
+            href="register.html"
+            >Register</a
+          >
+          <a href="index.html" class="text-brand-500 p-5 text-3xl uppercase"
+            >Back</a
+          >
         </div>
       </form>
     </main>
