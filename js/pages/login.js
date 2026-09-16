@@ -31,17 +31,17 @@ async function handleLogin() {
     showSuccess("Login was successful!");
     window.location.href = `${basePath}/index.html`;
   } catch (error) {
-    showPopup("error-popup", error.message || "Login failed", [
+    showPopup("border-error", error.message || "Login failed", [
       {
         text: "Try again",
-        class: "warning-button",
+        class: "confirm",
         onClick: () => {
           hidePopup();
         },
       },
       {
-        text: "Go back home",
-        class: "warning-button",
+        text: "Return home",
+        class: "cancel",
         onClick: () => {
           window.location.href = `${basePath}/index.html`;
         },
