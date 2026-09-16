@@ -17,5 +17,21 @@
 }
 
 .btn-primary {
-  @apply bg-brand-500 font-heading text-brand-200 p-3 text-3xl tracking-wider uppercase;
+  @apply bg-brand-500 font-heading text-brand-200 cursor-pointer p-3 text-3xl tracking-wider uppercase;
+}
+
+.popup-actions {
+  @apply mt-4 flex w-full flex-col;
+
+  .confirm {
+    @apply bg-brand-500 font-default text-brand-200 cursor-pointer p-3 text-2xl uppercase;
+  }
+
+  .cancel {
+    @apply font-default cursor-pointer border-none pt-3 text-base text-black uppercase hover:underline;
+  }
+
+  .warning {
+    @apply bg-warning font-default cursor-pointer p-3 text-2xl text-black uppercase;
+  }
 }
