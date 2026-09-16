@@ -21,7 +21,21 @@
     <header
       class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-8"
     ></header>
-    <div id="search"></div>
+    <form
+      id="search-form"
+      class="mx-4 mt-4 flex flex-row justify-between bg-white p-2 md:w-80"
+    >
+      <label for="search-input" class="hidden">Search for auctions</label>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="eg. Vinyl, Rock..."
+        class="mr-2 flex-1"
+      />
+      <button type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
     <div class="relative mt-8 mb-8">
       <img
         src="assets/cd.png"
