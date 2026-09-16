@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlitzBid | Results</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Jersey+20&family=Zilla+Slab+Highlight&family=Zilla+Slab:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/4b71fec88a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-brand-200 font-default">
+    <header
+      class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-8"
+    ></header>
+    <form
+      id="search-form"
+      class="mx-4 mt-4 flex flex-row justify-between bg-white p-2 md:w-80"
+    >
+      <label for="search-input" class="hidden">Search for auctions</label>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="eg. Vinyl, Rock..."
+        class="mr-2 flex-1"
+      />
+      <button type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <div id="results"></div>
+    </form>
+  </body>
+</html>
