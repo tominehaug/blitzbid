@@ -123,6 +123,16 @@ function displayEnding(auctions) {
 
 // search bar logic
 
+const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("search-input");
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const searchTerm = searchInput.value.toLowerCase().trim();
+  if (!searchTerm) return;
+  const params = new URLSearchParams({ q: searchTerm });
+  window.location.href = `results.html?${params.toString()}`;
+});
+
 // init
 
 renderHeader();
