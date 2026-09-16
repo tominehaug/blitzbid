@@ -5,14 +5,14 @@ const messageDiv = document.getElementById("popup-message");
 const actionsDiv = document.getElementById("popup-actions");
 
 // function that adds type, message and actions, removes .hidden, shows popup
-export function showPopup(borderColor, message, actions = []) {
+export function showPopup(borderColorClass, message, actions = []) {
   popupBox.classList.remove(
     "border-brand-500",
     "border-warning",
     "border-error",
   );
 
-  popupBox.classList.add(borderColor);
+  popupBox.classList.add(borderColorClass);
 
   messageDiv.innerHTML = "";
   messageDiv.textContent = message;
