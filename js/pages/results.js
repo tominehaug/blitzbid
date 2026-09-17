@@ -1,12 +1,14 @@
-import { renderFooter } from "../components/footer";
-import { renderHeader } from "../components/header";
-import { getMock, get } from "../services/apiClient";
+import { renderFooter } from "../components/footer.js";
+import { renderHeader } from "../components/header.js";
+import { getMock, get } from "../services/apiClient.js";
+import { renderCard } from "../components/card.js";
 
 const params = new URLSearchParams(window.location.search);
 const searchTerm = params.get("q");
 
 const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
+const resultsDiv = document.getElementById("results");
 
 let allListings = [];
 
@@ -19,7 +21,7 @@ async function fetchAllListings() {
   const mockResponse = await getMock("../../mock_endpoint/data.json");
   const mockListings = mockResponse.data;
 
-  const apiResponse = await get("/auction/listings");
+  const apiResponse = await get("/auction/listings?_bids=true&_seller=true");
   const apiListings = apiResponse.data;
 
   const allListings = [...mockListings, ...apiListings];
@@ -55,3 +57,9 @@ searchForm.addEventListener("submit", (event) => {
   const params = new URLSearchParams({ q: searchTerm });
   window.location.href = `results.html?${params.toString()}`;
 });
+
+function renderResults(filteredListings) {
+  filteredListings.forEach((listing) => {
+    renderCard(listing, resultsDiv);
+  });
+}
