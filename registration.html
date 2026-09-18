@@ -117,16 +117,26 @@
       </form>
     </main>
     <footer></footer>
-    <div id="popup-backdrop" class="hidden"></div>
+    <div
+      id="popup-backdrop"
+      class="fixed inset-0 z-40 hidden bg-white/70"
+    ></div>
     <section
       id="popup"
-      class="hidden"
+      class="fixed inset-0 z-50 flex hidden items-center justify-center"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="popup-message"
     >
-      <div id="popup-message"></div>
-      <div id="popup-actions"></div>
+      <div
+        id="popup-box"
+        class="mx-3 flex w-full flex-col items-center justify-center rounded-sm border-3 bg-white px-10 py-5 text-center md:w-80"
+      >
+        <div
+          id="popup-message"
+          class="font-default text-lg font-semibold"
+        ></div>
+        <div id="popup-actions" class="popup-actions"></div>
+      </div>
     </section>
   </body>
   <script type="module" src="js/pages/registration.js"></script>
