@@ -18,14 +18,16 @@
     ></script>
   </head>
   <body class="bg-brand-200 font-default">
+    <div class="flex flex-col min-h-dvh">
     <header
       class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-8"
     ></header>
-    <section id="profile-details">
-      <img src="" alt="" id="profile-banner" class="md:hidden" />
+    <main class="flex flex-1 flex-col">
       <a href="" class="js-back">
         <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
       </a>
+    <section id="profile-details">
+      <img src="" alt="" id="profile-banner" class="md:hidden" />
       <img src="" alt="" id="profile-img" />
       <h1 id="profile-name"></h1>
       <button>
@@ -40,7 +42,8 @@
       <i class="fa-solid fa-money-check-dollar text-4xl"></i>
     </div>
     <section id="my-listings"></section>
-    <footer></footer>
+    </main>
+    <footer class="bg-white p-3"></footer>
     <div
       id="popup-backdrop"
       class="fixed inset-0 z-40 hidden bg-white/70"
