@@ -22,11 +22,11 @@ export function renderCard(auction, container) {
     "font-heading",
     "relative",
     "mx-4",
-    "my-2",
+    "my-4",
     "flex",
-    "w-90",
+    "md:w-80",
     "flex-col",
-    "items-center",
+    "items-left",
     "justify-center",
     "overflow-hidden",
     "bg-white",
@@ -59,7 +59,13 @@ export function renderCard(auction, container) {
   price.append(amount, " (highest bid)");
 
   const deadline = document.createElement("p");
-  deadline.classList.add("mt-2", "border-t", "border-gray-400", "text-xl");
+  deadline.classList.add(
+    "mt-2",
+    "pt-2",
+    "border-t",
+    "border-gray-400",
+    "text-xl",
+  );
   deadline.textContent = `Deadline: ${endsAt}`;
 
   details.appendChild(title);
