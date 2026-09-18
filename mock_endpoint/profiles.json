@@ -1,0 +1,115 @@
+{
+  "data": [
+    {
+      "name": "Maya_Records",
+      "email": "maya@url.com",
+      "bio": "Independent record collector specialising in classic rock and rare pressings.",
+      "avatar": {
+        "url": "../../assets/maya_records.png",
+        "alt": "Maya Records profile picture"
+      },
+      "banner": {
+        "url": "https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Maya Records collection"
+      },
+      "credits": 1000,
+      "_count": {
+        "listings": 3,
+        "wins": 1
+      }
+    },
+    {
+      "name": "Vinyl_Vault",
+      "email": "vault@url.com",
+      "bio": "Long-time collector of alternative, rock and electronic records.",
+      "avatar": {
+        "url": "../../assets/vault_avatar.png",
+        "alt": "Vinyl Vault profile picture"
+      },
+      "banner": {
+        "url": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Vinyl Vault record collection"
+      },
+      "credits": 750,
+      "_count": {
+        "listings": 2,
+        "wins": 1
+      }
+    },
+    {
+      "name": "Grunge_Collector",
+      "email": "grunge@url.com",
+      "bio": "Collector focused on 90s alternative and grunge memorabilia.",
+      "avatar": {
+        "url": "../../assets/grunge_collector.png",
+        "alt": "Grunge Collector profile picture"
+      },
+      "banner": {
+        "url": "https://images.unsplash.com/photo-1644426358812-879f02d1d867?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Grunge Collector collection"
+      },
+      "credits": 1200,
+      "_count": {
+        "listings": 2,
+        "wins": 0
+      }
+    },
+    {
+      "name": "Poster_House",
+      "email": "poster@url.com",
+      "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
+      "avatar": {
+        "url": "../../assets/poster_house.png",
+        "alt": "Poster House profile picture"
+      },
+      "banner": {
+        "url": "https://images.unsplash.com/photo-1649861742672-20152f77c1f5?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Poster House collection"
+      },
+      "credits": 500,
+      "_count": {
+        "listings": 3,
+        "wins": 1
+      }
+    },
+    {
+      "name": "Digital_Grooves",
+      "email": "digital@url.com",
+      "bio": "Electronic music collector with a soft spot for unusual physical releases.",
+      "avatar": {
+        "url": "../../assets/digital_grooves.png",
+        "alt": "Digital Grooves profile picture"
+      },
+      "banner": {
+        "url": "https://images.unsplash.com/photo-1635776062360-af423602aff3?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Digital Grooves collection"
+      },
+      "credits": 1350,
+      "_count": {
+        "listings": 3,
+        "wins": 1
+      }
+    },
+    {
+      "name": "Needle_Drop",
+      "email": "needle@url.com",
+      "bio": "Collector of alternative music, indie releases and unusual formats.",
+      "avatar": {
+        "url": "../../assets/needle_drop.png",
+        "alt": "Needle Drop profile picture"
+      },
+      "banner": {
+        "url": "https://images.unsplash.com/photo-1604076850742-4c7221f3101b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Needle Drop collection"
+      },
+      "credits": 900,
+      "_count": {
+        "listings": 2,
+        "wins": 0
+      }
+    }
+  ],
+  "meta": {
+    "total": 6
+  }
+}
