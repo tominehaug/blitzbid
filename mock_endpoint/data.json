@@ -15,7 +15,7 @@
       "updated": "2026-09-10T08:00:00.000Z",
       "endsAt": "2026-09-30T18:00:00.000Z",
       "seller": {
-        "name": "Maya Records",
+        "name": "Maya_Records",
         "email": "maya@url.com",
         "bio": "Independent record collector specialising in classic rock and rare pressings.",
         "avatar": {
@@ -33,7 +33,7 @@
           "id": "bid-001",
           "amount": 85,
           "bidder": {
-            "name": "Vinyl Vault",
+            "name": "Vinyl_Vault",
             "email": "vault@url.com",
             "bio": "Long-time collector of alternative, rock and electronic records.",
             "avatar": {
@@ -51,7 +51,7 @@
           "id": "bid-002",
           "amount": 105,
           "bidder": {
-            "name": "Grunge Collector",
+            "name": "Grunge_Collector",
             "email": "grunge@url.com",
             "bio": "Collector focused on 90s alternative and grunge memorabilia.",
             "avatar": {
@@ -69,7 +69,7 @@
           "id": "bid-003",
           "amount": 125,
           "bidder": {
-            "name": "Poster House",
+            "name": "Poster_House",
             "email": "poster@url.com",
             "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
             "avatar": {
@@ -103,7 +103,7 @@
       "updated": "2026-09-08T12:15:00.000Z",
       "endsAt": "2026-09-21T19:30:00.000Z",
       "seller": {
-        "name": "Vinyl Vault",
+        "name": "Vinyl_Vault",
         "email": "vault@url.com",
         "bio": "Long-time collector of alternative, rock and electronic records.",
         "avatar": {
@@ -121,7 +121,7 @@
           "id": "bid-004",
           "amount": 45,
           "bidder": {
-            "name": "Maya Records",
+            "name": "Maya_Records",
             "email": "maya@url.com",
             "bio": "Independent record collector specialising in classic rock and rare pressings.",
             "avatar": {
@@ -139,7 +139,7 @@
           "id": "bid-005",
           "amount": 60,
           "bidder": {
-            "name": "Digital Grooves",
+            "name": "Digital_Grooves",
             "email": "digital@url.com",
             "bio": "Electronic music collector with a soft spot for unusual physical releases.",
             "avatar": {
@@ -173,7 +173,7 @@
       "updated": "2026-09-06T13:00:00.000Z",
       "endsAt": "2026-09-22T18:00:00.000Z",
       "seller": {
-        "name": "Grunge Collector",
+        "name": "Grunge_Collector",
         "email": "grunge@url.com",
         "bio": "Collector focused on 90s alternative and grunge memorabilia.",
         "avatar": {
@@ -181,7 +181,7 @@
           "alt": "Grunge Collector profile picture"
         },
         "banner": {
-          "url": "https://url.com/grunge-banner.jpg",
+          "url": "https://images.unsplash.com/photo-1644426358812-879f02d1d867?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "alt": "Grunge Collector collection"
         },
         "wins": []
@@ -191,7 +191,7 @@
           "id": "bid-006",
           "amount": 30,
           "bidder": {
-            "name": "Needle Drop",
+            "name": "Needle_Drop",
             "email": "needle@url.com",
             "bio": "Collector of alternative music, indie releases and unusual formats.",
             "avatar": {
@@ -225,7 +225,7 @@
       "updated": "2026-09-03T09:30:00.000Z",
       "endsAt": "2026-09-24T20:00:00.000Z",
       "seller": {
-        "name": "Poster House",
+        "name": "Poster_House",
         "email": "poster@url.com",
         "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
         "avatar": {
@@ -258,7 +258,7 @@
       "updated": "2026-09-02T15:10:00.000Z",
       "endsAt": "2026-09-25T17:30:00.000Z",
       "seller": {
-        "name": "Digital Grooves",
+        "name": "Digital_Grooves",
         "email": "digital@url.com",
         "bio": "Electronic music collector with a soft spot for unusual physical releases.",
         "avatar": {
@@ -276,7 +276,7 @@
           "id": "bid-007",
           "amount": 25,
           "bidder": {
-            "name": "Vinyl Vault",
+            "name": "Vinyl_Vault",
             "email": "vault@url.com",
             "bio": "Long-time collector of alternative, rock and electronic records.",
             "avatar": {
@@ -310,7 +310,7 @@
       "updated": "2026-09-09T10:00:00.000Z",
       "endsAt": "2026-09-26T21:00:00.000Z",
       "seller": {
-        "name": "Needle Drop",
+        "name": "Needle_Drop",
         "email": "needle@url.com",
         "bio": "Collector of alternative music, indie releases and unusual formats.",
         "avatar": {
@@ -328,7 +328,7 @@
           "id": "bid-008",
           "amount": 40,
           "bidder": {
-            "name": "Maya Records",
+            "name": "Maya_Records",
             "email": "maya@url.com",
             "bio": "Independent record collector specialising in classic rock and rare pressings.",
             "avatar": {
@@ -346,7 +346,7 @@
           "id": "bid-009",
           "amount": 55,
           "bidder": {
-            "name": "Poster House",
+            "name": "Poster_House",
             "email": "poster@url.com",
             "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
             "avatar": {
@@ -364,7 +364,7 @@
           "id": "bid-010",
           "amount": 70,
           "bidder": {
-            "name": "Grunge Collector",
+            "name": "Grunge_Collector",
             "email": "grunge@url.com",
             "bio": "Collector focused on 90s alternative and grunge memorabilia.",
             "avatar": {
@@ -398,7 +398,7 @@
       "updated": "2026-08-30T11:45:00.000Z",
       "endsAt": "2026-09-27T16:00:00.000Z",
       "seller": {
-        "name": "Maya Records",
+        "name": "Maya_Records",
         "email": "maya@url.com",
         "bio": "Independent record collector specialising in classic rock and rare pressings.",
         "avatar": {
@@ -431,7 +431,7 @@
       "updated": "2026-08-28T14:15:00.000Z",
       "endsAt": "2026-09-28T18:30:00.000Z",
       "seller": {
-        "name": "Poster House",
+        "name": "Poster_House",
         "email": "poster@url.com",
         "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
         "avatar": {
@@ -449,7 +449,7 @@
           "id": "bid-011",
           "amount": 35,
           "bidder": {
-            "name": "Needle Drop",
+            "name": "Needle_Drop",
             "email": "needle@url.com",
             "bio": "Collector of alternative music, indie releases and unusual formats.",
             "avatar": {
@@ -483,7 +483,7 @@
       "updated": "2026-08-25T10:00:00.000Z",
       "endsAt": "2026-09-29T20:00:00.000Z",
       "seller": {
-        "name": "Digital Grooves",
+        "name": "Digital_Grooves",
         "email": "digital@url.com",
         "bio": "Electronic music collector with a soft spot for unusual physical releases.",
         "avatar": {
@@ -501,7 +501,7 @@
           "id": "bid-012",
           "amount": 20,
           "bidder": {
-            "name": "Maya Records",
+            "name": "Maya_Records",
             "email": "maya@url.com",
             "bio": "Independent record collector specialising in classic rock and rare pressings.",
             "avatar": {
@@ -535,7 +535,7 @@
       "updated": "2026-08-22T17:00:00.000Z",
       "endsAt": "2026-09-30T19:00:00.000Z",
       "seller": {
-        "name": "Grunge Collector",
+        "name": "Grunge_Collector",
         "email": "grunge@url.com",
         "bio": "Collector focused on 90s alternative and grunge memorabilia.",
         "avatar": {
@@ -553,7 +553,7 @@
           "id": "bid-013",
           "amount": 50,
           "bidder": {
-            "name": "Digital Grooves",
+            "name": "Digital_Grooves",
             "email": "digital@url.com",
             "bio": "Electronic music collector with a soft spot for unusual physical releases.",
             "avatar": {
@@ -571,7 +571,7 @@
           "id": "bid-014",
           "amount": 65,
           "bidder": {
-            "name": "Vinyl Vault",
+            "name": "Vinyl_Vault",
             "email": "vault@url.com",
             "bio": "Long-time collector of alternative, rock and electronic records.",
             "avatar": {
@@ -605,7 +605,7 @@
       "updated": "2026-09-09T16:30:00.000Z",
       "endsAt": "2026-10-01T18:00:00.000Z",
       "seller": {
-        "name": "Needle Drop",
+        "name": "Needle_Drop",
         "email": "needle@url.com",
         "bio": "Collector of alternative music, indie releases and unusual formats.",
         "avatar": {
@@ -623,7 +623,7 @@
           "id": "bid-015",
           "amount": 55,
           "bidder": {
-            "name": "Poster House",
+            "name": "Poster_House",
             "email": "poster@url.com",
             "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
             "avatar": {
@@ -641,7 +641,7 @@
           "id": "bid-016",
           "amount": 75,
           "bidder": {
-            "name": "Maya Records",
+            "name": "Maya_Records",
             "email": "maya@url.com",
             "bio": "Independent record collector specialising in classic rock and rare pressings.",
             "avatar": {
@@ -659,7 +659,7 @@
           "id": "bid-017",
           "amount": 90,
           "bidder": {
-            "name": "Vinyl Vault",
+            "name": "Vinyl_Vault",
             "email": "vault@url.com",
             "bio": "Long-time collector of alternative, rock and electronic records.",
             "avatar": {
@@ -693,7 +693,7 @@
       "updated": "2026-08-20T09:00:00.000Z",
       "endsAt": "2026-10-02T21:00:00.000Z",
       "seller": {
-        "name": "Maya Records",
+        "name": "Maya_Records",
         "email": "maya@url.com",
         "bio": "Independent record collector specialising in classic rock and rare pressings.",
         "avatar": {
@@ -726,7 +726,7 @@
       "updated": "2026-09-09T12:00:00.000Z",
       "endsAt": "2026-10-03T18:30:00.000Z",
       "seller": {
-        "name": "Digital Grooves",
+        "name": "Digital_Grooves",
         "email": "digital@url.com",
         "bio": "Electronic music collector with a soft spot for unusual physical releases.",
         "avatar": {
@@ -744,7 +744,7 @@
           "id": "bid-018",
           "amount": 35,
           "bidder": {
-            "name": "Needle Drop",
+            "name": "Needle_Drop",
             "email": "needle@url.com",
             "bio": "Collector of alternative music, indie releases and unusual formats.",
             "avatar": {
@@ -778,7 +778,7 @@
       "updated": "2026-09-09T10:00:00.000Z",
       "endsAt": "2026-10-04T20:00:00.000Z",
       "seller": {
-        "name": "Poster House",
+        "name": "Poster_House",
         "email": "poster@url.com",
         "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
         "avatar": {
@@ -796,7 +796,7 @@
           "id": "bid-019",
           "amount": 25,
           "bidder": {
-            "name": "Grunge Collector",
+            "name": "Grunge_Collector",
             "email": "grunge@url.com",
             "bio": "Collector focused on 90s alternative and grunge memorabilia.",
             "avatar": {
@@ -830,7 +830,7 @@
       "updated": "2026-09-10T09:00:00.000Z",
       "endsAt": "2026-10-05T19:30:00.000Z",
       "seller": {
-        "name": "Vinyl Vault",
+        "name": "Vinyl_Vault",
         "email": "vault@url.com",
         "bio": "Long-time collector of alternative, rock and electronic records.",
         "avatar": {
@@ -848,7 +848,7 @@
           "id": "bid-020",
           "amount": 40,
           "bidder": {
-            "name": "Maya Records",
+            "name": "Maya_Records",
             "email": "maya@url.com",
             "bio": "Independent record collector specialising in classic rock and rare pressings.",
             "avatar": {
@@ -866,7 +866,7 @@
           "id": "bid-021",
           "amount": 55,
           "bidder": {
-            "name": "Digital Grooves",
+            "name": "Digital_Grooves",
             "email": "digital@url.com",
             "bio": "Electronic music collector with a soft spot for unusual physical releases.",
             "avatar": {
@@ -884,7 +884,7 @@
           "id": "bid-022",
           "amount": 70,
           "bidder": {
-            "name": "Needle Drop",
+            "name": "Needle_Drop",
             "email": "needle@url.com",
             "bio": "Collector of alternative music, indie releases and unusual formats.",
             "avatar": {
