@@ -12,11 +12,6 @@ const resultsDiv = document.getElementById("results");
 
 let allListings = [];
 
-if (searchTerm) {
-  searchInput.value = searchTerm;
-  conveySearch(searchTerm);
-}
-
 async function fetchAllListings() {
   const mockResponse = await getMock("../../mock_endpoint/data.json");
   const mockListings = mockResponse.data;
@@ -29,37 +24,52 @@ async function fetchAllListings() {
   return allListings;
 }
 
-async function init() {
-  allListings = await fetchAllListings();
-  renderResults(allListings);
-  renderHeader();
-  renderFooter();
+function renderResults(filteredListings) {
+  resultsDiv.innerHTML = "";
+  if (filteredListings.length === 0) {
+    const message = document.createElement("p");
+    message.classList.add("text-lg", "text-gray-500", "py-10", "px-4");
+    message.textContent = "No listings match your search.";
+    resultsDiv.appendChild(message);
+    return;
+  }
+  filteredListings.forEach((listing) => {
+    renderCard(listing, resultsDiv);
+  });
 }
-
-init();
 
 function conveySearch(term) {
   const filteredListings = allListings.filter((listing) => {
-    const nameMatch = listing.name.toLowerCase().includes(term);
+    const titleMatch = listing.title.toLowerCase().includes(term);
     const tagsMatch = listing.tags.some((tag) =>
       tag.toLowerCase().includes(term),
     );
-    return nameMatch || tagsMatch;
+    return titleMatch || tagsMatch;
   });
 
   renderResults(filteredListings);
 }
 
+async function init() {
+  allListings = await fetchAllListings();
+
+  if (searchTerm) {
+    searchInput.value = searchTerm;
+    conveySearch(searchTerm);
+  } else {
+    renderResults(allListings);
+  }
+
+  renderHeader();
+  renderFooter();
+}
+
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const searchTerm = searchInput.value.toLowerCase().trim();
-  if (!searchTerm) return;
-  const params = new URLSearchParams({ q: searchTerm });
+  const newSearchTerm = searchInput.value.toLowerCase().trim();
+  if (!newSearchTerm) return;
+  const params = new URLSearchParams({ q: newSearchTerm });
   window.location.href = `results.html?${params.toString()}`;
 });
 
-function renderResults(filteredListings) {
-  filteredListings.forEach((listing) => {
-    renderCard(listing, resultsDiv);
-  });
-}
+init();
