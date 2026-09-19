@@ -20,28 +20,34 @@
   <body class="bg-brand-200 font-default">
     <div class="flex flex-col min-h-dvh">
     <header
-      class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-8"
+      class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-4"
     ></header>
-    <main class="flex flex-1 flex-col">
-      <a href="" class="js-back">
-        <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
-      </a>
-    <section id="profile-details">
-      <img src="" alt="" id="profile-banner" class="md:hidden" />
-      <img src="" alt="" id="profile-img" />
-      <h1 id="profile-name"></h1>
-      <button>
-        <i class="fa-solid fa-pen-to-square"></i>
-      </button>
-      <p id="profile-bio"></p>
-      <button id="new-listing" class="btn-primary w-full">New listing</button>
-    </section>
-    <div>
-      <i class="fa-solid fa-bars rotate-90 text-4xl"></i>
-      <i class="fa-solid fa-hand text-4xl"></i>
-      <i class="fa-solid fa-money-check-dollar text-4xl"></i>
-    </div>
-    <section id="my-listings"></section>
+    <main class="flex flex-1 flex-col z-0">
+      <div id="banner" class="relative h-12 md:h-60">
+        <img src="" alt="" id="profile-banner" class="hidden md:block object-cover w-full h-full absolute inset-0" />
+        <button class="js-back absolute top-2 left-2 z-10">
+          <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
+        </button>
+      </div>
+      <div class="flex flex-col md:flex-row md:items-start md:gap-15 md:px-4">
+        <section id="profile-details" class="flex flex-col items-center md:items-start gap-3 w-full md:w-80 md:shrink-0">
+          <img src="" alt="" id="profile-img" class="max-w-[160px] rounded-full object-contain relative z-20 md:-mt-12" />
+          <div class="flex flex-row gap-2">
+            <h1 id="profile-name" class="font-heading text-3xl tracking-wider"></h1>
+            <i class="fa-solid fa-pen-to-square text-3xl"></i>
+          </div>
+          <p id="profile-bio" class="font-default text-lg text-center md:text-left mb-2"></p>
+          <button id="new-listing" class="btn-primary w-full !py-4">New listing</button>
+        </section>
+        <div class="flex flex-col gap-4">
+          <div class="mt-8 w-full flex flex-row gap-20 justify-center md:justify-start">
+            <i class="fa-solid fa-bars rotate-90 text-4xl" id="my-listings"></i>
+            <i class="fa-solid fa-hand text-4xl" id="my-bids"></i>
+            <i class="fa-solid fa-money-check-dollar text-4xl" id="credits"></i>
+          </div>
+          <section id="tab-content"></section>
+        </div>
+      </div>
     </main>
     <footer class="bg-white p-3"></footer>
     <div
