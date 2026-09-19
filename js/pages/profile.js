@@ -1,15 +1,21 @@
 import { renderHeader } from "../components/header.js";
 import { renderFooter } from "../components/footer.js";
+import { renderCard } from "../components/card.js";
 import { get, getMock } from "../services/apiClient.js";
 
 const params = new URLSearchParams(window.location.search);
 const username = params.get("user");
 const main = document.querySelector("main");
 
+const myListingsTab = document.getElementById("my-listings");
+const myBidsTab = document.getElementById("my-bids");
+const myCreditsTab = document.getElementById("credits");
+const tabContent = document.getElementById("tab-content");
+
 let profile;
 let mockEndpoint = true;
-let listingsByProfile = {};
-let bidsByProfile = {};
+let listingsByProfile = [];
+let bidsByUser = [];
 
 async function fetchUser() {
   const mockResponse = await getMock("../../mock_endpoint/profiles.json");
@@ -33,37 +39,43 @@ async function fetchUser() {
 }
 
 async function fetchListingsByProfile() {
-  if (!mockEndpoint) {
-    try {
-      const response = await getMock();
-      const mockListingsByProfile = response.data;
-      listingsByProfile = mockListingsByProfile;
-    } catch (error) {
-      console.log(error);
+  try {
+    if (mockEndpoint) {
+      const response = await getMock("../../mock_endpoint/data.json");
+      listingsByProfile = response.data.filter(
+        (listing) => listing.seller.name === username,
+      );
+    } else {
+      const response = await get(
+        `/auction/profiles/${username}/listings?_bids=true`,
+      );
+      listingsByProfile = response.data;
     }
-  } else {
-    const response = await get(`/auction/profiles/${username}/listings`);
-    const apiListingsByProfile = response.data;
-    listingsByProfile = apiListingsByProfile;
+  } catch (error) {
+    console.log(error);
   }
-  return listingsByProfile;
 }
 
 async function fetchBidsByUser() {
-  if (!mockEndpoint) {
-    try {
-      const response = await getMock();
-      const mockBidsByProfile = response.data;
-      bidsByProfile = mockBidsByProfile;
-    } catch (error) {
-      console.log(error);
+  try {
+    if (!mockEndpoint) {
+      const response = await getMock("../../mock_endpoint/data.json");
+      bidsByUser = response.data.filter((listing) =>
+        listing.bids.some((bid) => bid.bidder.name === username),
+      );
+    } else {
+      const response = await get(
+        `/auction/profiles/${username}/bids?_listings=true`,
+      );
+      const listings = response.data.map((bid) => bid.listing);
+      bidsByUser = listings.filter(
+        (listing, index) =>
+          listings.findIndex((l) => l.id === listing.id) === index,
+      );
     }
-  } else {
-    const apiBidsByProfile = await get(`/auction/profiles/${username}/bids`);
-    apiBidsByProfile = response.data;
-    bidsByProfile = apiBidsByProfile;
+  } catch (error) {
+    console.log(error);
   }
-  return bidsByProfile;
 }
 
 function renderProfile(profile) {
@@ -82,23 +94,42 @@ function renderProfile(profile) {
   bio.textContent = profile.bio;
 }
 
-const myListingsTab = document.getElementById("my-listings");
-const myBidsTab = document.getElementById("my-bids");
-const myCreditsTab = document.getElementById("credits");
-const tabContent = document.getElementById("tab-content");
+function renderListings(listings, emptyMessage) {
+  if (listings.length === 0) {
+    const message = document.createElement("p");
+    message.textContent = emptyMessage;
+    tabContent.appendChild(message);
+    return;
+  }
+  listings.forEach((listing) => renderCard(listing, tabContent));
+}
 
-function renderTab(tab, content) {
-  tabContent.innerHTML = "";
+function renderTab(tab) {
   myListingsTab.classList.remove("underline");
   myBidsTab.classList.remove("underline");
   myCreditsTab.classList.remove("underline");
+  tab.classList.add("underline");
 
-  tab.classlist.add("underline");
+  tabContent.innerHTML = "";
 
-  listings;
+  if (tab === myListingsTab) {
+    renderListings(listingsByProfile, "No listings yet.");
+    tabContent.classlist.add("md:flex", "md:flex-row", "md:flex-wrap");
+  } else if (tab === myBidsTab) {
+    renderListings(listingsBidOn, "No bids yet.");
+    tabContent.classlist.add("md:flex", "md:flex-row", "md:flex-wrap");
+  } else {
+    const loadCredits = document.createElement("div");
+    loadCredits.innerHTML = `<div class="flex-1 flex flex-col items-center justify-center text-center gap-2">
+              <h2 class="font-heading text-2xl">Your credits</h2>
+              <p class="text-lg font-default">Your current score is: <span class="text-2xl font-heading text-brand-500">€${profile.credits}</span></p>
+              <label for="load-credit"></label>
+                <input id="credit" class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none" type="number" maxlength="4" class="font-heading text-2xl">
+                <button id="load-btn" type="submit" class="border-2 border-brand-500 mt-4 border-dashed font-heading text-2xl cursor uppercase px-4 py-2">Load</button>
+            </div>`;
+    tabContent.appendChild(credits);
+  }
 }
-
-function calculateCredits() {}
 
 myListingsTab.addEventListener("click", () => {
   renderTab(myListingsTab);
@@ -112,6 +143,17 @@ myCreditsTab.addEventListener("click", () => {
   renderTab(myCreditsTab);
 });
 
-fetchUser();
-renderHeader();
-renderFooter();
+async function init() {
+  renderHeader();
+  renderFooter();
+
+  await fetchUser();
+  if (!profile) return;
+
+  await fetchListingsByProfile();
+  await fetchBidsByUser();
+
+  renderTab(myListingsTab);
+}
+
+init();
