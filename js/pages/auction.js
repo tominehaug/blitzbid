@@ -1,6 +1,7 @@
 import { get, getMock } from "../services/apiClient.js";
 import { showPopup } from "../services/ui-messages.js";
 import { renderBidCard, renderWinningCard } from "../components/bidCard.js";
+import { renderHeader } from "../components/header.js";
 
 const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
@@ -69,6 +70,9 @@ function renderAuction(listing) {
   sellerImg.src = listing.seller.avatar?.url;
   sellerImg.alt = listing.seller.avatar?.alt;
 
+  const description = document.getElementById("description");
+  description.textContent = listing.description;
+
   const tagContainer = document.getElementById("tag-container");
 
   const bids = listing.bids ?? [];
@@ -94,6 +98,7 @@ function renderAuction(listing) {
 
 async function init() {
   await fetchListing();
+  renderHeader();
 }
 
 init();
