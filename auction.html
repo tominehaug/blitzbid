@@ -33,19 +33,23 @@
         </div>
         <div>
             <h2>Description</h2>
+            <div id="description"></div>
         </div>
         <div id="tag-container"></div>
-        <div>
+        <div class="flex flex-col items-left gap-2 w-80">
             <label for="bid" class="hidden"></label>
-            <input type="number" id="bid" name="bid" placeholder="200" class="w-90">
-            <button id="bid-btn" class="btn-primary">Place your bid</button>
+            <div class="flex flex-row gap-2 items-center">
+            <input type="number" id="bid" name="bid" placeholder="200" class="text-2xl focus:border-brand-500 font-heading border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none w-full">
+            <i class="fa-solid fa-euro-sign text-4xl"></i>
+            </div>
+            <button id="bid-btn" class="btn-primary w-full">Place your bid</button>
         </div>
         <div>
             <h2 class="font-heading text-2xl">Bid history</h2>
             <div id="bid-list" class="flex flex-col gap-2">
             </div>
         </div>
-        <div>Deadline: 8/13/2026</div>
+        <div class="font-heading text-2xl text-error">Deadline: 8/13/2026</div>
     </main>
     <footer class="bg-white p-3"></footer></footer>
     <div
