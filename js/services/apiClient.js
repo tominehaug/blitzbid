@@ -2,6 +2,10 @@ import { ApiError } from "./errors.js";
 
 const BASE_URL = "https://v2.api.noroff.dev";
 
+const basePath = window.location.hostname.includes("github.io")
+  ? "/blitzbid"
+  : "";
+
 async function apiClient(endpoint, options = {}) {
   const { body, ...customOptions } = options;
 
@@ -69,7 +73,8 @@ export const del = (endpoint) => apiClient(endpoint, { method: "DELETE" });
 
 export async function getMock(endpoint) {
   try {
-    const response = await fetch(endpoint);
+    const path = `${basePath}/${endpoint.replace(/^(\.{1,2}\/|\/)+/, "")}`;
+    const response = await fetch(path);
 
     if (!response.ok) {
       throw new ApiError(`HTTP Error: ${response.status}`, response.status);
