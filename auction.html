@@ -1,0 +1,74 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlitzBid | Auction</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Jersey+20&family=Zilla+Slab+Highlight&family=Zilla+Slab:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/4b71fec88a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header
+      class="flex h-25 items-center justify-between bg-white px-8"
+    ></header>
+    <main>
+        <img src="" alt="" id="auction-media">
+        <div>
+            <h1 id="title" class="font-heading text-2xl"></h1>
+            <div>
+            <img src="" alt="" id="seller-img">
+            <div><p>Seller:</p>
+            <p id="seller-name"></p></div>
+            </div>
+        </div>
+        <div>
+            <h2>Description</h2>
+        </div>
+        <div id="tag-container"></div>
+        <div>
+            <label for="bid" class="hidden"></label>
+            <input type="number" id="bid" name="bid" placeholder="200" class="w-90">
+            <button id="bid-btn" class="btn-primary">Place your bid</button>
+        </div>
+        <div>
+            <h2 class="font-heading text-2xl">Bid history</h2>
+            <div id="bid-list" class="flex flex-col gap-2">
+            </div>
+        </div>
+        <div>Deadline: 8/13/2026</div>
+    </main>
+    <footer class="bg-white p-3"></footer></footer>
+    <div
+      id="popup-backdrop"
+      class="fixed inset-0 z-40 hidden bg-white/70"
+    ></div>
+    <section
+      id="popup"
+      class="fixed inset-0 z-50 flex hidden items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        id="popup-box"
+        class="mx-3 flex w-full flex-col items-center justify-center rounded-sm border-3 bg-white px-10 py-5 text-center md:w-80"
+      >
+        <div
+          id="popup-message"
+          class="font-default text-lg font-semibold"
+        ></div>
+        <div id="popup-actions" class="popup-actions"></div>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="js/pages/auction.js"></script>
+</html>
