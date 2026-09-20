@@ -5,7 +5,7 @@
       "email": "maya@url.com",
       "bio": "Independent record collector specialising in classic rock and rare pressings.",
       "avatar": {
-        "url": "../../assets/maya_records.png",
+        "url": "assets/maya_records.png",
         "alt": "Maya Records profile picture"
       },
       "banner": {
@@ -23,7 +23,7 @@
       "email": "vault@url.com",
       "bio": "Long-time collector of alternative, rock and electronic records.",
       "avatar": {
-        "url": "../../assets/vault_avatar.png",
+        "url": "assets/vault_avatar.png",
         "alt": "Vinyl Vault profile picture"
       },
       "banner": {
@@ -41,7 +41,7 @@
       "email": "grunge@url.com",
       "bio": "Collector focused on 90s alternative and grunge memorabilia.",
       "avatar": {
-        "url": "../../assets/grunge_collector.png",
+        "url": "assets/grunge_collector.png",
         "alt": "Grunge Collector profile picture"
       },
       "banner": {
@@ -59,7 +59,7 @@
       "email": "poster@url.com",
       "bio": "Music memorabilia enthusiast collecting posters, prints and physical media.",
       "avatar": {
-        "url": "../../assets/poster_house.png",
+        "url": "assets/poster_house.png",
         "alt": "Poster House profile picture"
       },
       "banner": {
@@ -77,7 +77,7 @@
       "email": "digital@url.com",
       "bio": "Electronic music collector with a soft spot for unusual physical releases.",
       "avatar": {
-        "url": "../../assets/digital_grooves.png",
+        "url": "assets/digital_grooves.png",
         "alt": "Digital Grooves profile picture"
       },
       "banner": {
@@ -95,7 +95,7 @@
       "email": "needle@url.com",
       "bio": "Collector of alternative music, indie releases and unusual formats.",
       "avatar": {
-        "url": "../../assets/needle_drop.png",
+        "url": "assets/needle_drop.png",
         "alt": "Needle Drop profile picture"
       },
       "banner": {

@@ -35,11 +35,11 @@ export function renderCard(auction, container) {
   cardWrapper.href = `${basePath}/auction.html?id=${auction.id}`;
 
   const thumbnail = document.createElement("img");
-  thumbnail.src = auction.media[0]?.url || "../../assets/placeholder-img.png";
+  thumbnail.src = auction.media[0]?.url || "assets/placeholder-img.png";
   thumbnail.alt = auction.media[0]?.alt || "No image uploaded";
   thumbnail.classList.add("h-70", "w-full", "object-cover");
   thumbnail.addEventListener("error", () => {
-    thumbnail.src = "../../assets/placeholder-img.png";
+    thumbnail.src = "assets/placeholder-img.png";
     thumbnail.alt = "Image unavailable";
   });
 
