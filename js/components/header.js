@@ -27,31 +27,31 @@ export function renderHeader() {
       <a href="${basePath}/index.html">
         <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
       </a>
-      <a href="${basePath}/login.html"><i class="fa-solid fa-right-to-bracket text-3xl"></i></a>
+      <a href="${basePath}/login.html"><i class="fa-solid fa-right-to-bracket text-3xl cursor-pointer"></i></a>
     `;
   } else if (path.includes("profile.html") && user === profile?.name) {
     header.innerHTML = `
       <a href="${basePath}/index.html">
         <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
       </a>
-      <button id="logout"><i class="fa-solid fa-arrow-right-from-bracket text-3xl"></i></button>
+      <button id="logout"><i class="fa-solid fa-arrow-right-from-bracket text-3xl cursor-pointer"></i></button>
     `;
 
     const logoutBtn = document.getElementById("logout");
 
     if (logoutBtn) {
       logoutBtn.addEventListener("click", () => {
-        showPopup("warning-popup", "Are you sure you want to logout?", [
+        showPopup("border-brand-500", "Are you sure you want to logout?", [
           {
             text: "Yes",
-            class: "confirmation-button",
+            class: "confirm",
             onClick: () => {
               logoutUser();
             },
           },
           {
             text: "Back",
-            class: "warning-button",
+            class: "cancel",
             onClick: () => {
               hidePopup();
             },
@@ -64,7 +64,7 @@ export function renderHeader() {
       <a href="${basePath}/index.html">
         <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
       </a>
-      <a href="${basePath}/profile.html?user=${username}"><i class="fa-solid fa-circle-user text-3xl"></i></a>
+      <a href="${basePath}/profile.html?user=${username}"><i class="fa-solid fa-circle-user text-3xl cursor-pointer"></i></a>
     `;
   }
 }
