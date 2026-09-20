@@ -46,7 +46,7 @@ export function hidePopup() {
 }
 // helper function for success messages
 export function showSuccess(message, timeout = 3000) {
-  showPopup("confirm-popup", message);
+  showPopup("border-brand-500", message);
   return new Promise((resolve) => {
     setTimeout(() => {
       hidePopup();
