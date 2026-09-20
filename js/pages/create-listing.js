@@ -2,6 +2,7 @@ import { renderHeader } from "../components/header.js";
 import { post } from "../services/apiClient.js";
 import { showPopup, showSuccess, hidePopup } from "../services/ui-messages.js";
 import { validateForm } from "../utils/validation.js";
+import { parseTags } from "../utils/parseTags.js";
 
 const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
@@ -12,19 +13,10 @@ const username = loggedInProfile?.name;
 
 const createForm = document.getElementById("create-form");
 
-function parseTags(value) {
-  const tags = value
-    .split(",")
-    .map((tag) => tag.trim().toLowerCase())
-    .filter((tag) => tag !== "");
-
-  return [...new Set(tags)];
-}
-
 async function uploadListing(form) {
   const formData = new FormData(form);
-  const url = formData.get("img-url")?.trim();
-  const alt = formData.get("img-alt")?.trim();
+  const url = formData.get("media-url")?.trim();
+  const alt = formData.get("media-alt")?.trim();
 
   const description = formData.get("description");
 
@@ -80,7 +72,6 @@ async function uploadListing(form) {
         text: "Go back home",
         class: "cancel",
         action: () => {
-          console.log("clicked try again");
           window.location.href = `${basePath}/index.html`;
         },
       },
