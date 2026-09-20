@@ -29,23 +29,23 @@
           <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
         </button>
       </div>
-      <div class="flex flex-col md:flex-row md:items-start md:gap-15 md:max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-start md:gap-15 w-full max-w-[70rem] mx-auto md:px-4">
         <section id="profile-details" class="flex flex-col items-center md:items-start gap-3 w-full md:w-80 md:shrink-0">
           <img src="" alt="" id="profile-img" class="max-w-[160px] rounded-full object-contain relative z-20 md:-mt-12" />
           <div class="flex flex-row gap-2">
             <h1 id="profile-name" class="font-heading text-3xl tracking-wider"></h1>
-            <i class="fa-solid fa-pen-to-square text-3xl"></i>
+            <i class="!hidden fa-solid fa-pen-to-square text-3xl" id="edit-profile"></i>
           </div>
-          <p id="profile-bio" class="font-default text-lg text-center md:text-left mb-2 mx-4"></p>
-          <button id="new-listing" class="btn-primary w-full !py-4">New listing</button>
+          <p id="profile-bio" class="font-default text-lg text-center md:text-left mb-2 mx-4 md:mx-0"></p>
+          <button id="new-listing" class="hidden btn-primary w-full !py-4">New listing</button>
         </section>
         <div class="flex flex-col gap-4">
           <div class="mt-8 w-full flex flex-row gap-20 justify-center">
-            <i class="fa-solid fa-bars rotate-90 text-4xl" id="my-listings"></i>
-            <i class="fa-solid fa-hand text-4xl" id="my-bids"></i>
-            <i class="fa-solid fa-money-check-dollar text-4xl" id="credits"></i>
+            <button id="my-listings" class="hover:border-b-4 hover:border-black hover:pb-1 hover:cursor-pointer"><i class="fa-solid fa-bars rotate-90 text-4xl" ></i></button>
+            <button id="my-bids" class="hover:border-b-4 hover:border-black hover:pb-1 hover:cursor-pointer"><i class="fa-solid fa-hand text-4xl"></i></button>
+            <button id="credits" class="hover:border-b-4 hover:border-black hover:pb-1 hover:cursor-pointer"><i class="fa-solid fa-money-check-dollar text-4xl" ></i></button>
           </div>
-          <section id="tab-content" class="flex flex-col flex-1 mx-4 my-8">
+          <section id="tab-content" class="flex flex-col gap-4 flex-1 min-w-0">
           </section>
         </div>
       </div>
