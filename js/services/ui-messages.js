@@ -33,6 +33,10 @@ export function showPopup(borderColorClass, message, actions = []) {
       button.addEventListener("click", action.onClick);
     }
 
+    if (action.action) {
+      button.addEventListener("click", action.action);
+    }
+
     actionsDiv.appendChild(button);
   });
 
