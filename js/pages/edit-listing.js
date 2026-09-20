@@ -11,7 +11,7 @@ const basePath = window.location.hostname.includes("github.io")
 const loggedInProfile = JSON.parse(localStorage.getItem("profile"));
 const username = loggedInProfile?.name;
 
-const editForm = document.getElementById("edit-form");
+const editForm = document.getElementById("edit-listing-form");
 const params = new URLSearchParams(window.location.search);
 const postId = params.get("id");
 
@@ -30,10 +30,29 @@ async function fetchListing() {
     renderEditForm(listing);
   } catch (error) {
     console.log(error);
+    showPopup(
+      "border-error",
+      "Could not load the listing. Check your connection and try again.",
+      [
+        {
+          text: "Try again",
+          class: "confirm",
+          action: () => {
+            hidePopup();
+            fetchListing();
+          },
+        },
+        {
+          text: "Go back",
+          class: "cancel",
+          action: () => history.back(),
+        },
+      ],
+    );
   }
 }
 
-async function renderEditForm(listing) {
+function renderEditForm(listing) {
   document.getElementById("media-url").value = listing.media?.[0]?.url ?? "";
   document.getElementById("media-alt").value = listing.media?.[0]?.alt ?? "";
   document.getElementById("title").value = listing.title || "";
