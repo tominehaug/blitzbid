@@ -7,6 +7,11 @@ const params = new URLSearchParams(window.location.search);
 const username = params.get("user");
 const main = document.querySelector("main");
 
+const loggedInProfile = JSON.parse(localStorage.getItem("profile"));
+const loggedInUsername = loggedInProfile?.name;
+const isOwnProfile =
+  loggedInUsername?.toLowerCase() === username?.toLowerCase();
+
 const myListingsTab = document.getElementById("my-listings");
 const myBidsTab = document.getElementById("my-bids");
 const myCreditsTab = document.getElementById("credits");
@@ -58,7 +63,7 @@ async function fetchListingsByProfile() {
 
 async function fetchBidsByUser() {
   try {
-    if (!mockEndpoint) {
+    if (mockEndpoint) {
       const response = await getMock("../../mock_endpoint/data.json");
       bidsByUser = response.data.filter((listing) =>
         listing.bids.some((bid) => bid.bidder.name === username),
@@ -105,30 +110,66 @@ function renderListings(listings, emptyMessage) {
 }
 
 function renderTab(tab) {
-  myListingsTab.classList.remove("underline");
-  myBidsTab.classList.remove("underline");
-  myCreditsTab.classList.remove("underline");
-  tab.classList.add("underline");
+  myListingsTab.classList.remove(
+    "border-b-4",
+    "border-black",
+    "pb-1",
+    "cursor-pointer",
+  );
+  myBidsTab.classList.remove(
+    "border-b-4",
+    "border-black",
+    "pb-1",
+    "cursor-pointer",
+  );
+  myCreditsTab.classList.remove(
+    "border-b-4",
+    "border-black",
+    "pb-1",
+    "cursor-pointer",
+  );
+  tab.classList.add("border-b-4", "border-black", "pb-1", "cursor-pointer");
 
   tabContent.innerHTML = "";
 
   if (tab === myListingsTab) {
     renderListings(listingsByProfile, "No listings yet.");
-    tabContent.classlist.add("md:flex", "md:flex-row", "md:flex-wrap");
+    tabContent.className = "md:flex md:flex-row md:flex-wrap";
   } else if (tab === myBidsTab) {
-    renderListings(listingsBidOn, "No bids yet.");
-    tabContent.classlist.add("md:flex", "md:flex-row", "md:flex-wrap");
+    renderListings(bidsByUser, "No bids yet.");
+    tabContent.className = "md:flex md:flex-row md:flex-wrap";
   } else {
-    const loadCredits = document.createElement("div");
-    loadCredits.innerHTML = `<div class="flex-1 flex flex-col items-center justify-center text-center gap-2">
+    tabContent.className =
+      "flex-1 flex flex-col items-center justify-center text-center gap-2";
+    tabContent.innerHTML = `
               <h2 class="font-heading text-2xl">Your credits</h2>
               <p class="text-lg font-default">Your current score is: <span class="text-2xl font-heading text-brand-500">€${profile.credits}</span></p>
-              <label for="load-credit"></label>
-                <input id="credit" class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none" type="number" maxlength="4" class="font-heading text-2xl">
-                <button id="load-btn" type="submit" class="border-2 border-brand-500 mt-4 border-dashed font-heading text-2xl cursor uppercase px-4 py-2">Load</button>
-            </div>`;
-    tabContent.appendChild(credits);
+              <label for="credit"></label>
+                <input id="credit" class="text-2xl focus:border-brand-500 font-heading w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none" type="number" max="5000" >
+                <button id="load-btn" type="submit" class="border-2 border-brand-500 mt-4 border-dashed font-heading text-2xl cursor-pointer uppercase px-4 py-2">Load</button>
+            `;
   }
+}
+
+function lockTabs() {
+  myBidsTab.disabled = true;
+  myCreditsTab.disabled = true;
+
+  myBidsTab.classList.remove(
+    "hover:border-b-4",
+    "hover:border-black",
+    "hover:pb-1",
+    "hover:cursor-pointer",
+  );
+  myCreditsTab.classList.remove(
+    "hover:border-b-4",
+    "hover:border-black",
+    "hover:pb-1",
+    "hover:cursor-pointer",
+  );
+
+  myBidsTab.classList.add("text-gray-400", "cursor-not-allowed");
+  myCreditsTab.classList.add("text-gray-400", "cursor-not-allowed");
 }
 
 myListingsTab.addEventListener("click", () => {
@@ -150,8 +191,18 @@ async function init() {
   await fetchUser();
   if (!profile) return;
 
+  if (isOwnProfile) {
+    document.getElementById("edit-profile").classList.remove("!hidden");
+    document.getElementById("new-listing").classList.remove("hidden");
+  }
+
   await fetchListingsByProfile();
-  await fetchBidsByUser();
+
+  if (isOwnProfile) {
+    await fetchBidsByUser();
+  } else {
+    lockTabs();
+  }
 
   renderTab(myListingsTab);
 }
