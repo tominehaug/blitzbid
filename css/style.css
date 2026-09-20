@@ -822,8 +822,20 @@
     .md\:hidden {
       display: none;
     }
+    .md\:\!h-auto {
+      height: auto !important;
+    }
     .md\:h-60 {
       height: calc(var(--spacing) * 60);
+    }
+    .md\:h-\[250px\] {
+      height: 250px;
+    }
+    .md\:h-\[300px\] {
+      height: 300px;
+    }
+    .md\:h-\[400px\] {
+      height: 400px;
     }
     .md\:h-auto {
       height: auto;
@@ -872,6 +884,9 @@
     }
     .md\:gap-20 {
       gap: calc(var(--spacing) * 20);
+    }
+    .md\:\!self-stretch {
+      align-self: stretch !important;
     }
     .md\:self-center {
       align-self: center;
