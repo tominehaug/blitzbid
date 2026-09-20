@@ -1,0 +1,135 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlitzBid | New Listing</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Jersey+20&family=Zilla+Slab+Highlight&family=Zilla+Slab:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/4b71fec88a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-brand-200 flex min-h-screen flex-col">
+    <header
+      class="flex h-25 items-center justify-between bg-white px-8"
+    ></header>
+    <main
+      class="font-heading mt-6 flex flex-1 flex-col items-center tracking-wider"
+    >
+      <img
+        src="assets/cd_half.png"
+        alt="Shiny compact disc"
+        class="h-21 w-auto"
+      />
+      <h1 class="mt-3 text-3xl uppercase">Edit listing</h1>
+      <form
+        id="create-form"
+        novalidate
+        class="mt-10 mb-8 flex w-full flex-1 flex-col text-center lg:w-auto"
+      >
+        <div class="lg:flex lg:w-200 lg:flex-row lg:gap-20">
+          <div class="flex flex-col gap-1">
+            <label for="media" class="text-2xl">Image</label>
+            <div class="flex flex-row gap-2">
+              <input
+                type="text"
+                name="media"
+                id="media"
+                class="focus:border-brand-500 font-default w-73 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+                placeholder="URL"
+              />
+              <button><i class="fa-solid fa-trash text-2xl"></i></button>
+            </div>
+            <div class="text-error font-default mt-1 text-base"></div>
+            <button class="text-center text-2xl lg:text-left">
+              <i class="fa-solid fa-plus"></i>
+              Add image
+            </button>
+            <label for="title" class="text-2xl">Title</label>
+            <input
+              type="url"
+              name="title"
+              id="title"
+              class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+            />
+            <div class="text-error font-default mx-2 mt-1 text-base"></div>
+            <label for="description" class="text-2xl">Description</label>
+            <textarea
+              type="text"
+              name="description"
+              id="description"
+              rows="5"
+              class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+            ></textarea>
+            <div class="text-error font-default mx-2 mt-1 text-base"></div>
+          </div>
+          <div
+            class="text-brand-500 mt-8 mb-8 h-0.5 w-full shrink-0 bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)] md:my-0 md:h-auto md:w-0.5 md:self-stretch md:bg-[repeating-linear-gradient(to_bottom,currentColor_0_10px,transparent_10px_20px)]"
+          ></div>
+          <div class="flex flex-col gap-1">
+            <label for="deadline" class="text-2xl">Deadline</label>
+            <input
+              type="datetime-local"
+              name="deadline"
+              id="dealine"
+              required
+              class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+            />
+            <div class="text-error font-default mx-2 mt-1 text-base"></div>
+            <label for="tags" class="text-2xl">Tags</label>
+            <input
+              type="text"
+              name="tags"
+              id="tags"
+              class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+              placeholder="vinyl, 80s, poster"
+            />
+            <div class="text-error font-default mx-2 mt-1 pb-7 text-base"></div>
+            <div class="mt-auto flex flex-col lg:gap-5 lg:pb-6">
+              <button type="submit" id="post-listing" class="btn-primary !p-5">
+                Post listing
+              </button>
+              <button
+                class="text-error border-error border-2 border-dashed p-5 text-3xl uppercase"
+              >
+                Delete
+              </button>
+              <a href="" class="text-brand-500 p-5 text-3xl uppercase">Back</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+    <footer></footer>
+    <div
+      id="popup-backdrop"
+      class="fixed inset-0 z-40 hidden bg-white/70"
+    ></div>
+    <section
+      id="popup"
+      class="fixed inset-0 z-50 flex hidden items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        id="popup-box"
+        class="mx-3 flex w-full flex-col items-center justify-center rounded-sm border-3 bg-white px-10 py-5 text-center md:w-80"
+      >
+        <div
+          id="popup-message"
+          class="font-default text-lg font-semibold"
+        ></div>
+        <div id="popup-actions" class="popup-actions"></div>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="js/pages/edit-listing.js"></script>
+</html>
