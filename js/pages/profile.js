@@ -52,7 +52,7 @@ async function fetchListingsByProfile() {
       );
     } else {
       const response = await get(
-        `/auction/profiles/${username}/listings?_bids=true`,
+        `/auction/profiles/${username}/listings?_bids=true&_seller=true`,
       );
       listingsByProfile = response.data;
     }
