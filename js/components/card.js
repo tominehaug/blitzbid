@@ -5,6 +5,7 @@ const basePath = window.location.hostname.includes("github.io")
   : "";
 
 const profile = JSON.parse(localStorage.getItem("profile"));
+const loggedInName = profile?.name;
 
 export function renderCard(auction, container) {
   if (!auction.bids) {
@@ -74,7 +75,7 @@ export function renderCard(auction, container) {
   cardWrapper.appendChild(thumbnail);
   cardWrapper.appendChild(details);
 
-  if (auction.seller.name === profile?.name) {
+  if (auction.seller.name === loggedInName) {
     const editIcon = document.createElement("i");
     editIcon.classList.add(
       "fa-solid",
@@ -83,7 +84,13 @@ export function renderCard(auction, container) {
       "top-2",
       "right-2",
       "text-3xl",
+      "cursor-pointer",
     );
+    editIcon.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      window.location.href = `edit-listing.html?id=${auction.id}`;
+    });
     cardWrapper.appendChild(editIcon);
   }
 
