@@ -1,7 +1,7 @@
 import { renderHeader } from "../components/header.js";
 import { validateForm } from "../utils/validation.js";
 import { post } from "../services/apiClient.js";
-import { showPopup, showSuccess } from "../services/ui-messages.js";
+import { showPopup, showSuccess, hidePopup } from "../services/ui-messages.js";
 
 const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
@@ -53,17 +53,17 @@ async function handleRegistration() {
     showSuccess("Registration was successful!");
     window.location.href = `${basePath}/login.html`;
   } catch (error) {
-    showPopup("error-message", error.message || "Registration failed", [
+    showPopup("border-error", error.message || "Registration failed", [
       {
         text: "Try again",
-        class: "confirm-button",
+        class: "confirm",
         action: () => {
           hidePopup();
         },
       },
       {
         text: "Go back home",
-        class: "warning-button",
+        class: "cancel",
         action: () => {
           window.location.href = `${basePath}/index.html`;
         },
