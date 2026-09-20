@@ -1,7 +1,7 @@
 export function validateForm(form) {
   let isValid = true;
 
-  const inputs = Array.from(form.querySelectorAll("input"));
+  const inputs = Array.from(form.querySelectorAll("input, textarea"));
 
   inputs.forEach((input) => {
     const errorDiv = input.nextElementSibling;
