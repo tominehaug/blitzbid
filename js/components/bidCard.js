@@ -2,13 +2,18 @@ import { formatDate } from "../utils/formatDate.js";
 
 export function renderBidCard(bid, container) {
   const card = document.createElement("div");
-  card.className = "flex flex-row justify-between h-20 w-90 bg-brand-200 p-2";
+  card.className = "flex flex-row justify-between h-20 bg-brand-200 p-2";
+
+  const profileLink = document.createElement("a");
+  profileLink.href = `profile.html?user=${bid.bidder.name}`;
+  profileLink.className = "h-full shrink-0";
 
   const avatar = document.createElement("img");
   if (bid.bidder?.avatar?.url) {
     avatar.src = bid.bidder.avatar.url;
   }
   avatar.alt = bid.bidder?.avatar?.alt;
+  avatar.className = "h-full aspect-square object-cover";
 
   const details = document.createElement("div");
   details.className = "flex flex-col items-end justify-end p-1";
@@ -21,23 +26,29 @@ export function renderBidCard(bid, container) {
   date.className = "font-default";
   date.textContent = formatDate(bid.created);
 
-  details.append(amount);
-  details.append(date);
-  card.append(avatar);
-  card.append(details);
+  details.appendChild(amount);
+  details.appendChild(date);
+  profileLink.appendChild(avatar);
+  card.appendChild(profileLink);
+  card.appendChild(details);
   container.appendChild(card);
 }
 
 export function renderWinningCard(bid, container) {
   const card = document.createElement("div");
   card.className =
-    "flex flex-row justify-between h-20 w-90 bg-brand-200 p-2 border-brand-500 border-2";
+    "flex flex-row justify-between h-20 bg-brand-200 p-2 border-brand-500 border-2";
+
+  const profileLink = document.createElement("a");
+  profileLink.href = `profile.html?user=${bid.bidder.name}`;
+  profileLink.className = "h-full shrink-0";
 
   const avatar = document.createElement("img");
   if (bid.bidder?.avatar?.url) {
     avatar.src = bid.bidder.avatar.url;
   }
   avatar.alt = bid.bidder?.avatar?.alt;
+  avatar.className = "h-full aspect-square object-cover";
 
   const details = document.createElement("div");
   details.className = "flex flex-col items-end justify-end p-1";
@@ -50,9 +61,10 @@ export function renderWinningCard(bid, container) {
   date.className = "font-default";
   date.textContent = formatDate(bid.created);
 
-  details.append(amount);
-  details.append(date);
-  card.append(avatar);
-  card.append(details);
+  details.appendChild(amount);
+  details.appendChild(date);
+  profileLink.appendChild(avatar);
+  card.appendChild(profileLink);
+  card.appendChild(details);
   container.appendChild(card);
 }
