@@ -97,3 +97,5 @@ function init() {
   }
   renderHeader();
 }
+
+init();
