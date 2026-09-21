@@ -81,10 +81,12 @@ export function renderCard(auction, container) {
       "fa-solid",
       "fa-pen-to-square",
       "absolute",
-      "top-2",
-      "right-2",
+      "top-0",
+      "right-0",
       "text-3xl",
       "cursor-pointer",
+      "bg-white",
+      "p-2",
     );
     editIcon.addEventListener("click", (event) => {
       event.preventDefault();
