@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,39 +19,88 @@
     ></script>
   </head>
   <body class="bg-brand-200 font-default">
-    <div class="flex flex-col min-h-dvh">
-    <header
-      class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-4"
-    ></header>
-    <main class="flex flex-1 flex-col z-0 mb-4">
-      <div id="banner" class="relative h-12 md:h-60">
-        <img src="" alt="" id="profile-banner" class="hidden md:block object-cover w-full h-full absolute inset-0" />
-        <button class="js-back absolute top-2 left-2 z-10">
-          <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
-        </button>
-      </div>
-      <div class="flex flex-col md:flex-row md:items-start md:gap-15 w-full max-w-[70rem] mx-auto md:px-4">
-        <section id="profile-details" class="flex flex-col items-center md:items-start gap-3 w-full md:w-80 md:shrink-0">
-          <img src="" alt="" id="profile-img" class="max-w-[160px] rounded-full object-contain relative z-20 md:-mt-12" />
-          <div class="flex flex-row gap-2">
-            <h1 id="profile-name" class="font-heading text-3xl tracking-wider"></h1>
-            <i class="!hidden fa-solid fa-pen-to-square text-3xl" id="edit-profile"></i>
-          </div>
-          <p id="profile-bio" class="font-default text-lg text-center md:text-left mb-2 mx-4 md:mx-0"></p>
-          <button id="new-listing" class="hidden btn-primary w-full !py-4">New listing</button>
-        </section>
-        <div class="flex flex-col gap-4">
-          <div class="mt-8 w-full flex flex-row gap-20 justify-center">
-            <button id="my-listings" class="hover:border-b-4 hover:border-black hover:pb-1 hover:cursor-pointer"><i class="fa-solid fa-bars rotate-90 text-4xl" ></i></button>
-            <button id="my-bids" class="hover:border-b-4 hover:border-black hover:pb-1 hover:cursor-pointer"><i class="fa-solid fa-hand text-4xl"></i></button>
-            <button id="credits" class="hover:border-b-4 hover:border-black hover:pb-1 hover:cursor-pointer"><i class="fa-solid fa-money-check-dollar text-4xl" ></i></button>
-          </div>
-          <section id="tab-content" class="flex flex-col gap-4 flex-1 min-w-0">
-          </section>
+    <div class="flex min-h-dvh flex-col">
+      <header
+        class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-4"
+      ></header>
+      <main class="z-0 mb-4 flex flex-1 flex-col">
+        <div id="banner" class="relative h-12 md:h-60">
+          <img
+            src=""
+            alt=""
+            id="profile-banner"
+            class="absolute inset-0 hidden h-full w-full object-cover md:block"
+          />
+          <button class="js-back absolute top-2 left-2 z-10">
+            <img
+              src="assets/prev.svg"
+              alt="back-arrow"
+              width="20"
+              height="40"
+            />
+          </button>
         </div>
-      </div>
-    </main>
-    <footer class="bg-white p-3"></footer>
+        <div
+          class="mx-auto flex w-full max-w-[70rem] flex-col md:flex-row md:items-start md:gap-15 md:px-4"
+        >
+          <section
+            id="profile-details"
+            class="flex w-full flex-col items-center gap-3 md:w-80 md:shrink-0 md:items-start"
+          >
+            <img
+              src=""
+              alt=""
+              id="profile-img"
+              class="relative z-20 max-w-[160px] rounded-full object-contain md:-mt-12"
+            />
+            <div class="flex flex-row gap-2">
+              <h1
+                id="profile-name"
+                class="font-heading text-3xl tracking-wider"
+              ></h1>
+              <i
+                class="fa-solid fa-pen-to-square !hidden text-3xl"
+                id="edit-profile"
+              ></i>
+            </div>
+            <p
+              id="profile-bio"
+              class="font-default mx-4 mb-2 text-center text-lg md:mx-0 md:text-left"
+            ></p>
+            <button id="new-listing" class="btn-primary hidden w-full !py-4">
+              New listing
+            </button>
+          </section>
+          <div class="flex flex-col gap-4">
+            <div class="mt-8 flex w-full flex-row justify-center gap-20">
+              <button
+                id="my-listings"
+                class="hover:cursor-pointer hover:border-b-4 hover:border-black hover:pb-1"
+              >
+                <i class="fa-solid fa-bars rotate-90 text-4xl"></i>
+              </button>
+              <button
+                id="my-bids"
+                class="hover:cursor-pointer hover:border-b-4 hover:border-black hover:pb-1"
+              >
+                <i class="fa-solid fa-hand text-4xl"></i>
+              </button>
+              <button
+                id="credits"
+                class="hover:cursor-pointer hover:border-b-4 hover:border-black hover:pb-1"
+              >
+                <i class="fa-solid fa-money-check-dollar text-4xl"></i>
+              </button>
+            </div>
+            <section
+              id="tab-content"
+              class="flex min-w-0 flex-1 flex-col gap-4"
+            ></section>
+          </div>
+        </div>
+      </main>
+      <footer class="bg-white p-3"></footer>
+    </div>
     <div
       id="popup-backdrop"
       class="fixed inset-0 z-40 hidden bg-white/70"
@@ -72,6 +122,6 @@
         <div id="popup-actions" class="popup-actions"></div>
       </div>
     </section>
+    <script type="module" src="js/pages/profile.js"></script>
   </body>
-  <script type="module" src="js/pages/profile.js"></script>
 </html>

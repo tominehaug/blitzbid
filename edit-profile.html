@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -40,7 +41,8 @@
           type="text"
           name="banner"
           id="banner"
-          class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none" placeholder="URL"
+          class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+          placeholder="URL"
         />
         <div class="text-error font-default mx-2 mt-1 text-base"></div>
         <label for="avatar" class="text-2xl">Avatar</label>
@@ -68,13 +70,12 @@
           id="bio"
           class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
         />
-        <div class="text-error font-default mx-2 mt-1 text-base pb-7"></div>
+        <div class="text-error font-default mx-2 mt-1 pb-7 text-base"></div>
+        <div class="mt-auto flex flex-col md:w-80 md:self-center md:pb-6">
           <button type="submit" id="update-profile" class="btn-primary !p-5">
             Save changes
           </button>
-          <a href="" class="text-brand-500 p-5 text-3xl uppercase"
-            >Back</a
-          >
+          <a href="" class="text-brand-500 p-5 text-3xl uppercase">Back</a>
         </div>
       </form>
     </main>
@@ -99,6 +100,6 @@
         <div id="popup-actions" class="popup-actions"></div>
       </div>
     </section>
+    <script type="module" src="js/pages/edit-profile.js"></script>
   </body>
-  <script type="module" src="js/pages/edit-profile.js"></script>
 </html>
