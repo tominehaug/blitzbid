@@ -5,9 +5,12 @@
     <title>BlitzBid | Auction</title>
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Jersey+20&family=Zilla+Slab+Highlight&family=Zilla+Slab:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Jersey+20&family=Zilla+Slab+Highlight&family=Zilla+Slab:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/4b71fec88a.js"
@@ -18,45 +21,65 @@
     <header
       class="flex h-25 items-center justify-between bg-white px-8"
     ></header>
-    <main class="md:grid md:grid-cols-4 lg:grid-cols-3 md:gap-6 lg:gap-[4vw] md:mx-10 lg:mx-10">
+    <main
+      class="md:mx-10 md:grid md:grid-cols-4 md:gap-6 lg:mx-10 lg:grid-cols-3 lg:gap-[4vw]"
+    >
       <div class="md:col-span-2 lg:col-span-1">
-        <img src="" alt="" id="auction-media" class="w-full object-cover max-h-[400px] md:max-h-full">
-        </div>
-        <div class="md:col-span-2 lg:col-span-1">
+        <img
+          src=""
+          alt=""
+          id="auction-media"
+          class="max-h-100 w-full object-cover md:max-h-full"
+        />
+      </div>
+      <div class="md:col-span-2 lg:col-span-1">
         <div class="mx-4 mt-4">
-            <h1 id="title" class="font-heading text-2xl"></h1>
-            <h2 class="italic">Description</h2>
-            <div id="description"></div>
+          <h1 id="title" class="font-heading text-2xl"></h1>
+          <h2 class="italic">Description</h2>
+          <div id="description"></div>
         </div>
-        <div class="flex flex-row justify-end h-20 font-heading mt-8 mr-4">
-            <div class="flex flex-col items-end justify-end">
-              <p class="text-xl text-gray-500">Seller:</p>
-              <p id="seller-name" class="text-2xl"></p></div>
-            <img src="" alt="" id="seller-img">
+        <div class="font-heading mt-8 mr-4 flex h-20 flex-row justify-end">
+          <div class="flex flex-col items-end justify-end">
+            <p class="text-xl text-gray-500">Seller:</p>
+            <p id="seller-name" class="text-2xl"></p>
+          </div>
+          <img src="" alt="" id="seller-img" />
         </div>
-        <div id="tag-container" class="px-4 w-full bg-brand-200 py-5 mt-4 flex flex-wrap justify-center gap-4 text-xl [&>a:nth-child(3n+1)]:border-2 [&>a:nth-child(3n+1)]:border-dashed"></div>
-        </div>
-        <div class="md:col-span-2 md:col-start-3 lg:col-span-1 lg:col-start-auto">
-        <div class="flex flex-col items-left gap-3 w-full mt-4">
-            <div class="font-heading text-2xl text-error self-center lg:self-start lg:ml-4">Deadline: 8/13/2026</div>
-            <label for="bid" class="hidden"></label>
-            <div class="flex flex-row gap-2 items-center mx-4 md:mx-0">
-            <input type="number" id="bid" name="bid" placeholder="200" class="text-2xl focus:border-brand-500 font-heading border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none w-full">
+        <div
+          id="tag-container"
+          class="bg-brand-200 mt-4 flex w-full flex-wrap justify-center gap-4 px-4 py-5 text-xl [&>a:nth-child(3n+1)]:border-2 [&>a:nth-child(3n+1)]:border-dashed"
+        ></div>
+      </div>
+      <div class="md:col-span-2 md:col-start-3 lg:col-span-1 lg:col-start-auto">
+        <div class="items-left mt-4 flex w-full flex-col gap-3">
+          <div
+            class="font-heading text-error self-center text-2xl lg:ml-4 lg:self-start"
+          >
+            Deadline: 8/13/2026
+          </div>
+          <label for="bid" class="hidden"></label>
+          <div class="mx-4 flex flex-row items-center gap-2 md:mx-0">
+            <input
+              type="number"
+              id="bid"
+              name="bid"
+              placeholder="200"
+              class="focus:border-brand-500 font-heading w-full border border-gray-400 bg-white p-3 text-2xl focus:border-2 focus:ring-0 focus:outline-none"
+            />
             <i class="fa-solid fa-euro-sign text-4xl"></i>
-            </div>
-            <button id="bid-btn" class="btn-primary !py-5">Place your bid</button>
+          </div>
+          <button id="bid-btn" class="btn-primary !py-5">Place your bid</button>
         </div>
-        <div class="mx-4 md:mx-0 mt-4">
-            <h2 class="font-heading text-2xl">Bid history</h2>
-            <div id="bid-list" class="flex flex-col gap-3">
-            </div>
+        <div class="mx-4 mt-4 md:mx-0">
+          <h2 class="font-heading text-2xl">Bid history</h2>
+          <div id="bid-list" class="flex flex-col gap-3"></div>
         </div>
-        </div>
+      </div>
     </main>
     <div
       class="text-brand-500 mt-8 mb-4 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)]"
     ></div>
-    <footer class="bg-white p-3"></footer></footer>
+    <footer class="bg-white p-3"></footer>
     <div
       id="popup-backdrop"
       class="fixed inset-0 z-40 hidden bg-white/70"
@@ -78,6 +101,6 @@
         <div id="popup-actions" class="popup-actions"></div>
       </div>
     </section>
+    <script type="module" src="js/pages/auction.js"></script>
   </body>
-  <script type="module" src="js/pages/auction.js"></script>
 </html>
