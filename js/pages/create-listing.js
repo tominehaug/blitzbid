@@ -90,4 +90,10 @@ createForm.addEventListener("submit", async (event) => {
   await uploadListing(createForm);
 });
 
-renderHeader();
+function init() {
+  if (!localStorage.getItem("accessToken")) {
+    window.location.href = `${basePath}/login.html`;
+    return;
+  }
+  renderHeader();
+}

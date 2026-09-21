@@ -15,10 +15,10 @@ const username = profile.name;
 // GET REQUEST AND DISPLAY
 
 async function fetchProfile() {
+  let profile;
   try {
     const data = await get(`/auction/profiles/${username}`);
-    const profile = data.data;
-    renderEditForm(profile);
+    profile = data.data;
   } catch (error) {
     console.log(error);
     showPopup(
@@ -41,9 +41,11 @@ async function fetchProfile() {
       ],
     );
   }
+  renderEditForm(profile);
 }
 
 function renderEditForm(profile) {
+  document.getElementById("name").value = profile.name ?? "";
   document.getElementById("banner").value = profile.banner?.url ?? "";
   document.getElementById("banner-alt").value = profile.banner?.alt ?? "";
   document.getElementById("avatar").value = profile.avatar?.url ?? "";
@@ -119,6 +121,10 @@ editForm.addEventListener("submit", async (event) => {
 });
 
 async function init() {
+  if (!localStorage.getItem("accessToken")) {
+    window.location.href = `${basePath}/login.html`;
+    return;
+  }
   renderHeader();
   await fetchProfile();
 }

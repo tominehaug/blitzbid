@@ -24,10 +24,10 @@ function toDateTimeLocal(date) {
 // DISPLAY CONTENTS
 
 async function fetchListing() {
+  let listing;
   try {
     const data = await get(`/auction/listings/${postId}`);
-    const listing = data.data;
-    renderEditForm(listing);
+    listing = data.data;
   } catch (error) {
     console.log(error);
     showPopup(
@@ -50,6 +50,7 @@ async function fetchListing() {
       ],
     );
   }
+  renderEditForm(listing);
 }
 
 function renderEditForm(listing) {
@@ -196,6 +197,10 @@ editForm.addEventListener("submit", async (event) => {
 });
 
 async function init() {
+  if (!localStorage.getItem("accessToken")) {
+    window.location.href = `${basePath}/login.html`;
+    return;
+  }
   renderHeader();
   await fetchListing();
 }
