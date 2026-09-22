@@ -251,6 +251,9 @@
   .z-0 {
     z-index: 0;
   }
+  .z-5 {
+    z-index: 5;
+  }
   .z-10 {
     z-index: 10;
   }
@@ -343,6 +346,9 @@
   }
   .hidden {
     display: none;
+  }
+  .inline {
+    display: inline;
   }
   .inline-block {
     display: inline-block;
@@ -486,11 +492,29 @@
     --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .-rotate-10 {
+    rotate: calc(10deg * -1);
+  }
+  .-rotate-12 {
+    rotate: calc(12deg * -1);
+  }
   .-rotate-15 {
     rotate: calc(15deg * -1);
   }
+  .-rotate-20 {
+    rotate: calc(20deg * -1);
+  }
+  .rotate-20 {
+    rotate: 20deg;
+  }
   .rotate-90 {
     rotate: 90deg;
+  }
+  .rotate-\[-20\] {
+    rotate: -20;
+  }
+  .rotate-\[-50\] {
+    rotate: -50;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -687,6 +711,9 @@
   }
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
+  }
+  .pt-30 {
+    padding-top: calc(var(--spacing) * 30);
   }
   .pb-1 {
     padding-bottom: var(--spacing);
@@ -1055,8 +1082,23 @@
     }
   }
   @media (width >= 64rem) {
+    .lg\:absolute {
+      position: absolute;
+    }
+    .lg\:relative {
+      position: relative;
+    }
+    .lg\:top-0 {
+      top: 0px;
+    }
+    .lg\:right-0 {
+      right: 0px;
+    }
     .lg\:left-0 {
       left: 0px;
+    }
+    .lg\:z-5 {
+      z-index: 5;
     }
     .lg\:col-span-1 {
       grid-column: span 1 / span 1;
@@ -1100,8 +1142,14 @@
     .lg\:mx-0 {
       margin-inline: 0px;
     }
+    .lg\:mx-4 {
+      margin-inline: calc(var(--spacing) * 4);
+    }
     .lg\:mx-10 {
       margin-inline: calc(var(--spacing) * 10);
+    }
+    .lg\:my-0 {
+      margin-block: 0px;
     }
     .lg\:mt-8 {
       margin-top: calc(var(--spacing) * 8);
@@ -1111,6 +1159,9 @@
     }
     .lg\:mt-20 {
       margin-top: calc(var(--spacing) * 20);
+    }
+    .lg\:mt-40 {
+      margin-top: calc(var(--spacing) * 40);
     }
     .lg\:ml-0 {
       margin-left: 0px;
@@ -1228,6 +1279,24 @@
     }
     .lg\:pt-20 {
       padding-top: calc(var(--spacing) * 20);
+    }
+    .lg\:pt-30 {
+      padding-top: calc(var(--spacing) * 30);
+    }
+    .lg\:pt-40 {
+      padding-top: calc(var(--spacing) * 40);
+    }
+    .lg\:pt-50 {
+      padding-top: calc(var(--spacing) * 50);
+    }
+    .lg\:pt-55 {
+      padding-top: calc(var(--spacing) * 55);
+    }
+    .lg\:pt-60 {
+      padding-top: calc(var(--spacing) * 60);
+    }
+    .lg\:pt-70 {
+      padding-top: calc(var(--spacing) * 70);
     }
     .lg\:pb-5 {
       padding-bottom: calc(var(--spacing) * 5);
