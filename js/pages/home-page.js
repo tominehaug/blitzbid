@@ -72,7 +72,7 @@ function createCarousel(highlights, container) {
   highlights.forEach((highlight) => {
     const link = document.createElement("a");
     link.href = `${basePath}/auction.html?id=${highlight.id}`;
-    link.classList.add("js-link-wrap");
+    link.classList.add("js-link-wrap", "md:w-[20vw]");
 
     const figure = document.createElement("figure");
 
