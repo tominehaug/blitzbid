@@ -22,7 +22,7 @@
     <header
       class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-8"
     ></header>
-    <main class="min-h-[calc(100vh-25)] md:mx-auto md:max-w-200">
+    <main class="mb-8 min-h-[calc(100vh-25)] md:mx-auto md:max-w-200">
       <form
         id="search-form"
         class="mx-4 mt-4 flex flex-row justify-between bg-white p-2 md:w-80"
@@ -40,6 +40,11 @@
       </form>
       <h1 class="font-heading mt-4 ml-4 text-2xl">Results</h1>
       <div id="results" class="md:flex md:flex-row md:flex-wrap"></div>
+      <div id="pagination" class="mx-4 flex flex-row justify-between">
+        <i class="fa-solid fa-backward cursor-pointer" id="prev-btn"></i>
+        <span id="page-info font-"></span>
+        <i class="fa-solid fa-forward cursor-pointer" id="next-btn"></i>
+      </div>
     </main>
     <footer class="bg-white p-3"></footer>
     <div
