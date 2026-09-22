@@ -93,7 +93,7 @@
     </section>
     <main id="browse" class="mb-5 scroll-mt-27">
       <div
-        class="lg:flex lg:w-full lg:flex-row-reverse lg:justify-end lg:gap-20"
+        class="lg:z-5 lg:flex lg:w-full lg:flex-row-reverse lg:justify-end lg:gap-20"
       >
         <section
           id="popular-carousel"
@@ -112,7 +112,7 @@
             />
           </button>
           <div
-            class="js-slides-container md:flex md:flex-row md:flex-wrap md:gap-4 lg:max-w-200 md:[&>.js-link-wrap]:!block"
+            class="js-slides-container md:flex md:flex-row md:flex-wrap md:gap-4 lg:z-5 lg:max-w-200 md:[&>.js-link-wrap]:!block"
           ></div>
           <button
             type="button"
@@ -167,31 +167,43 @@
       <div
         class="text-brand-500 mt-8 mb-8 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)] lg:hidden"
       ></div>
-      <section id="recent-carousel" class="relative m-3 mb-10 lg:pt-20">
-        <div class="sm:hidden lg:block">
+      <section
+        id="recent-carousel"
+        class="relative z-0 m-3 mb-10 lg:mx-4 lg:my-0"
+      >
+        <div
+          class="-rotate-15 sm:hidden lg:absolute lg:top-0 lg:right-0 lg:block"
+        >
           <img src="assets/turnarm.png" alt="" />
         </div>
-        <h2 class="font-heading mb-2 text-2xl">Recently added</h2>
-        <button
-          type="button"
-          class="js-prev bg-brand-200 absolute top-1/2 left-0 -translate-y-1/2 p-2 md:hidden"
-        >
-          <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
-        </button>
-        <div
-          class="js-slides-container md:flex md:flex-row md:flex-wrap md:gap-4 md:[&>.js-link-wrap]:!block"
-        ></div>
-        <button
-          type="button"
-          class="js-next bg-brand-200 absolute top-1/2 right-0 -translate-y-1/2 p-2 md:hidden"
-        >
-          <img
-            src="assets/next.svg"
-            alt="forward-arrow"
-            width="20"
-            height="40"
-          />
-        </button>
+        <div class="lg:relative lg:z-5 lg:pt-70">
+          <h2 class="font-heading mb-2 text-2xl">Recently added</h2>
+          <button
+            type="button"
+            class="js-prev bg-brand-200 absolute top-1/2 left-0 -translate-y-1/2 p-2 md:hidden"
+          >
+            <img
+              src="assets/prev.svg"
+              alt="back-arrow"
+              width="20"
+              height="40"
+            />
+          </button>
+          <div
+            class="js-slides-container md:flex md:flex-row md:flex-wrap md:gap-4 md:[&>.js-link-wrap]:!block"
+          ></div>
+          <button
+            type="button"
+            class="js-next bg-brand-200 absolute top-1/2 right-0 -translate-y-1/2 p-2 md:hidden"
+          >
+            <img
+              src="assets/next.svg"
+              alt="forward-arrow"
+              width="20"
+              height="40"
+            />
+          </button>
+        </div>
         <div class="mt-5 flex justify-center gap-2 md:hidden">
           <span
             class="js-dot inline-block h-3 w-3 cursor-pointer bg-gray-700"
