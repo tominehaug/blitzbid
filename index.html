@@ -23,49 +23,49 @@
       class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-8"
     ></header>
     <section class="flex min-h-[calc(100dvh-6.25rem)] flex-col">
-      <form
-        id="search-form"
-        class="mx-4 mt-4 flex flex-row justify-between bg-white p-2 md:w-80"
-      >
-        <label for="search-input" class="hidden">Search for auctions</label>
-        <input
-          id="search-input"
-          type="search"
-          placeholder="eg. Vinyl, Rock..."
-          class="mr-2 flex-1"
-        />
-        <button type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </form>
-      <div class="relative mt-8 mb-8">
-        <img
-          src="assets/cd.png"
-          alt="Shiny compact disc"
-          class="mx-auto block h-auto w-50 md:w-77.5"
-        />
-        <p
-          class="font-styled absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-15 text-lg whitespace-nowrap md:text-3xl"
+      <div>
+        <form
+          id="search-form"
+          class="mx-4 mt-4 flex flex-row justify-between bg-white p-2 md:w-80"
         >
-          Music doesn't
-          <span class="font-styled-special bg-white text-[22px] md:text-4xl"
-            >just belong</span
+          <label for="search-input" class="hidden">Search for auctions</label>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="eg. Vinyl, Rock..."
+            class="mr-2 flex-1"
+          />
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <div class="relative mt-8 mb-8">
+          <img
+            src="assets/cd.png"
+            alt="Shiny compact disc"
+            class="mx-auto block h-auto w-50 md:w-77.5"
+          />
+          <p
+            class="font-styled absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-15 text-lg whitespace-nowrap md:text-3xl"
           >
-          in your playlist
-        </p>
-      </div>
-      <div class="mx-auto max-w-xs text-center">
-        <h2 class="font-heading text-2xl">Browse categories</h2>
-        <div
-          class="mt-1 flex flex-wrap justify-center gap-4 text-xl [&>a:nth-child(3n+1)]:border-2 [&>a:nth-child(3n+1)]:border-dashed"
-        >
-          <a href="" class="border-2 p-1">Picture discs</a>
-          <a href="" class="border-2 p-1">Casette tapes</a>
-          <a href="" class="border-2 p-1">Posters</a>
-          <a href="" class="border-2 p-1">Vinyl records</a>
-          <a href="" class="border-2 p-1">CDs</a>
-          <button id="load-categories" class="text-lg underline">
-            load more
+            Music doesn't
+            <span class="font-styled-special bg-white text-[22px] md:text-4xl"
+              >just belong</span
+            >
+            in your playlist
+          </p>
+        </div>
+        <div class="mx-auto max-w-xs text-center">
+          <h2 class="font-heading text-2xl">Browse categories</h2>
+          <div
+            id="tag-container"
+            class="mt-1 flex flex-wrap justify-center gap-4 text-xl [&>a:nth-child(3n+1)]:border-2 [&>a:nth-child(3n+1)]:border-dashed"
+          ></div>
+          <button
+            id="shuffle-categories"
+            class="mt-4 text-lg uppercase underline"
+          >
+            Shuffle
           </button>
         </div>
       </div>
