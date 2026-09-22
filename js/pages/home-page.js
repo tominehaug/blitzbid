@@ -6,10 +6,62 @@ const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
   : "";
 
+let allAuctions = [];
+const tagContainer = document.getElementById("tag-container");
+
+// Fetching and displaying random categories
+
+function getRandomTags(auctions) {
+  const allTags = auctions.flatMap((auction) => auction.tags ?? []);
+  const uniqueTags = [
+    ...new Set(allTags.map((tag) => tag.toLowerCase().trim())),
+  ];
+
+  const shuffled = [...uniqueTags];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled.slice(0, 5);
+}
+
+function displayCategories(auctions) {
+  tagContainer.innerHTML = "";
+
+  const tags = getRandomTags(auctions);
+
+  tags.forEach((tag) => {
+    const searchTerm = tag.toLowerCase().trim();
+    if (!searchTerm) return;
+
+    const params = new URLSearchParams({ q: searchTerm });
+
+    const tagLink = document.createElement("a");
+    tagLink.textContent = tag;
+    tagLink.href = `results.html?${params.toString()}`;
+    tagLink.className = "border-2 p-1";
+    tagContainer.appendChild(tagLink);
+  });
+}
+
+const shuffleBtn = document.getElementById("shuffle-categories");
+shuffleBtn.addEventListener("click", () => {
+  tagContainer.innerHTML = "";
+  displayCategories(allAuctions);
+});
+
 // Fetching and displaying highlights in thumbnail carousels
 
-const mockResponse = await getMock("../../mock_endpoint/data.json");
-const mockAuctions = mockResponse.data;
+async function fetchMock() {
+  try {
+    const mockResponse = await getMock("../../mock_endpoint/data.json");
+    allAuctions = mockResponse.data;
+  } catch (error) {
+    console.log(error);
+  }
+  return allAuctions;
+}
 
 // MUCH OF THE FOLLOWING CODE IS BORROWED FROM w3schools.com !
 
@@ -135,8 +187,15 @@ searchForm.addEventListener("submit", (event) => {
 
 // init
 
-renderHeader();
-renderFooter();
-displayPopular(mockAuctions);
-displayRecent(mockAuctions);
-displayEnding(mockAuctions);
+async function init() {
+  allAuctions = await fetchMock();
+
+  renderHeader();
+  renderFooter();
+  displayCategories(allAuctions);
+  displayPopular(allAuctions);
+  displayRecent(allAuctions);
+  displayEnding(allAuctions);
+}
+
+init();
