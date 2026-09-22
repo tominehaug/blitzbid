@@ -23,10 +23,12 @@
       class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-8"
     ></header>
     <section class="flex min-h-[calc(100dvh-6.25rem)] flex-col">
-      <div>
+      <div
+        class="md:grid md:grid-cols-2 md:grid-rows-2 md:justify-items-center md:gap-8 lg:mt-8 lg:grid-cols-7 lg:grid-rows-3"
+      >
         <form
           id="search-form"
-          class="mx-4 mt-4 flex flex-row justify-between bg-white p-2 md:w-80"
+          class="mx-4 mt-4 flex h-10 flex-row justify-between bg-white p-2 md:col-start-2 md:row-start-1 md:mx-0 md:mt-0 md:w-80 md:self-end lg:col-span-2 lg:col-start-5 lg:row-span-1"
         >
           <label for="search-input" class="hidden">Search for auctions</label>
           <input
@@ -39,23 +41,27 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
-        <div class="relative mt-8 mb-8">
+        <div
+          class="relative mt-8 mb-8 self-center md:col-start-1 md:row-span-2 md:mt-0 md:mb-0 lg:col-span-2 lg:col-start-2 lg:row-span-3 lg:row-start-1"
+        >
           <img
             src="assets/cd.png"
             alt="Shiny compact disc"
-            class="mx-auto block h-auto w-50 md:w-77.5"
+            class="mx-auto block h-auto w-50 lg:w-77.5"
           />
           <p
-            class="font-styled absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-15 text-lg whitespace-nowrap md:text-3xl"
+            class="font-styled absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-15 text-lg whitespace-nowrap lg:text-3xl"
           >
             Music doesn't
-            <span class="font-styled-special bg-white text-[22px] md:text-4xl"
+            <span class="font-styled-special bg-white text-[22px] lg:text-4xl"
               >just belong</span
             >
             in your playlist
           </p>
         </div>
-        <div class="mx-auto max-w-xs text-center">
+        <div
+          class="mx-auto max-w-xs text-center md:col-start-2 md:row-start-2 md:mx-0 md:w-full md:self-start lg:col-span-2 lg:col-start-5 lg:row-span-2"
+        >
           <h2 class="font-heading text-2xl">Browse categories</h2>
           <div
             id="tag-container"
@@ -86,77 +92,98 @@
       /></a>
     </section>
     <main id="browse" class="mb-5 scroll-mt-27">
-      <section id="popular-carousel" class="relative m-3 pt-5">
-        <h2 class="font-heading mb-2 text-2xl">Popular listings</h2>
-        <button
-          type="button"
-          class="js-prev bg-brand-200 absolute top-1/2 left-0 -translate-y-1/2 p-2"
-        >
-          <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
-        </button>
-        <div class="js-slides-container"></div>
-        <button
-          type="button"
-          class="js-next bg-brand-200 absolute top-1/2 right-0 -translate-y-1/2 p-2"
-        >
-          <img
-            src="assets/next.svg"
-            alt="forward-arrow"
-            width="20"
-            height="40"
-          />
-        </button>
-        <div class="mt-5 flex justify-center gap-2 md:hidden">
-          <span
-            class="js-dot inline-block h-3 w-3 cursor-pointer bg-gray-700"
-          ></span>
-          <span
-            class="js-dot inline-block h-3 w-3 cursor-pointer bg-gray-400"
-          ></span>
-          <span
-            class="js-dot inline-block h-3 w-3 cursor-pointer bg-gray-400"
-          ></span>
-          <span
-            class="js-dot inline-block h-3 w-3 cursor-pointer bg-gray-400"
-          ></span>
-        </div>
-      </section>
-      <section>
-        <div
-          class="text-brand-500 mt-8 mb-8 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)] md:w-[450px] md:rotate-90"
-        ></div>
-        <h2 class="font-styled mx-auto max-w-3xs text-center text-3xl">
-          <span class="font-styled-special text-6xl">What</span> makes us worth
-          the bid <span class="font-styled-special text-6xl">?</span>
-        </h2>
-        <ul class="font-heading mt-5 flex flex-col gap-4 text-2xl">
-          <li class="w-2xs self-end bg-white p-3 text-left">
-            Curated selection
-          </li>
-          <li class="w-2xs self-start bg-white p-3 text-right">
-            Transparency and trust
-          </li>
-          <li class="w-2xs self-end bg-white p-3 text-left">
-            Unique and rare items
-          </li>
-        </ul>
-      </section>
       <div
-        class="text-brand-500 mt-8 mb-4 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)]"
+        class="lg:flex lg:w-full lg:flex-row-reverse lg:justify-end lg:gap-20"
+      >
+        <section
+          id="popular-carousel"
+          class="relative m-3 pt-5 md:flex md:flex-col md:items-center lg:items-start"
+        >
+          <h2 class="font-heading mb-2 text-2xl">Popular listings</h2>
+          <button
+            type="button"
+            class="js-prev bg-brand-200 absolute top-1/2 left-0 -translate-y-1/2 p-2 md:hidden"
+          >
+            <img
+              src="assets/prev.svg"
+              alt="back-arrow"
+              width="20"
+              height="40"
+            />
+          </button>
+          <div
+            class="js-slides-container md:flex md:flex-row md:flex-wrap md:gap-4 lg:max-w-200 md:[&>.js-link-wrap]:!block"
+          ></div>
+          <button
+            type="button"
+            class="js-next bg-brand-200 absolute top-1/2 right-0 -translate-y-1/2 p-2 md:hidden"
+          >
+            <img
+              src="assets/next.svg"
+              alt="forward-arrow"
+              width="20"
+              height="40"
+            />
+          </button>
+          <div class="mt-5 flex justify-center gap-2 md:hidden">
+            <span
+              class="js-dot inline-block h-3 w-3 cursor-pointer bg-gray-700"
+            ></span>
+            <span
+              class="js-dot inline-block h-3 w-3 cursor-pointer bg-gray-400"
+            ></span>
+            <span
+              class="js-dot inline-block h-3 w-3 cursor-pointer bg-gray-400"
+            ></span>
+            <span
+              class="js-dot inline-block h-3 w-3 cursor-pointer bg-gray-400"
+            ></span>
+          </div>
+        </section>
+        <div
+          class="text-brand-500 mt-8 mb-4 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)] lg:hidden"
+        ></div>
+        <section
+          id="salespoints"
+          class="border-r-brand-500 border-r-2 border-dashed lg:mt-10 lg:self-start"
+        >
+          <h2 class="font-styled mx-auto max-w-3xs text-center text-3xl">
+            <span class="font-styled-special text-6xl">What</span> makes us
+            worth the bid <span class="font-styled-special text-6xl">?</span>
+          </h2>
+          <ul class="font-heading mt-5 flex flex-col gap-4 text-2xl lg:pb-5">
+            <li class="w-[70vw] self-end bg-white p-3 text-left lg:w-100">
+              Curated selection
+            </li>
+            <li class="w-[70vw] self-start bg-white p-3 text-right lg:w-100">
+              Transparency and trust
+            </li>
+            <li class="w-[70vw] self-end bg-white p-3 text-left lg:w-100">
+              Unique and rare items
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div
+        class="text-brand-500 mt-8 mb-8 h-0.5 w-full bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)] lg:hidden"
       ></div>
-      <section id="recent-carousel" class="relative m-3 mb-10">
-        <div class="sm-hidden bg-[url(assets/turnarm.png)]"></div>
+      <section id="recent-carousel" class="relative m-3 mb-10 lg:pt-20">
+        <div class="sm:hidden lg:block">
+          <img src="assets/turnarm.png" alt="" />
+        </div>
         <h2 class="font-heading mb-2 text-2xl">Recently added</h2>
         <button
           type="button"
-          class="js-prev bg-brand-200 absolute top-1/2 left-0 -translate-y-1/2 p-2"
+          class="js-prev bg-brand-200 absolute top-1/2 left-0 -translate-y-1/2 p-2 md:hidden"
         >
           <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
         </button>
-        <div class="js-slides-container"></div>
+        <div
+          class="js-slides-container md:flex md:flex-row md:flex-wrap md:gap-4 md:[&>.js-link-wrap]:!block"
+        ></div>
         <button
           type="button"
-          class="js-next bg-brand-200 absolute top-1/2 right-0 -translate-y-1/2 p-2"
+          class="js-next bg-brand-200 absolute top-1/2 right-0 -translate-y-1/2 p-2 md:hidden"
         >
           <img
             src="assets/next.svg"
@@ -177,18 +204,23 @@
           ></span>
         </div>
       </section>
-      <section id="ending-carousel" class="relative m-3">
+      <section
+        id="ending-carousel"
+        class="relative m-3 md:flex md:flex-col md:items-end"
+      >
         <h2 class="font-heading mb-2 text-right text-2xl">Ending soon</h2>
         <button
           type="button"
-          class="js-prev bg-brand-200 absolute top-1/2 left-0 -translate-y-1/2 p-2"
+          class="js-prev bg-brand-200 absolute top-1/2 left-0 -translate-y-1/2 p-2 md:hidden"
         >
           <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
         </button>
-        <div class="js-slides-container"></div>
+        <div
+          class="js-slides-container md:flex md:flex-row md:flex-wrap md:gap-4 md:[&>.js-link-wrap]:!block"
+        ></div>
         <button
           type="button"
-          class="js-next bg-brand-200 absolute top-1/2 right-0 -translate-y-1/2 p-2"
+          class="js-next bg-brand-200 absolute top-1/2 right-0 -translate-y-1/2 p-2 md:hidden"
         >
           <img
             src="assets/next.svg"
