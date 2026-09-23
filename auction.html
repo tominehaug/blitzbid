@@ -30,7 +30,7 @@
             src=""
             alt=""
             id="auction-media"
-            class="max-h-100 w-full object-cover md:max-h-full"
+            class="aspect-square w-full object-cover"
           />
           <div
             id="media-thumbnails"
@@ -46,9 +46,9 @@
         </div>
         <a
           id="seller-link"
-          class="font-heading mt-8 mr-4 flex h-20 flex-row justify-end gap-2"
+          class="font-heading mt-8 mr-4 flex h-20 flex-row justify-end gap-3"
         >
-          <div class="flex flex-col items-end justify-end">
+          <div class="flex flex-col items-end justify-center leading-0">
             <p class="text-xl text-gray-500">Seller:</p>
             <p id="seller-name" class="text-2xl"></p>
           </div>
@@ -63,7 +63,7 @@
         <div class="items-left mt-4 flex w-full flex-col gap-3">
           <div
             id="deadline"
-            class="font-heading text-error self-center text-2xl lg:ml-4 lg:self-start"
+            class="font-heading text-error self-center text-2xl lg:self-start"
           ></div>
           <form id="bid-form" class="w-full">
             <label
