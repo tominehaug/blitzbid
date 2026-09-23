@@ -20,7 +20,7 @@
   </head>
   <body class="bg-brand-200 font-default">
     <header
-      class="sticky top-0 z-10 flex h-25 items-center justify-between bg-white px-8"
+      class="sticky top-0 z-10 flex h-24 items-center justify-between bg-white px-8"
     ></header>
     <main class="mb-8 min-h-[calc(100vh-25)] md:mx-auto md:max-w-200">
       <form
@@ -40,10 +40,16 @@
       </form>
       <h1 class="font-heading mt-4 ml-4 text-2xl">Results</h1>
       <div id="results" class="md:flex md:flex-row md:flex-wrap"></div>
-      <div id="pagination" class="mx-4 flex flex-row justify-between">
-        <i class="fa-solid fa-backward cursor-pointer" id="prev-btn"></i>
-        <span id="page-info font-"></span>
-        <i class="fa-solid fa-forward cursor-pointer" id="next-btn"></i>
+      <div id="pagination" class="mx-4 flex hidden flex-row justify-between">
+        <i
+          class="fa-solid fa-backward hidden cursor-pointer text-3xl"
+          id="prev-btn"
+        ></i>
+        <span id="page-info" class="font-heading text-3xl"></span>
+        <i
+          class="fa-solid fa-forward hidden cursor-pointer text-3xl"
+          id="next-btn"
+        ></i>
       </div>
     </main>
     <footer class="bg-white p-3"></footer>
