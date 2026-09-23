@@ -12,6 +12,8 @@ const loggedInProfile = JSON.parse(localStorage.getItem("profile"));
 const username = loggedInProfile?.name;
 
 const createForm = document.getElementById("create-form");
+const mediaContainer = document.getElementById("media-container");
+const addMediaBtn = document.getElementById("add-media-row");
 
 async function uploadListing(form) {
   const formData = new FormData(form);
@@ -80,6 +82,45 @@ async function uploadListing(form) {
     submitBtn.disabled = false;
   }
 }
+
+function createMediaRow() {
+  const row = document.createElement("div");
+  row.classList.add("media-row");
+
+  row.innerHTML = `
+    <input
+      type="url"
+      name="media-url"
+      class="media-url-input focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+      placeholder="URL"
+    />
+    <input
+      type="text"
+      name="media-alt"
+      class="media-alt-input focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 mt-4 focus:border-2 focus:ring-0 focus:outline-none"
+      placeholder="ALT"
+    />
+    <button
+      type="button"
+      class="remove-media-row text-error font-default underline my-2"
+    >
+      -Remove image
+    </button>
+  `;
+
+  return row;
+}
+
+addMediaBtn.addEventListener("click", () => {
+  const newRow = createMediaRow();
+  mediaContainer.appendChild(newRow);
+});
+
+mediaContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-media-row")) {
+    event.target.closest(".media-row").remove();
+  }
+});
 
 createForm.addEventListener("submit", async (event) => {
   event.preventDefault();
