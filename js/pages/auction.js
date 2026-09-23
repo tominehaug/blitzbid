@@ -3,6 +3,7 @@ import { showPopup, hidePopup, showSuccess } from "../services/ui-messages.js";
 import { renderBidCard, renderWinningCard } from "../components/bidCard.js";
 import { renderHeader } from "../components/header.js";
 import { renderFooter } from "../components/footer.js";
+import { formatDate } from "../utils/formatDate.js";
 
 const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
@@ -128,6 +129,9 @@ function renderAuction(listing) {
     tagLink.className = "border-2 p-1";
     tagContainer.appendChild(tagLink);
   });
+
+  const deadline = document.getElementById("deadline");
+  deadline.textContent = "Ends: " + formatDate(listing.endsAt);
 
   const bids = listing.bids ?? [];
   const bidList = document.getElementById("bid-list");
