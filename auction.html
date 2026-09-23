@@ -19,18 +19,24 @@
   </head>
   <body>
     <header
-      class="flex h-25 items-center justify-between bg-white px-8"
+      class="flex h-24 items-center justify-between bg-white px-8"
     ></header>
     <main
       class="md:mx-10 md:grid md:grid-cols-4 md:gap-6 lg:mx-10 lg:grid-cols-3 lg:gap-[4vw]"
     >
       <div class="md:col-span-2 lg:col-span-1">
-        <img
-          src=""
-          alt=""
-          id="auction-media"
-          class="max-h-100 w-full object-cover md:max-h-full"
-        />
+        <div id="auction-gallery" class="flex flex-col gap-2">
+          <img
+            src=""
+            alt=""
+            id="auction-media"
+            class="max-h-100 w-full object-cover md:max-h-full"
+          />
+          <div
+            id="media-thumbnails"
+            class="flex flex-row gap-2 overflow-x-auto"
+          ></div>
+        </div>
       </div>
       <div class="md:col-span-2 lg:col-span-1">
         <div class="mx-4 mt-4">
@@ -38,13 +44,16 @@
           <h2 class="italic">Description</h2>
           <div id="description"></div>
         </div>
-        <div class="font-heading mt-8 mr-4 flex h-20 flex-row justify-end">
+        <a
+          id="seller-link"
+          class="font-heading mt-8 mr-4 flex h-20 flex-row justify-end gap-2"
+        >
           <div class="flex flex-col items-end justify-end">
             <p class="text-xl text-gray-500">Seller:</p>
             <p id="seller-name" class="text-2xl"></p>
           </div>
           <img src="" alt="" id="seller-img" />
-        </div>
+        </a>
         <div
           id="tag-container"
           class="bg-brand-200 mt-4 flex w-full flex-wrap justify-center gap-4 px-4 py-5 text-xl [&>a:nth-child(3n+1)]:border-2 [&>a:nth-child(3n+1)]:border-dashed"
@@ -57,18 +66,29 @@
           >
             Deadline: 8/13/2026
           </div>
-          <label for="bid" class="hidden"></label>
-          <div class="mx-4 flex flex-row items-center gap-2 md:mx-0">
-            <input
-              type="number"
-              id="bid"
-              name="bid"
-              placeholder="200"
-              class="focus:border-brand-500 font-heading w-full border border-gray-400 bg-white p-3 text-2xl focus:border-2 focus:ring-0 focus:outline-none"
-            />
-            <i class="fa-solid fa-euro-sign text-4xl"></i>
-          </div>
-          <button id="bid-btn" class="btn-primary !py-5">Place your bid</button>
+          <form id="bid-form" class="w-full">
+            <label
+              for="bid"
+              class="mx-4 mb-4 flex flex-row items-center gap-2 md:mx-0"
+            >
+              <input
+                type="number"
+                id="bid"
+                name="bid"
+                placeholder="200"
+                required
+                max="9999"
+                class="focus:border-brand-500 font-heading w-full border border-gray-400 bg-white p-3 text-2xl focus:border-2 focus:ring-0 focus:outline-none"
+              />
+              <i class="fa-solid fa-euro-sign text-4xl"></i>
+              <error
+                class="text-error font-default mx-2 mt-1 text-base"
+              ></error>
+            </label>
+            <button id="bid-btn" type="submit" class="btn-primary w-full !py-5">
+              Place your bid
+            </button>
+          </form>
         </div>
         <div class="mx-4 mt-4 md:mx-0">
           <h2 class="font-heading text-2xl">Bid history</h2>
