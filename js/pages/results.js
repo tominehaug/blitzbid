@@ -3,7 +3,7 @@ import { renderHeader } from "../components/header.js";
 import { getMock, get } from "../services/apiClient.js";
 import { renderCard } from "../components/card.js";
 
-const PAGE_LIMIT = 5;
+const PAGE_LIMIT = 4;
 let currentPage = 1;
 let pageCount = 1;
 let isLastPage = false;
@@ -36,7 +36,7 @@ async function searchMockListings(term) {
 
 async function searchApiListings(term, page = 1) {
   const apiResponse = await get(
-    `/auction/listings/search?q=${term}&page=${page}&limit=${PAGE_LIMIT}`,
+    `/auction/listings/search?q=${term}&_bids=true&_seller=true&page=${page}&limit=${PAGE_LIMIT}`,
   );
 
   return {
@@ -96,7 +96,7 @@ function renderPagination() {
     nextBtn.classList.remove("hidden");
   }
 
-  pageInfo.textContent = `${currentPage}/${pageCount}`;
+  pageInfo.textContent = `0${currentPage}/0${pageCount}`;
 }
 
 async function goToPage(page) {
@@ -106,6 +106,7 @@ async function goToPage(page) {
   pageCount = apiSearch.meta.pageCount;
   isFirstPage = apiSearch.meta.isFirstPage;
   isLastPage = apiSearch.meta.isLastPage;
+  console.log({ currentPage, pageCount, isFirstPage, isLastPage });
 
   renderResults([], apiSearch.filteredListings);
   renderPagination();
@@ -136,8 +137,10 @@ async function init() {
   pageCount = apiSearch.meta.pageCount;
   isFirstPage = apiSearch.meta.isFirstPage;
   isLastPage = apiSearch.meta.isLastPage;
+  console.log({ currentPage, pageCount, isFirstPage, isLastPage });
 
   renderResults(mockResults, apiResults);
+  renderPagination();
 }
 
 searchForm.addEventListener("submit", (event) => {
