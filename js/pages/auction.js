@@ -60,7 +60,7 @@ async function fetchListing() {
 
 function renderAuction(listing) {
   const placeholderImage = {
-    url: `${basePath}/assets/placeholder.png`,
+    url: `${basePath}/assets/placeholder-img.png`,
     alt: "No image available",
   };
   const media = listing.media?.length ? listing.media : [placeholderImage];
