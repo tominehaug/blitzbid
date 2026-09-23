@@ -48,7 +48,7 @@ export function renderWinningCard(bid, container) {
     avatar.src = bid.bidder.avatar.url;
   }
   avatar.alt = bid.bidder?.avatar?.alt;
-  avatar.className = "h-full aspect-square object-cover";
+  avatar.className = "h-full aspect-square object-cover rounded-full";
 
   const details = document.createElement("div");
   details.className = "flex flex-col items-end justify-end p-1";
