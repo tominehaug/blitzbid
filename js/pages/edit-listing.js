@@ -11,9 +11,12 @@ const basePath = window.location.hostname.includes("github.io")
 const loggedInProfile = JSON.parse(localStorage.getItem("profile"));
 const username = loggedInProfile?.name;
 
-const editForm = document.getElementById("edit-listing-form");
 const params = new URLSearchParams(window.location.search);
 const postId = params.get("id");
+
+const editForm = document.getElementById("edit-listing-form");
+const mediaContainer = document.getElementById("media-container");
+const addMediaBtn = document.getElementById("add-media-row");
 
 function toDateTimeLocal(date) {
   const d = new Date(date);
@@ -54,8 +57,17 @@ async function fetchListing() {
 }
 
 function renderEditForm(listing) {
-  document.getElementById("media-url").value = listing.media?.[0]?.url ?? "";
-  document.getElementById("media-alt").value = listing.media?.[0]?.alt ?? "";
+  mediaContainer.innerHTML = "";
+
+  const media = listing.media?.length ? listing.media : [];
+
+  if (media.length === 0) {
+    mediaContainer.appendChild(createMediaRow());
+  } else {
+    media.forEach((item) => {
+      mediaContainer.appendChild(createMediaRow(item.url, item.alt));
+    });
+  }
   document.getElementById("title").value = listing.title || "";
   document.getElementById("description").value = listing.description || "";
   document.getElementById("deadline").value =
@@ -63,12 +75,57 @@ function renderEditForm(listing) {
   document.getElementById("tags").value = (listing.tags ?? []).join(", ");
 }
 
+function createMediaRow(url = "", alt = "") {
+  const row = document.createElement("div");
+  row.classList.add("media-row");
+
+  row.innerHTML = `
+    <input
+      type="url"
+      name="media-url"
+      class="media-url-input focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+      placeholder="URL"
+      value=${url}
+    />
+    <input
+      type="text"
+      name="media-alt"
+      class="media-alt-input focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 mt-4 focus:border-2 focus:ring-0 focus:outline-none"
+      placeholder="ALT"
+      value=${alt}
+    />
+    <button
+      type="button"
+      class="remove-media-row text-error font-default underline my-2"
+    >
+      -Remove image
+    </button>
+  `;
+
+  return row;
+}
+
+addMediaBtn.addEventListener("click", () => {
+  const newRow = createMediaRow();
+  mediaContainer.appendChild(newRow);
+});
+
+mediaContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-media-row")) {
+    event.target.closest(".media-row").remove();
+  }
+});
+
 // PUT REQUEST
 
 async function updateListing(form) {
   const formData = new FormData(form);
-  const url = formData.get("media-url")?.trim();
-  const alt = formData.get("media-alt")?.trim();
+  const urls = formData.getAll("media-url").map((u) => u.trim());
+  const alts = formData.getAll("media-alt").map((a) => a.trim());
+
+  const media = urls
+    .map((url, index) => ({ url, alt: alts[index] || "" }))
+    .filter((item) => item.url);
 
   const description = formData.get("description");
 
@@ -84,13 +141,8 @@ async function updateListing(form) {
     tags: tagList,
   };
 
-  if (url) {
-    body.media = [
-      {
-        url,
-        alt: alt || "",
-      },
-    ];
+  if (media.length) {
+    body.media = media;
   }
 
   if (description) {
