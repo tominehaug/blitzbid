@@ -75,7 +75,7 @@ export function renderCard(auction, container) {
   cardWrapper.appendChild(thumbnail);
   cardWrapper.appendChild(details);
 
-  if (auction.seller.name === loggedInName) {
+  if (auction.seller?.name === loggedInName) {
     const editIcon = document.createElement("i");
     editIcon.classList.add(
       "fa-solid",
