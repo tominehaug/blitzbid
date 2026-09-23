@@ -26,7 +26,6 @@ async function fetchListing() {
         `/auction/listings/${listingId}?_seller=true&_bids=true`,
       );
       listing = data.data;
-      renderAuction(listing);
     } catch (error) {
       console.log(error);
       showPopup(
