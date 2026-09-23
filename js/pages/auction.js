@@ -1,5 +1,5 @@
-import { get, getMock } from "../services/apiClient.js";
-import { showPopup } from "../services/ui-messages.js";
+import { get, post, getMock } from "../services/apiClient.js";
+import { showPopup, hidePopup, showSuccess } from "../services/ui-messages.js";
 import { renderBidCard, renderWinningCard } from "../components/bidCard.js";
 import { renderHeader } from "../components/header.js";
 import { renderFooter } from "../components/footer.js";
@@ -9,22 +9,23 @@ const basePath = window.location.hostname.includes("github.io")
   : "";
 
 const params = new URLSearchParams(window.location.search);
-const postId = params.get("id");
+const listingId = params.get("id");
 
 let listing;
 const main = document.querySelector("main");
+const bidForm = document.getElementById("bid-form");
 
 async function fetchListing() {
   const mockResponse = await getMock("../../mock_endpoint/data.json");
-  listing = mockResponse?.data?.find((listing) => listing.id === postId);
+  listing = mockResponse?.data?.find((listing) => listing.id === listingId);
 
   if (!listing) {
     try {
       const data = await get(
-        `/auction/listings/${postId}?_seller=true&_bids=true`,
+        `${basePath}/auction/listings/${listingId}?_seller=true&_bids=true`,
       );
-      const listing = data.data;
-      renderEditForm(listing);
+      listing = data.data;
+      renderAuction(listing);
     } catch (error) {
       console.log(error);
       showPopup(
@@ -34,7 +35,7 @@ async function fetchListing() {
           {
             text: "Try again",
             class: "confirm",
-            action: () => {
+            onClick: () => {
               hidePopup();
               fetchListing();
             },
@@ -42,7 +43,7 @@ async function fetchListing() {
           {
             text: "Go back",
             class: "cancel",
-            action: () => history.back(),
+            onClick: () => history.back(),
           },
         ],
       );
@@ -57,12 +58,47 @@ async function fetchListing() {
 }
 
 function renderAuction(listing) {
-  const media = document.getElementById("auction-media");
-  media.src = listing.media?.[0]?.url;
-  media.alt = listing.media?.[0]?.alt;
+  const placeholderImage = {
+    url: `${basePath}/assets/placeholder.png`,
+    alt: "No image available",
+  };
+  const media = listing.media?.length ? listing.media : [placeholderImage];
+
+  const mainImg = document.getElementById("auction-media");
+  mainImg.src = listing.media?.[0]?.url;
+  mainImg.alt = listing.media?.[0]?.alt || "";
+
+  const thumbnailContainer = document.getElementById("media-thumbnails");
+  thumbnailContainer.innerHTML = "";
+
+  if (media.length > 1) {
+    media.forEach((item, index) => {
+      const thumbnail = document.createElement("img");
+      thumbnail.src = item.url;
+      thumbnail.alt = item.alt || `${listing.title} image ${index + 1}`;
+      thumbnail.className =
+        "w-16 h-16 object-cover cursor-pointer border-2 border-transparent shrink-0";
+      if (index === 0) thumbnail.classList.add("border-brand-500");
+
+      thumbnail.addEventListener("click", () => {
+        mainImg.src = item.url;
+        mainImg.alt = item.alt || "";
+
+        thumbnailContainer
+          .querySelectorAll("img")
+          .forEach((thumb) => thumb.classList.remove("border-brand-500"));
+        thumbnail.classList.add("border-brand-500");
+      });
+
+      thumbnailContainer.appendChild(thumbnail);
+    });
+  }
 
   const title = document.getElementById("title");
   title.textContent = listing.title;
+
+  const sellerLink = document.getElementById("seller-link");
+  sellerLink.href = `${basePath}/profile.html?user=${listing.seller.name}`;
 
   const sellerName = document.getElementById("seller-name");
   sellerName.textContent = listing.seller.name;
@@ -70,6 +106,7 @@ function renderAuction(listing) {
   const sellerImg = document.getElementById("seller-img");
   sellerImg.src = listing.seller.avatar?.url;
   sellerImg.alt = listing.seller.avatar?.alt;
+  sellerImg.className = "h-auto rounded-full object-cover w-20";
 
   const description = document.getElementById("description");
   description.textContent = listing.description;
@@ -113,6 +150,140 @@ function renderAuction(listing) {
     .sort((a, b) => new Date(b.created) - new Date(a.created))
     .forEach((bid) => renderBidCard(bid, bidList));
 }
+
+async function updateCredits(amount) {
+  const profile = JSON.parse(localStorage.getItem("profile"));
+  const username = profile?.name;
+  if (!username) {
+    showPopup("border-error", "You must be logged in to place bid.", [
+      {
+        text: "Log in",
+        class: "confirm",
+        onClick: () => {
+          window.location.href = `${basePath}/login.html`;
+        },
+      },
+      {
+        text: "OK",
+        class: "cancel",
+        onClick: () => {
+          hidePopup();
+        },
+      },
+    ]);
+    return false;
+  }
+
+  const bidAmount = Number(amount);
+  const bids = listing.bids ?? [];
+  const highestBid = bids.length
+    ? bids.reduce((top, bid) => (bid.amount > top.amount ? bid : top))
+    : null;
+
+  if (highestBid && bidAmount <= highestBid.amount) {
+    showPopup(
+      "border-error",
+      `Your bid must be higher than the current highest bid of €${highestBid.amount}.`,
+      [
+        {
+          text: "OK",
+          class: "cancel",
+          onClick: () => hidePopup(),
+        },
+      ],
+    );
+    return false;
+  }
+
+  const profileData = await get(`${basePath}/auction/profiles/${username}`);
+  const currentCredits = profileData.data.credits;
+
+  if (currentCredits < bidAmount) {
+    showPopup("border-error", "Your credit score is too low.", [
+      {
+        text: "OK",
+        class: "cancel",
+        onClick: () => {
+          hidePopup();
+        },
+      },
+    ]);
+    return false;
+  }
+
+  try {
+    const response = await post(
+      `${basePath}/auction/listings/${listingId}/bids`,
+      { amount: bidAmount },
+    );
+
+    listing = response.data ?? listing;
+    renderAuction(listing);
+    return true;
+  } catch (error) {
+    console.log(error);
+    showPopup("border-error", error.message || "Could not place your bid.", [
+      {
+        text: "Try again",
+        class: "confirm",
+        onClick: () => {
+          hidePopup();
+          updateCredits(amount);
+        },
+      },
+      {
+        text: "Cancel",
+        class: "cancel",
+        onClick: () => {
+          hidePopup();
+        },
+      },
+    ]);
+    return false;
+  }
+}
+
+bidForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(bidForm);
+  const bidAmount = Number(formData.get("bid"));
+  if (!bidAmount) {
+    showPopup("border-error", "Please place amount.", [
+      {
+        text: "OK",
+        class: "cancel",
+        onClick: () => {
+          hidePopup();
+        },
+      },
+    ]);
+  }
+  if (bidAmount)
+    showPopup(
+      "border-brand-500",
+      `Are you sure you want to bid €${bidAmount}?`,
+      [
+        {
+          text: "Yes",
+          class: "confirm",
+          onClick: async () => {
+            const success = await updateCredits(bidAmount);
+            if (success) {
+              showSuccess("Bid placed successfully!");
+              window.location.reload();
+            }
+          },
+        },
+        {
+          text: "No",
+          class: "warning",
+          onClick: () => {
+            hidePopup();
+          },
+        },
+      ],
+    );
+});
 
 async function init() {
   await fetchListing();
