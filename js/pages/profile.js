@@ -2,6 +2,7 @@ import { renderHeader } from "../components/header.js";
 import { renderFooter } from "../components/footer.js";
 import { renderCard } from "../components/card.js";
 import { get, getMock } from "../services/apiClient.js";
+import { hidePopup, showPopup } from "../services/ui-messages.js";
 
 const params = new URLSearchParams(window.location.search);
 const username = params.get("user");
@@ -144,9 +145,11 @@ function renderTab(tab) {
     tabContent.innerHTML = `
               <h2 class="font-heading text-2xl">Your credits</h2>
               <p class="text-lg font-default">Your current score is: <span class="text-2xl font-heading text-brand-500">€${profile.credits}</span></p>
-              <label for="credit"></label>
+              <form id="credits-form">
+                <label for="credit"></label>
                 <input id="credit" class="text-2xl focus:border-brand-500 font-heading w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none" type="number" max="5000" >
-                <button id="load-btn" type="submit" class="border-2 border-brand-500 mt-4 border-dashed font-heading text-2xl cursor-pointer uppercase px-4 py-2">Load</button>
+                <button id="load-btn" type="button" class="border-2 border-brand-500 mt-4 border-dashed font-heading text-2xl cursor-pointer uppercase px-4 py-2">Load</button>
+              </form>
             `;
   }
 }
@@ -182,6 +185,19 @@ myBidsTab.addEventListener("click", () => {
 
 myCreditsTab.addEventListener("click", () => {
   renderTab(myCreditsTab);
+  const creditForm = document.getElementById("credits-form");
+
+  creditForm.addEventListener("click", () => {
+    showPopup("border-brand-500", "Functionality coming soon!", [
+      {
+        text: "OK",
+        class: "cancel",
+        action: () => {
+          hidePopup();
+        },
+      },
+    ]);
+  });
 });
 
 async function init() {
