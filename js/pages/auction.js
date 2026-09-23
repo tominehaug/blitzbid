@@ -216,10 +216,9 @@ async function updateCredits(amount) {
   }
 
   try {
-    const response = await post(
-      `${basePath}/auction/listings/${listingId}/bids`,
-      { amount: bidAmount },
-    );
+    const response = await post(`/auction/listings/${listingId}/bids`, {
+      amount: bidAmount,
+    });
 
     listing = response.data ?? listing;
     renderAuction(listing);
