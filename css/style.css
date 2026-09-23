@@ -17,6 +17,8 @@
     --container-3xs: 16rem;
     --container-2xs: 18rem;
     --container-xs: 20rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
@@ -270,6 +272,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }
@@ -387,6 +392,15 @@
   .h-full {
     height: 100%;
   }
+  .max-h-10 {
+    max-height: calc(var(--spacing) * 10);
+  }
+  .max-h-15 {
+    max-height: calc(var(--spacing) * 15);
+  }
+  .max-h-50 {
+    max-height: calc(var(--spacing) * 50);
+  }
   .max-h-100 {
     max-height: calc(var(--spacing) * 100);
   }
@@ -423,8 +437,17 @@
   .w-80 {
     width: calc(var(--spacing) * 80);
   }
+  .w-90 {
+    width: calc(var(--spacing) * 90);
+  }
+  .w-200 {
+    width: calc(var(--spacing) * 200);
+  }
   .w-\[70vw\] {
     width: 70vw;
+  }
+  .w-\[200px\] {
+    width: 200px;
   }
   .w-auto {
     width: auto;
@@ -531,6 +554,9 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
   }
   .gap-20 {
     gap: calc(var(--spacing) * 20);
@@ -748,12 +774,20 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .text-\[22px\] {
     font-size: 22px;
+  }
+  .leading-0 {
+    --tw-leading: 0px;
+    line-height: 0px;
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
@@ -831,6 +865,9 @@
   @media (width >= 40rem) {
     .sm\:hidden {
       display: none;
+    }
+    .sm\:flex-col {
+      flex-direction: column;
     }
   }
   @media (width >= 48rem) {
@@ -1257,6 +1294,10 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -1347,6 +1388,7 @@
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-border-style: solid;
+      --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-outline-style: solid;
