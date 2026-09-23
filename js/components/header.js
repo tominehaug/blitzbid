@@ -11,7 +11,7 @@ async function fetchCredits() {
   const username = profile?.name;
   if (!username) return "-";
   try {
-    const profileInfo = await get(`${basePath}/auction/profiles/${username}`);
+    const profileInfo = await get(`/auction/profiles/${username}`);
     return profileInfo.data.credits ?? "-";
   } catch {
     showPopup(
@@ -52,13 +52,8 @@ export async function renderHeader() {
     header.innerHTML = `
       <a href="${basePath}/index.html">
         <img src="${basePath}/assets/logo.svg" alt="BlitzBid logo" width="180" height="72"/>
-      </a>
-      <div class="flex flex-row gap-2 items-center justify-center">       
-      <span
-        class="bg-brand-200 border-2 border-brand-500 font-heading inline-block rounded-lg pt-1 pb-1 pl-3 pr-3 text-2xl shrink-0" id="credits"
-      >€ ${credits}</span>
+      </a>    
       <a href="${basePath}/login.html"><i class="fa-solid fa-right-to-bracket text-4xl cursor-pointer"></i></a>
-      </div>
     `;
   } else if (path.includes("profile.html") && loggedInUser === viewedUser) {
     header.innerHTML = `
