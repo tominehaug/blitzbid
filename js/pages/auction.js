@@ -199,7 +199,7 @@ async function updateCredits(amount) {
     return false;
   }
 
-  const profileData = await get(`${basePath}/auction/profiles/${username}`);
+  const profileData = await get(`/auction/profiles/${username}`);
   const currentCredits = profileData.data.credits;
 
   if (currentCredits < bidAmount) {
