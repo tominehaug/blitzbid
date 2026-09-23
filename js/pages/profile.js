@@ -73,11 +73,21 @@ async function fetchBidsByUser() {
       const response = await get(
         `/auction/profiles/${username}/bids?_listings=true`,
       );
-      const listings = response.data.map((bid) => bid.listing);
-      bidsByUser = listings.filter(
-        (listing, index) =>
-          listings.findIndex((l) => l.id === listing.id) === index,
-      );
+
+      const listingIds = [];
+      for (const bid of response.data) {
+        const id = bid.listing.id;
+        if (!listingIds.includes(id)) {
+          listingIds.push(id);
+        }
+      }
+      bidsByUser = [];
+      for (const id of listingIds) {
+        const listingResponse = await get(
+          `/auction/listings/${id}?_bids=true&_seller=true`,
+        );
+        bidsByUser.push(listingResponse.data);
+      }
     }
   } catch (error) {
     console.log(error);
