@@ -63,7 +63,7 @@ async function updateProfile(form) {
   const avatarUrl = formData.get("banner")?.trim();
   const avatarAlt = formData.get("banner-alt")?.trim();
 
-  const bio = formData.get("deadline");
+  const bio = formData.get("bio");
 
   const body = {
     bio: bio ?? "",

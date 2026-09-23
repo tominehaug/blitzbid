@@ -23,7 +23,7 @@ async function fetchListing() {
   if (!listing) {
     try {
       const data = await get(
-        `${basePath}/auction/listings/${listingId}?_seller=true&_bids=true`,
+        `/auction/listings/${listingId}?_seller=true&_bids=true`,
       );
       listing = data.data;
       renderAuction(listing);
