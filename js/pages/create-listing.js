@@ -17,8 +17,12 @@ const addMediaBtn = document.getElementById("add-media-row");
 
 async function uploadListing(form) {
   const formData = new FormData(form);
-  const url = formData.get("media-url")?.trim();
-  const alt = formData.get("media-alt")?.trim();
+  const urls = formData.getAll("media-url").map((u) => u.trim());
+  const alts = formData.getAll("media-alt").map((a) => a.trim());
+
+  const media = urls
+    .map((url, index) => ({ url, alt: alts[index] || "" }))
+    .filter((item) => item.url);
 
   const description = formData.get("description");
 
@@ -32,14 +36,8 @@ async function uploadListing(form) {
     title: formData.get("title"),
     endsAt: endsAt,
   };
-
-  if (url) {
-    body.media = [
-      {
-        url,
-        alt: alt || "",
-      },
-    ];
+  if (media.length) {
+    body.media = media;
   }
 
   if (tagList.length) {
