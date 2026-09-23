@@ -36,25 +36,39 @@
         class="mt-10 mb-8 flex w-full flex-1 flex-col text-center md:w-auto"
       >
         <div class="md:flex md:w-200 md:flex-row md:gap-20">
+          <div>
+            <div class="flex flex-col gap-1" id="media-container">
+              <label for="media-url" class="text-2xl">Image</label>
+              <input
+                type="url"
+                name="media-url"
+                id="media-url"
+                class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+                placeholder="URL"
+              />
+              <div class="text-error font-default mt-1 text-base"></div>
+              <label for="media-alt" class="hidden text-2xl">Alt text</label>
+              <input
+                type="text"
+                name="media-alt"
+                id="media-alt"
+                class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
+                placeholder="ALT"
+              />
+              <div class="text-error font-default mt-1 text-base"></div>
+            </div>
+            <button
+              type="button"
+              id="add-media-row"
+              class="text-brand-500 font-default cursor-pointer text-lg underline"
+            >
+              + Add another image
+            </button>
+          </div>
+          <div
+            class="text-brand-500 mt-8 mb-8 h-0.5 w-full shrink-0 bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)] md:my-0 md:h-auto md:w-0.5 md:self-stretch md:bg-[repeating-linear-gradient(to_bottom,currentColor_0_10px,transparent_10px_20px)]"
+          ></div>
           <div class="flex flex-col gap-1">
-            <label for="media-url" class="text-2xl">Image</label>
-            <input
-              type="url"
-              name="media-url"
-              id="media-url"
-              class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
-              placeholder="URL"
-            />
-            <div class="text-error font-default mt-1 text-base"></div>
-            <label for="media-alt" class="text-2xl">Alt text</label>
-            <input
-              type="text"
-              name="media-alt"
-              id="media-alt"
-              class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
-              placeholder="ALT"
-            />
-            <div class="text-error font-default mt-1 text-base"></div>
             <label for="title" class="text-2xl">Title</label>
             <input
               type="text"
@@ -73,11 +87,6 @@
               class="focus:border-brand-500 font-default w-80 self-center border border-gray-400 bg-white p-3 focus:border-2 focus:ring-0 focus:outline-none"
             ></textarea>
             <div class="text-error font-default mx-2 mt-1 text-base"></div>
-          </div>
-          <div
-            class="text-brand-500 mt-8 mb-8 h-0.5 w-full shrink-0 bg-[repeating-linear-gradient(to_right,currentColor_0_10px,transparent_10px_20px)] md:my-0 md:h-auto md:w-0.5 md:self-stretch md:bg-[repeating-linear-gradient(to_bottom,currentColor_0_10px,transparent_10px_20px)]"
-          ></div>
-          <div class="flex flex-col gap-1">
             <label for="deadline" class="text-2xl">Deadline</label>
             <input
               type="datetime-local"
