@@ -60,8 +60,8 @@ async function updateProfile(form) {
   const bannerUrl = formData.get("banner")?.trim();
   const bannerAlt = formData.get("banner-alt")?.trim();
 
-  const avatarUrl = formData.get("banner")?.trim();
-  const avatarAlt = formData.get("banner-alt")?.trim();
+  const avatarUrl = formData.get("avatar")?.trim();
+  const avatarAlt = formData.get("avatar-alt")?.trim();
 
   const bio = formData.get("bio");
 
