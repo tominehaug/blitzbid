@@ -5,6 +5,14 @@ export function validateForm(form) {
 
   inputs.forEach((input) => {
     const errorDiv = input.nextElementSibling;
+    const requiredDomain = "@stud.noroff.no";
+
+    if (input.type === "email" && input.value) {
+      const email = input.value.trim().toLowerCase();
+      if (!email.endsWith(requiredDomain)) {
+        input.setCustomValidity(`Email must end with ${requiredDomain}`);
+      }
+    }
 
     if (!input.checkValidity()) {
       errorDiv.textContent = input.validationMessage;
