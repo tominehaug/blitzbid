@@ -70,8 +70,6 @@ function renderEditForm(listing) {
   }
   document.getElementById("title").value = listing.title || "";
   document.getElementById("description").value = listing.description || "";
-  document.getElementById("deadline").value =
-    toDateTimeLocal(listing.endsAt) || "";
   document.getElementById("tags").value = (listing.tags ?? []).join(", ");
 }
 
@@ -132,12 +130,8 @@ async function updateListing(form) {
   const tags = formData.get("tags");
   const tagList = parseTags(tags);
 
-  const deadline = formData.get("deadline");
-  const endsAt = new Date(deadline).toISOString();
-
   const body = {
     title: formData.get("title"),
-    endsAt: endsAt,
     tags: tagList,
   };
 
