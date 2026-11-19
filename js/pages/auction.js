@@ -18,7 +18,11 @@ const bidForm = document.getElementById("bid-form");
 
 async function fetchListing() {
   const mockResponse = await getMock("../../mock_endpoint/data.json");
-  listing = mockResponse?.data?.find((listing) => listing.id === listingId);
+  mockListing = mockResponse?.data?.find((item) => item.id === listingId);
+
+  if (mockListing) {
+    listing = { ...mockListing, isMock: true };
+  }
 
   if (!listing) {
     try {
@@ -52,9 +56,26 @@ async function fetchListing() {
 
   if (listing) {
     renderAuction(listing);
+    restrictBidState(listing);
   } else {
     main.innerHTML = "Could not find listing.";
   }
+}
+
+function restrictBidState(listing) {
+  if (!listing.isMock) return;
+
+  bidForm.querySelectorAll("input, button").forEach((el) => {
+    el.disabled = true;
+    classList.add("grayscale", "opacity-70", "pointer-events-none");
+  });
+
+  const warning = document.getElementById("mock-restriction");
+  warning.innerHTML = `
+    This is an example listing, so bids can't be placed on it.
+    <a href="${basePath}/auction.html?id=a3f9b993-50b2-49e2-83e5-f482edf50897" class="underline">Check out a real listing</a>
+    or use the search bar and browse other listings.
+  `;
 }
 
 function renderAuction(listing) {
@@ -154,7 +175,14 @@ function renderAuction(listing) {
     .forEach((bid) => renderBidCard(bid, bidList));
 }
 
-async function updateCredits(amount) {
+async function placeBid(amount) {
+  if (listing.isMock) {
+    showPopup("border-error", "Bids can't be placed on example listings.", [
+      { text: "OK", class: "cancel", onClick: () => hidePopup() },
+    ]);
+    return false;
+  }
+
   const profile = JSON.parse(localStorage.getItem("profile"));
   const username = profile?.name;
   if (!username) {
@@ -173,6 +201,20 @@ async function updateCredits(amount) {
           hidePopup();
         },
       },
+    ]);
+    return false;
+  }
+
+  if (listing.seller?.name === username) {
+    showPopup("border-error", "You can't bid on your own listing.", [
+      { text: "OK", class: "cancel", onClick: () => hidePopup() },
+    ]);
+    return false;
+  }
+
+  if (new Date(listing.endsAt) <= new Date()) {
+    showPopup("border-error", "This auction has already ended.", [
+      { text: "OK", class: "cancel", onClick: () => hidePopup() },
     ]);
     return false;
   }
@@ -198,18 +240,34 @@ async function updateCredits(amount) {
     return false;
   }
 
-  const profileData = await get(`/auction/profiles/${username}`);
-  const currentCredits = profileData.data.credits;
+  let currentCredits;
+
+  try {
+    const profileData = await get(`/auction/profiles/${username}`);
+    currentCredits = profileData.data.credits;
+  } catch (error) {
+    console.log(error);
+    showPopup("border-error", "Trouble fetching your credit score.", [
+      {
+        text: "Try again",
+        class: "confirm",
+        onClick: () => {
+          hidePopup();
+          placeBid(amount);
+        },
+      },
+      {
+        text: "Cancel",
+        class: "cancel",
+        onClick: () => hidePopup(),
+      },
+    ]);
+    return false;
+  }
 
   if (currentCredits < bidAmount) {
     showPopup("border-error", "Your credit score is too low.", [
-      {
-        text: "OK",
-        class: "cancel",
-        onClick: () => {
-          hidePopup();
-        },
-      },
+      { text: "OK", class: "cancel", onClick: () => hidePopup() },
     ]);
     return false;
   }
@@ -230,7 +288,7 @@ async function updateCredits(amount) {
         class: "confirm",
         onClick: () => {
           hidePopup();
-          updateCredits(amount);
+          placeBid(amount);
         },
       },
       {
@@ -249,16 +307,11 @@ bidForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(bidForm);
   const bidAmount = Number(formData.get("bid"));
-  if (!bidAmount) {
-    showPopup("border-error", "Please place amount.", [
-      {
-        text: "OK",
-        class: "cancel",
-        onClick: () => {
-          hidePopup();
-        },
-      },
+  if (isNaN(bidAmount) || bidAmount <= 0) {
+    showPopup("border-error", "Please enter a valid amount.", [
+      { text: "OK", class: "cancel", onClick: () => hidePopup() },
     ]);
+    return;
   }
   if (bidAmount)
     showPopup(
@@ -269,7 +322,7 @@ bidForm.addEventListener("submit", (event) => {
           text: "Yes",
           class: "confirm",
           onClick: async () => {
-            const success = await updateCredits(bidAmount);
+            const success = await placeBid(bidAmount);
             if (success) {
               showSuccess("Bid placed successfully!");
               window.location.reload();
