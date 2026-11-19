@@ -78,6 +78,37 @@ function restrictBidState(listing) {
   `;
 }
 
+function renderBids(listing) {
+  const bids = listing.bids ?? [];
+  const bidList = document.getElementById("bid-list");
+  const loadMoreBtn = document.getElementById("load-more-bids");
+  bidList.innerHTML = "";
+
+  if (bids.length === 0) {
+    bidList.textContent = "No bids yet.";
+    loadMoreBtn.classList.add("hidden");
+    return;
+  }
+
+  const highest = bids.reduce((top, bid) =>
+    bid.amount > top.amount ? bid : top,
+  );
+
+  renderWinningCard(highest, bidList);
+
+  const otherBids = bids
+    .filter((bid) => bid !== highest)
+    .sort((a, b) => new Date(b.created) - new Date(a.created));
+
+  otherBids.slice(0, visibleBids).forEach((bid) => renderBidCard(bid, bidList));
+
+  if (otherBids.length > visibleBids) {
+    loadMoreBtn.classList.remove("hidden");
+  } else {
+    loadMoreBtn.classList.add("hidden");
+  }
+}
+
 function renderAuction(listing) {
   const placeholderImage = {
     url: `${basePath}/assets/placeholder-img.png`,
@@ -152,27 +183,6 @@ function renderAuction(listing) {
 
   const deadline = document.getElementById("deadline");
   deadline.textContent = "Ends: " + formatDate(listing.endsAt);
-
-  const bids = listing.bids ?? [];
-  const bidList = document.getElementById("bid-list");
-  bidList.innerHTML = "";
-
-  if (bids.length === 0) {
-    bidList.innerHTML = "";
-    bidList.textContent = "No bids yet.";
-    return;
-  }
-
-  const highest = bids.reduce((top, bid) =>
-    bid.amount > top.amount ? bid : top,
-  );
-
-  renderWinningCard(highest, bidList);
-
-  bids
-    .filter((bid) => bid !== highest)
-    .sort((a, b) => new Date(b.created) - new Date(a.created))
-    .forEach((bid) => renderBidCard(bid, bidList));
 }
 
 async function placeBid(amount) {
@@ -302,6 +312,11 @@ async function placeBid(amount) {
     return false;
   }
 }
+
+document.getElementById("load-more-bids").addEventListener("click", () => {
+  visibleBids += BIDS_PER_PAGE;
+  renderBids(listing);
+});
 
 bidForm.addEventListener("submit", (event) => {
   event.preventDefault();
