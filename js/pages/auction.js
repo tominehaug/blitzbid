@@ -21,7 +21,7 @@ let visibleBids = BIDS_PER_PAGE;
 
 async function fetchListing() {
   const mockResponse = await getMock("../../mock_endpoint/data.json");
-  mockListing = mockResponse?.data?.find((item) => item.id === listingId);
+  const mockListing = mockResponse?.data?.find((item) => item.id === listingId);
 
   if (mockListing) {
     listing = { ...mockListing, isMock: true };
@@ -70,7 +70,7 @@ function restrictBidState(listing) {
 
   bidForm.querySelectorAll("input, button").forEach((el) => {
     el.disabled = true;
-    classList.add("grayscale", "opacity-70", "pointer-events-none");
+    bidForm.classList.add("grayscale", "opacity-70", "pointer-events-none");
   });
 
   const warning = document.getElementById("mock-restriction");
