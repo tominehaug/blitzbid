@@ -16,6 +16,9 @@ let listing;
 const main = document.querySelector("main");
 const bidForm = document.getElementById("bid-form");
 
+const BIDS_PER_PAGE = 3;
+let visibleBids = BIDS_PER_PAGE;
+
 async function fetchListing() {
   const mockResponse = await getMock("../../mock_endpoint/data.json");
   mockListing = mockResponse?.data?.find((item) => item.id === listingId);
