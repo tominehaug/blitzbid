@@ -13,7 +13,6 @@ async function apiClient(endpoint, options = {}) {
 
   const headers = {
     "Content-Type": "application/json",
-    "X-Noroff-API-Key": "2bde75d8-9f1b-47c2-9a2a-9aeb4314b744",
   };
 
   if (accessToken) {
