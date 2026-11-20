@@ -185,6 +185,14 @@ function lockTabs() {
   myCreditsTab.classList.add("text-gray-400", "cursor-not-allowed");
 }
 
+document.getElementById("back-btn").addEventListener("click", () => {
+  if (document.referrer) {
+    history.back();
+  } else {
+    window.location.href = `${basePath}/index.html`;
+  }
+});
+
 myListingsTab.addEventListener("click", () => {
   renderTab(myListingsTab);
 });
