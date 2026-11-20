@@ -22,8 +22,16 @@
       <header
         class="flex h-24 items-center justify-between bg-white px-8"
       ></header>
+      <button
+        id="back-btn"
+        type="button"
+        aria-label="Go back"
+        class="js-back m-4 cursor-pointer lg:ml-10"
+      >
+        <img src="assets/prev.svg" alt="back-arrow" width="20" height="40" />
+      </button>
       <main
-        class="md:mx-10 md:mt-10 md:grid md:grid-cols-4 md:gap-6 lg:mx-10 lg:grid-cols-3 lg:gap-[4vw]"
+        class="md:mx-10 md:grid md:grid-cols-4 md:gap-6 lg:mb-10 lg:grid-cols-3 lg:gap-[4vw]"
       >
         <div class="md:col-span-2 lg:col-span-1">
           <div id="auction-gallery" class="flex flex-col gap-2">
@@ -94,7 +102,7 @@
             </form>
             <p id="mock-restriction" class="p-4 text-center"></p>
           </div>
-          <div class="mx-4 mt-4 md:mx-0">
+          <div class="mx-4 mt-4 mb-8 md:mx-0">
             <h2 class="font-heading text-2xl">Bid history</h2>
             <div id="bid-list" class="flex flex-col gap-3"></div>
             <button id="load-more-bids" class="hidden py-4 underline">

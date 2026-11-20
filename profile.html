@@ -31,7 +31,12 @@
             id="profile-banner"
             class="absolute inset-0 hidden h-full w-full object-cover md:block"
           />
-          <button class="js-back absolute top-2 left-2 z-10">
+          <button
+            id="back-btn"
+            type="button"
+            aria-label="Go back"
+            class="js-back absolute top-4 left-4 z-10 cursor-pointer"
+          >
             <img
               src="assets/prev.svg"
               alt="back-arrow"
@@ -106,10 +111,11 @@
           </div>
         </div>
       </main>
-      <footer
-        class="bg-white p-3 md:flex md:w-full md:flex-row md:gap-5 md:pt-5"
-      ></footer>
     </div>
+    <footer
+      class="bg-white p-3 md:flex md:w-full md:flex-row md:gap-5 md:pt-5"
+    ></footer>
+
     <div
       id="popup-backdrop"
       class="fixed inset-0 z-40 hidden bg-white/70"
