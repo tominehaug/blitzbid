@@ -16,7 +16,7 @@ let listing;
 const main = document.querySelector("main");
 const bidForm = document.getElementById("bid-form");
 
-const BIDS_PER_PAGE = 3;
+const BIDS_PER_PAGE = 2;
 let visibleBids = BIDS_PER_PAGE;
 
 async function fetchListing() {
@@ -186,6 +186,8 @@ function renderAuction(listing) {
 
   const deadline = document.getElementById("deadline");
   deadline.textContent = "Ends: " + formatDate(listing.endsAt);
+
+  renderBids(listing);
 }
 
 async function placeBid(amount) {
@@ -315,6 +317,14 @@ async function placeBid(amount) {
     return false;
   }
 }
+
+document.getElementById("back-btn").addEventListener("click", () => {
+  if (document.referrer) {
+    history.back();
+  } else {
+    window.location.href = `${basePath}/index.html`;
+  }
+});
 
 document.getElementById("load-more-bids").addEventListener("click", () => {
   visibleBids += BIDS_PER_PAGE;
