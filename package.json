@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tailwindcss -i ./css/input.css -o ./css/style.css --watch",
-    "build": "tailwindcss -i ./css/input.css -o ./css/style.css --minify"
+    "build": "node build.js && tailwindcss -i ./css/input.css -o ./dist/css/style.css --minify",
+    "build:local": "node --env-file=.env build.js && tailwindcss -i ./css/input.css -o ./dist/css/style.css --minify"
   },
   "repository": {
     "type": "git",

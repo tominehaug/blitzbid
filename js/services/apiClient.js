@@ -1,6 +1,7 @@
 import { ApiError } from "./errors.js";
+import { API_URL, API_KEY } from "../config.js";
 
-const BASE_URL = "https://v2.api.noroff.dev";
+const BASE_URL = API_URL;
 
 const basePath = window.location.hostname.includes("github.io")
   ? "/blitzbid"
@@ -13,6 +14,7 @@ async function apiClient(endpoint, options = {}) {
 
   const headers = {
     "Content-Type": "application/json",
+    "X-Noroff-API-Key": API_KEY,
   };
 
   if (accessToken) {
